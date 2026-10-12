@@ -2,7 +2,7 @@
 
 Open [the interactive dashboard](index.html) or [the live site](https://kmlawson.github.io/vision-model-bench/). The dashboard is a single offline HTML file with embedded input images, accuracy scores, colored extraction review, timing, tokens, and reported costs.
 
-16 finished configurations, 120 saved extractions out of 128 tasks. Active runs are excluded until finished. Failed or missing final responses score zero; the eight corrected Markdown files are ground truth.
+17 finished configurations, 128 saved extractions out of 136 tasks. Active runs are excluded until finished. Failed or missing final responses score zero; the eight corrected Markdown files are ground truth.
 
 | Configuration | Date | Backend | Saved | Content F1 | Number F1 | Status | Details |
 |---|---|---|---:|---:|---:|---|---|
@@ -12,6 +12,7 @@ Open [the interactive dashboard](index.html) or [the live site](https://kmlawson
 | [gemini-3.8-flash-low](gemini-3.8-flash-low/2026-10-12/) | 2026-10-12 | agy | 8/8 | 94.26% | 89.47% | completed | [Metadata](gemini-3.8-flash-low/2026-10-12/run.json) |
 | [gemini-3.8-flash-medium](gemini-3.8-flash-medium/2026-10-12/) | 2026-10-12 | agy | 8/8 | 93.86% | 87.26% | completed | [Metadata](gemini-3.8-flash-medium/2026-10-12/run.json) |
 | [claude-sonnet-5.5](claude-sonnet-5.5/2026-10-12/) | 2026-10-12 | llm | 8/8 | 93.73% | 86.05% | completed | [Metadata](claude-sonnet-5.5/2026-10-12/run.json) |
+| [gpt-6-astra-low-cli](gpt-6-astra-low-cli/2026-10-13/) | 2026-10-13 | codex | 8/8 | 91.78% | 78.87% | completed | [Metadata](gpt-6-astra-low-cli/2026-10-13/run.json) |
 | [gpt-6.1-sol-medium](gpt-6.1-sol-medium/2026-10-12/) | 2026-10-12 | codex | 8/8 | 91.31% | 77.85% | completed | [Metadata](gpt-6.1-sol-medium/2026-10-12/run.json) |
 | [gpt-6.1-sol-high](gpt-6.1-sol-high/2026-10-12/) | 2026-10-12 | codex | 8/8 | 91.06% | 79.37% | completed | [Metadata](gpt-6.1-sol-high/2026-10-12/run.json) |
 | [qwen3.5-35b-a3b](qwen3.5-35b-a3b/2026-10-12/) | 2026-10-12 | llm | 8/8 | 86.23% | 71.14% | completed | [Metadata](qwen3.5-35b-a3b/2026-10-12/run.json) |
