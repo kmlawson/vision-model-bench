@@ -1,0 +1,59 @@
+[
+  {
+    "id": "01m4ry4gcexmyfbqbmx0wy4zvy",
+    "model": "anthropic/claude-opus-5-5",
+    "resolved_model": null,
+    "options_json": {},
+    "conversation_id": "01m4ry4gcds4e6hvan5zn25zg9",
+    "duration_ms": 16220,
+    "datetime_utc": "2026-10-12T20:51:13.934672+00:00",
+    "input_tokens": 2408,
+    "output_tokens": 1934,
+    "token_details": "{\"output_tokens_details\": {\"thinking_tokens\": 1227}}",
+    "conversation_name": "Extract the text from difficult\u2026",
+    "conversation_model": "anthropic/claude-opus-5-5",
+    "schema_json": null,
+    "prompt": "Extract the text from difficult-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example \u4e09 \u2192 3 and \u4e8c\u5341\u4e09 \u2192 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+    "system": null,
+    "response": "# \u5317\u5e73\u5e0224\u5e74\u5ea6\u5404\u9805\u6536\u5165\u6982\u6cc1\u8868(\u55ae\u4f4d\uff1a\u5143)\n\n| \u9805\u76ee | \u7e3d\u8a08 | \u7d93\u5e38\u6536\u5165 | \u81e8\u6642\u6536\u5165 |\n|---|---|---|---|\n| \u7e3d\u8a08 | 6,222,826.00 | 6,148,368.00 | 74,458.00 |\n| \u7a05\u6350\u6536\u5165 | 4,334,280.00 | 4,334,280.00 | \u2026\u2026 |\n| \u884c\u653f\u6536\u5165 | 769,738.00 | 769,738.00 | \u2026\u2026 |\n| \u8ca1\u7522\u6536\u5165 | 173,822.00 | 101,114.00 | 72,708.00 |\n| \u4e8b\u696d\u6536\u5165 | 120,588.00 | 120,588.00 | \u2026\u2026 |\n| \u88dc\u52a9\u6536\u5165 | 708,000.00 | 708,000.00 | \u2026\u2026 |\n| \u5176\u4ed6\u6536\u5165 | 116,398.00 | 114,648.00 | 1,750.00 |\n\n\u4f9d\u64da24\u5e74\u5ea6\u9810\u7b97\u586b\u9020\u3002\n\n# \u5317\u5e73\u5e0224\u5e74\u5ea6\u5404\u9805\u652f\u51fa\u6982\u6cc1\u8868(\u55ae\u4f4d\uff1a\u5143)\n\n| \u9805\u76ee | \u7e3d\u8a08 | \u7d93\u5e38\u652f\u51fa | \u81e8\u6642\u652f\u51fa |\n|---|---|---|---|\n| \u7e3d\u8a08 | 6,222,826.00 | 5,766,091.00 | 456,735.00 |\n| \u884c\u653f\u8cbb | 531,523.00 | 389,506.00 | 142,017.00 |\n| \u8ca1\u52d9\u8cbb | 479,265.00 | 362,446.00 | 116,819.00 |\n| \u516c\u5b89\u8cbb | 2,172,857.00 | 2,157,361.00 | 15,496.00 |\n| \u5efa\u8a2d\u8cbb | 511,389.00 | 471,389.00 | 40,000.00 |\n| \u885b\u751f\u8cbb | 477,575.00 | 456,284.00 | 21,291.00 |\n| \u5be6\u696d\u8cbb | 176,158.00 | 176,158.00 | \u2026\u2026 |\n| \u6559\u80b2\u6587\u5316\u8cbb | 1,503,811.00 | 1,382,699.00 | 121,112.00 |\n| \u5354\u52a9\u8cbb | 297,496.00 | 297,496.00 | \u2026\u2026 |\n| \u6551\u5379\u8cbb | 26,539.00 | 26,539.00 | \u2026\u2026 |\n| \u9810\u5099\u8cbb | 46,213.00 | 46,213.00 | \u2026\u2026 |\n\n\u4f9d\u716724\u5e74\u5ea6\u9810\u7b97\u586b\u9020\u3002",
+    "reasoning": null,
+    "prompt_json": null,
+    "response_json": {
+      "id": "msg_011Cfy1CFrcCx1PocZgdm3AV",
+      "container": null,
+      "content": [
+        {
+          "signature": "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",
+          "thinking": "",
+          "type": "thinking"
+        },
+        {
+          "citations": null,
+          "text": "# \u5317\u5e73\u5e0224\u5e74\u5ea6\u5404\u9805\u6536\u5165\u6982\u6cc1\u8868(\u55ae\u4f4d\uff1a\u5143)\n\n| \u9805\u76ee | \u7e3d\u8a08 | \u7d93\u5e38\u6536\u5165 | \u81e8\u6642\u6536\u5165 |\n|---|---|---|---|\n| \u7e3d\u8a08 | 6,222,826.00 | 6,148,368.00 | 74,458.00 |\n| \u7a05\u6350\u6536\u5165 | 4,334,280.00 | 4,334,280.00 | \u2026\u2026 |\n| \u884c\u653f\u6536\u5165 | 769,738.00 | 769,738.00 | \u2026\u2026 |\n| \u8ca1\u7522\u6536\u5165 | 173,822.00 | 101,114.00 | 72,708.00 |\n| \u4e8b\u696d\u6536\u5165 | 120,588.00 | 120,588.00 | \u2026\u2026 |\n| \u88dc\u52a9\u6536\u5165 | 708,000.00 | 708,000.00 | \u2026\u2026 |\n| \u5176\u4ed6\u6536\u5165 | 116,398.00 | 114,648.00 | 1,750.00 |\n\n\u4f9d\u64da24\u5e74\u5ea6\u9810\u7b97\u586b\u9020\u3002\n\n# \u5317\u5e73\u5e0224\u5e74\u5ea6\u5404\u9805\u652f\u51fa\u6982\u6cc1\u8868(\u55ae\u4f4d\uff1a\u5143)\n\n| \u9805\u76ee | \u7e3d\u8a08 | \u7d93\u5e38\u652f\u51fa | \u81e8\u6642\u652f\u51fa |\n|---|---|---|---|\n| \u7e3d\u8a08 | 6,222,826.00 | 5,766,091.00 | 456,735.00 |\n| \u884c\u653f\u8cbb | 531,523.00 | 389,506.00 | 142,017.00 |\n| \u8ca1\u52d9\u8cbb | 479,265.00 | 362,446.00 | 116,819.00 |\n| \u516c\u5b89\u8cbb | 2,172,857.00 | 2,157,361.00 | 15,496.00 |\n| \u5efa\u8a2d\u8cbb | 511,389.00 | 471,389.00 | 40,000.00 |\n| \u885b\u751f\u8cbb | 477,575.00 | 456,284.00 | 21,291.00 |\n| \u5be6\u696d\u8cbb | 176,158.00 | 176,158.00 | \u2026\u2026 |\n| \u6559\u80b2\u6587\u5316\u8cbb | 1,503,811.00 | 1,382,699.00 | 121,112.00 |\n| \u5354\u52a9\u8cbb | 297,496.00 | 297,496.00 | \u2026\u2026 |\n| \u6551\u5379\u8cbb | 26,539.00 | 26,539.00 | \u2026\u2026 |\n| \u9810\u5099\u8cbb | 46,213.00 | 46,213.00 | \u2026\u2026 |\n\n\u4f9d\u716724\u5e74\u5ea6\u9810\u7b97\u586b\u9020\u3002",
+          "type": "text"
+        }
+      ],
+      "model": "claude-opus-5-5",
+      "role": "assistant",
+      "stop_details": null,
+      "stop_reason": "end_turn",
+      "stop_sequence": null,
+      "type": "message"
+    },
+    "prompt_fragments": [],
+    "system_fragments": [],
+    "tools": [],
+    "tool_calls": [],
+    "tool_results": [],
+    "attachments": [
+      {
+        "id": "6e8030417069ffea318f62aa0734952ce6f272a2ab03c1e898b3743ca4fd7c7a",
+        "type": "image/png",
+        "path": "/Users/kml/shell/projects/extract-benchmark/files/difficult-table.png",
+        "url": null,
+        "content": null,
+        "content_length": null
+      }
+    ]
+  }
+]

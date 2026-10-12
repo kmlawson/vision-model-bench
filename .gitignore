@@ -1,0 +1,16 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.env
+.env.*
+.aws/
+.codex/
+.agents/
+
+# Work in progress: leave corrected/reference files local until authorized.
+/corrected/
+/correct/
+/reference/
+/results/corrected/
+/results/correct/
+/results/reference/

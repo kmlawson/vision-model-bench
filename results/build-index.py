@@ -1,0 +1,144 @@
+#!/usr/bin/env python3
+"""Build a portable, offline dashboard from sibling model/date/run.json files."""
+from datetime import datetime, timezone
+import json
+import hashlib
+from pathlib import Path
+import re
+
+HERE = Path(__file__).resolve().parent
+# Keep work-in-progress corrected files out until the user says they are done.
+DEFER_CORRECTED_FILES = True
+REFERENCE_DIRS = {'correct', 'corrected', 'reference', 'ground-truth', 'ground_truth', 'gold', 'golden'}
+
+def object_value(value):
+    if isinstance(value, str):
+        try:
+            value = json.loads(value)
+        except (ValueError, TypeError):
+            return {}
+    if isinstance(value, list):
+        value = value[-1] if value else {}
+    return value if isinstance(value, dict) else {}
+
+def collect():
+    runs = []
+    for manifest in sorted(HERE.glob('*/*/run.json')):
+        if any(part.lower() in REFERENCE_DIRS for part in manifest.relative_to(HERE).parts):
+            continue
+        run = json.loads(manifest.read_text())
+        name = manifest.parent.parent.name
+        backend = run.get('backend', 'Codex fresh subagents')
+        family = 'Gemini' if name.startswith('gemini') else 'Claude' if name.startswith('claude') else 'OpenAI'
+        tasks = []
+        for original in run['tasks']:
+            raw = {}
+            if original.get('raw_stdout'):
+                raw_path = manifest.parent / original['raw_stdout']
+                if raw_path.exists() and raw_path.stat().st_size:
+                    try:
+                        raw = object_value(json.loads(raw_path.read_text()))
+                    except ValueError:
+                        pass
+            metadata = {**original.get('response_metadata', {}), **raw}
+            usage = object_value(metadata.get('usage'))
+            details = object_value(metadata.get('token_details'))
+            thinking = usage.get('thinking_tokens', object_value(details.get('output_tokens_details')).get('thinking_tokens'))
+            input_tokens = usage.get('input_tokens', metadata.get('input_tokens'))
+            output_tokens = usage.get('output_tokens', metadata.get('output_tokens'))
+            total_tokens = usage.get('total_tokens')
+            if total_tokens is None and input_tokens is not None and output_tokens is not None:
+                total_tokens = input_tokens + output_tokens
+            provider_time = metadata.get('duration_seconds')
+            if provider_time is None and metadata.get('duration_ms') is not None:
+                provider_time = metadata['duration_ms'] / 1000
+            output_path = manifest.parent / original['output']
+            if DEFER_CORRECTED_FILES:
+                response = raw.get('response')
+                output = response if isinstance(response, str) and response.strip() else None
+            else:
+                output = output_path.read_text() if output_path.exists() else None
+            changed = output is not None and original.get('output_sha256') is not None and hashlib.sha256(output.encode()).hexdigest() != original['output_sha256']
+            original_output = raw.get('response') if changed and isinstance(raw.get('response'), str) and raw.get('response') else None
+            marker_source = original_output if original_output is not None else (output if not changed else None)
+            tasks.append({'task': original['task'], 'input': original['input'].split('/')[-1],
+                          'status': original.get('status', 'pending'), 'output': output, 'saved_changed': changed, 'original_output': original_output,
+                          'output_bytes': len(output.encode()) if output is not None else None,
+                          'unreadable': len(re.findall(r'\[\?\]|\[illegible\]', marker_source)) if marker_source is not None else None,
+                          'elapsed_seconds': original.get('elapsed_seconds'), 'provider_seconds': provider_time,
+                          'input_tokens': input_tokens, 'output_tokens': output_tokens,
+                          'thinking_tokens': thinking, 'total_tokens': total_tokens,
+                          'failed_attempts': int(original.get('status') == 'failed') + sum(a.get('status') == 'failed' for a in original.get('previous_attempts', [])),
+                          'retry_seconds': sum(a.get('elapsed_seconds', 0) for a in original.get('previous_attempts', []) if a.get('status') == 'failed'),
+                          'prompt': original.get('prompt', original.get('agent_prompt', '')),
+                          'error': original.get('failure_reason', original.get('error')), 'metadata_path': str(manifest.relative_to(HERE))})
+        runs.append({'id': name + '/' + manifest.parent.name, 'name': name, 'date': run.get('date', manifest.parent.name),
+                     'model': run.get('model', name), 'family': family, 'backend': backend,
+                     'effort': run.get('reasoning_effort', 'unspecified'), 'status': run.get('status', 'unknown'),
+                     'earlier_prompt': 'astra' in name, 'tasks': tasks})
+    order = {name: i for i, name in enumerate(['gemini-3.8-flash-low', 'gemini-3.8-flash-medium', 'gemini-3.8-flash-high', 'claude-haiku-5.5', 'claude-sonnet-5.5', 'claude-opus-5.5', 'gpt-6-astra-low', 'gpt-6-luna-low', 'gpt-6-luna-medium', 'gpt-6-luna-high'])}
+    runs.sort(key=lambda r: (r['date'], order.get(r['name'], 100), r['name']))
+    return {'generated_at': datetime.now(timezone.utc).isoformat(), 'runs': runs}
+
+TEMPLATE = r'''<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Visual extraction benchmark</title>
+<style>
+:root{color-scheme:light dark;--bg:#f5f5f0;--panel:#fff;--ink:#202c33;--muted:#5e6d73;--line:#dce2df;--track:#eef1ee;--gemini:#158477;--claude:#a35782;--openai:#4b6ab7;--selected:#e7eeeb}
+@media(prefers-color-scheme:dark){:root{--bg:#151c20;--panel:#1d272c;--ink:#e7eeec;--muted:#a3b4b9;--line:#35444b;--track:#2a373d;--gemini:#65c7b6;--claude:#d995b9;--openai:#91a9e9;--selected:#2a3c40}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,sans-serif}main{max-width:1480px;margin:auto;padding:42px 36px 70px}h1{font:500 clamp(30px,4vw,50px)/1.15 Georgia,serif;margin:10px 0 14px;letter-spacing:-1px}h2{font-size:19px;font-weight:600;margin:0 0 7px}h3{font-size:16px;margin:0 0 12px}.eyebrow{font-size:12px;letter-spacing:2px;color:var(--muted);text-transform:uppercase}.muted,.note{color:var(--muted)}.note{font-size:13px;margin:7px 0 0}.header{display:flex;gap:25px;justify-content:space-between;align-items:center}.header p{max-width:780px}.pills{display:flex;gap:16px;flex-wrap:wrap;font-size:13px}.dot{width:9px;height:9px;display:inline-block;border-radius:50%;margin-right:6px}.Gemini{--series:var(--gemini)}.Claude{--series:var(--claude)}.OpenAI{--series:var(--openai)}.dot{background:var(--series)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin:30px 0}.stat{border-top:1px solid var(--line);padding-top:14px}.stat .value{font-size:32px;font-weight:550;letter-spacing:-1px;font-variant-numeric:tabular-nums}.stat small{display:block;color:var(--muted);font-size:13px}.controls{display:flex;align-items:end;gap:18px;flex-wrap:wrap;margin:25px 0}label{display:grid;gap:5px;font-size:13px;color:var(--muted)}select,button{font:inherit;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:7px;padding:9px 12px}select{max-width:100%}button{cursor:pointer}button:hover{background:var(--selected)}button:focus-visible,select:focus-visible{outline:2px solid var(--series,var(--openai));outline-offset:3px}.input-choice{min-width:270px}.grow{flex:1}.charts{display:grid;grid-template-columns:1fr 1fr;gap:24px}.panel{background:var(--panel);padding:24px;border:1px solid var(--line);border-radius:12px;min-width:0}.chart-head{display:flex;gap:14px;justify-content:space-between;align-items:start;margin-bottom:20px}.chart-head select{font-size:12px;padding:7px;max-width:190px}.bar-row{display:grid;grid-template-columns:145px minmax(30px,1fr) 82px;gap:12px;align-items:center;margin:13px 0;font-size:12px;min-height:30px}.bar-label{overflow-wrap:anywhere}.track{background:var(--track);height:18px;border-radius:3px;overflow:hidden;display:flex}.fill{height:100%;background:var(--series)}.input-segment{background:var(--series);opacity:.35;height:100%}.output-segment{background:var(--series);height:100%}.bar-value{text-align:right;font-variant-numeric:tabular-nums}.missing{font-size:11px;color:var(--muted);width:100%;text-align:center;line-height:18px}.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin-top:17px}.square{display:inline-block;width:10px;height:10px;background:var(--ink);margin-right:5px}.axis{display:flex;justify-content:space-between;margin-left:157px;margin-right:94px;font-size:11px;color:var(--muted);border-top:1px solid var(--line);padding-top:5px}section{margin-top:28px}.table-wrap{overflow-x:auto;margin-top:16px}table{border-collapse:collapse;width:100%;font-size:13px}th{text-align:right;font-weight:500;color:var(--muted);white-space:nowrap}th:first-child,td:first-child{text-align:left}td,th{padding:13px 12px;border-bottom:1px solid var(--line)}td{text-align:right;font-variant-numeric:tabular-nums}td:first-child{min-width:220px}.model-button{border:0;background:none;padding:0;font-weight:600;text-align:left;font-size:13px}.sub{display:block;color:var(--muted);font-size:11px;font-weight:400;margin-top:2px}.badge{display:inline-block;font-size:10px;margin-left:6px;padding:1px 5px;background:var(--track);border-radius:3px}.selected-row{background:var(--selected)}.viewer-controls{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;margin:18px 0}.detail-meta{display:flex;gap:18px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-bottom:15px}.detail-meta strong{color:var(--ink)}pre{white-space:pre-wrap;overflow-wrap:anywhere;max-height:600px;overflow:auto;margin:0;padding:22px;background:var(--bg);border-radius:7px;font:13px/1.65 ui-monospace,SFMono-Regular,Menlo,monospace}details{margin-top:15px}summary{cursor:pointer;font-size:13px}.footer{margin-top:30px;border-top:1px solid var(--line);padding-top:18px;font-size:12px;color:var(--muted)}a{color:var(--ink)}.empty{padding:20px 0;color:var(--muted)}
+@media(max-width:950px){.charts{grid-template-columns:1fr}.header{display:block}.bar-row{grid-template-columns:170px minmax(30px,1fr) 90px}.axis{margin-left:182px;margin-right:102px}}@media(max-width:600px){main{padding:24px 16px 40px}.stats{grid-template-columns:1fr 1fr;gap:16px}.panel{padding:18px 14px}.bar-row{grid-template-columns:120px minmax(25px,1fr) 66px;gap:8px;font-size:11px}.axis{margin-left:128px;margin-right:74px}.chart-head{display:block}.chart-head select{margin-top:10px}.viewer-controls{grid-template-columns:1fr}.controls>label{width:100%;min-width:0}.controls select{width:100%;font-size:16px}.stat .value{font-size:27px}pre{font-size:12px;padding:14px}.input-choice{min-width:0}}
+</style></head><body><main>
+<header class="header"><div><div class="eyebrow">Results / visual text extraction</div><h1>Visual extraction benchmark.</h1><p class="muted">Compare recorded time and token use across models, then inspect saved files and original responses. Original model responses are shown; corrected files are excluded while work is in progress. Extraction accuracy is unscored; no reference answer has been selected.</p></div><div class="pills"><span class="Gemini"><i class="dot"></i>Gemini</span><span class="Claude"><i class="dot"></i>Claude</span><span class="OpenAI"><i class="dot"></i>OpenAI</span></div></header>
+<div class="stats" id="stats" aria-live="polite"></div>
+<div class="controls"><label>Date<select id="date"></select></label><label class="input-choice">Compare input<select id="scope"></select></label><label>Configuration family<select id="family"><option value="all">All families</option><option>Gemini</option><option>Claude</option><option>OpenAI</option></select></label><div class="grow"></div><button id="export" type="button">Export comparison CSV</button></div>
+<div class="charts"><section class="panel" style="margin:0"><div class="chart-head"><div><h2>Time taken</h2><p class="note" id="time-caption"></p></div><select id="time-mode" aria-label="Timing metric"><option value="mean">Mean CLI time / task</option><option value="sum">Total CLI task time</option><option value="provider">Mean reported duration</option></select></div><div id="time-chart" role="img" aria-label="Recorded task durations by configuration"></div><div id="time-axis" class="axis"></div><p class="note">CLI timing includes process startup. Only successful attempts are included. Task totals sum individual requests, not concurrent run wall time. Failed-request durations are excluded. Missing measurements are unavailable, not zero.</p></section>
+<section class="panel" style="margin:0"><div class="chart-head"><div><h2>Recorded tokens</h2><p class="note">Captured input and output tokens, including failed requests with reported usage.</p></div></div><div id="token-chart" role="img" aria-label="Recorded input and output tokens by configuration"></div><div id="token-axis" class="axis"></div><div class="legend"><span><i class="square" style="opacity:.35"></i>Input</span><span><i class="square"></i>Output</span></div><p class="note">Unreported failure usage is unavailable. Reasoning counts appear in the table below. They are not added again to token totals. Provider token accounting and agent environments differ.</p></section></div>
+<section class="panel"><h2>Configuration details</h2><p class="note">Select a model to inspect its saved extraction. Unreadable markers count literal <code>[?]</code> and <code>[illegible]</code> occurrences; they are not an accuracy score.</p><div class="table-wrap"><table><thead><tr><th>Configuration</th><th>Saved</th><th>Mean CLI time</th><th>Input tokens</th><th>Output tokens</th><th>Reasoning</th><th>Unreadable</th><th>Response size</th><th>Failed requests</th></tr></thead><tbody id="rows"></tbody></table></div><p class="note">Astra is from the earlier prompt revision. Claude reasoning settings use provider defaults. Agent runs have no captured duration or token measurements. Gemini duration includes its CLI turn; Claude reported duration comes from the LLM response timer.</p></section>
+<section class="panel" id="viewer"><h2>Inspect an extraction</h2><div class="viewer-controls"><label>Configuration<select id="view-model"></select></label><label>Input<select id="view-input"></select></label><label>Response version<select id="view-version"></select></label></div><div class="detail-meta" id="detail-meta" aria-live="polite"></div><pre id="output"></pre><details><summary>Extraction prompt</summary><pre id="prompt"></pre></details><p class="note" id="run-note"></p></section>
+<footer class="footer" id="footer"></footer>
+</main><script id="benchmark-data" type="application/json">__BENCHMARK_DATA__</script><script>
+'use strict';
+const DATA=JSON.parse(document.getElementById('benchmark-data').textContent), $=id=>document.getElementById(id);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const number=n=>n==null?'—':Math.round(n).toLocaleString(), short=n=>n>=1e6?(n/1e6).toFixed(1)+'m':n>=1e3?(n/1e3).toFixed(1)+'k':number(n);
+const seconds=n=>n==null?'—':n<60?n.toFixed(1)+' s':Math.floor(Math.round(n)/60)+'m '+(Math.round(n)%60)+'s';
+const bytes=n=>n==null?'—':(n/1024).toFixed(1)+' KB';
+const sum=(tasks,key)=>{const values=tasks.map(t=>t[key]).filter(v=>Number.isFinite(v));return values.length?values.reduce((a,b)=>a+b,0):null};
+const mean=(tasks,key)=>{const values=tasks.map(t=>t[key]).filter(v=>Number.isFinite(v));return values.length?values.reduce((a,b)=>a+b,0)/values.length:null};
+const label=r=>r.name.replace('gemini-3.8-flash','Gemini 3.8 Flash').replace('claude-','Claude ').replace('gpt-6-luna','GPT-6 Luna').replace('gpt-6-astra','GPT-6 Astra').replace(/-/g,' ');
+const dates=[...new Set(DATA.runs.map(r=>r.date))].sort().reverse(); dates.forEach(d=>$('date').add(new Option(d,d)));
+const inputs=[...new Map(DATA.runs.flatMap(r=>r.tasks).map(t=>[t.task,t.input])).entries()].sort((a,b)=>a[0]-b[0]);
+$('scope').add(new Option('All eight inputs','all'));inputs.forEach(([id,input])=>{$('scope').add(new Option(id+'. '+input,String(id)));$('view-input').add(new Option(id+'. '+input,String(id)))});
+let selectedRun=null;
+function filteredRuns(){return DATA.runs.filter(r=>r.date===$('date').value&&($('family').value==='all'||r.family===$('family').value))}
+function selectedTasks(r){return r.tasks.filter(t=>$('scope').value==='all'||t.task===Number($('scope').value))}
+function timing(r){const tasks=selectedTasks(r).filter(t=>t.status==='completed');return $('time-mode').value==='sum'?sum(tasks,'elapsed_seconds'):mean(tasks,$('time-mode').value==='provider'?'provider_seconds':'elapsed_seconds')}
+function bar(r,value,max,format,segments){const width=value==null?0:(max?value/max*100:0);let marks='<span class="missing">Unavailable</span>';if(value!=null){marks=segments?`<span class="input-segment" style="width:${max?segments[0]/max*100:0}%"></span><span class="output-segment" style="width:${max?segments[1]/max*100:0}%"></span>`:`<span class="fill" style="width:${width}%"></span>`}return `<div class="bar-row ${r.family}"><span class="bar-label">${esc(label(r))}</span><div class="track">${marks}</div><span class="bar-value">${format(value)}</span></div>`}
+function axis(id,max,format){$(id).innerHTML=[0,max/2,max].map(n=>`<span>${format(n)}</span>`).join('')}
+function render(){const runs=filteredRuns(),tasks=runs.flatMap(selectedTasks),done=tasks.filter(t=>t.status==='completed'),timed=done.filter(t=>t.elapsed_seconds!=null),knownTokens=sum(tasks,'total_tokens');
+$('stats').innerHTML=[['Saved extractions',done.length+'/'+tasks.length,'Selected inputs and configurations'],['Configurations',runs.length,'Independent runs'],['Timed requests',timed.length+'/'+done.length,'CLI wall time recorded'],['Recorded tokens',knownTokens==null?'Unavailable':short(knownTokens),'Includes captured failed-request usage']].map(([title,value,note])=>`<div class="stat"><small>${title}</small><div class="value">${value}</div><small>${note}</small></div>`).join('');
+const maxTime=Math.max(0,...runs.map(timing).filter(Number.isFinite)),maxTokens=Math.max(0,...runs.map(r=>sum(selectedTasks(r),'total_tokens')).filter(Number.isFinite));
+$('time-caption').textContent=$('scope').value==='all'?'Eight input tasks per configuration.':'One selected input per configuration.';
+$('time-chart').innerHTML=runs.map(r=>bar(r,timing(r),maxTime,seconds)).join('')||'<div class="empty">No matching runs.</div>';axis('time-axis',maxTime,seconds);
+$('token-chart').innerHTML=runs.map(r=>{const t=selectedTasks(r);return bar(r,sum(t,'total_tokens'),maxTokens,short,[sum(t,'input_tokens')||0,sum(t,'output_tokens')||0])}).join('');axis('token-axis',maxTokens,short);
+$('rows').innerHTML=runs.map(r=>{const t=selectedTasks(r),d=t.filter(t=>t.status==='completed');return `<tr data-run="${esc(r.id)}"><td><button class="model-button" data-inspect="${esc(r.id)}">${esc(label(r))}</button>${r.earlier_prompt?'<span class="badge">Earlier prompt</span>':''}${t.some(t=>t.saved_changed)?'<span class="badge">Saved file changed</span>':''}<span class="sub">${esc(r.backend)} · ${esc(r.effort)}</span></td><td>${d.length}/${t.length}</td><td>${seconds(mean(d,'elapsed_seconds'))}</td><td>${number(sum(t,'input_tokens'))}</td><td>${number(sum(t,'output_tokens'))}</td><td>${number(sum(t,'thinking_tokens'))}</td><td>${number(sum(d,'unreadable'))}</td><td>${bytes(sum(d,'output_bytes'))}</td><td>${number(sum(t,'failed_attempts'))}</td></tr>`}).join('');
+const previous=selectedRun;$('view-model').replaceChildren();runs.forEach(r=>$('view-model').add(new Option(label(r),r.id)));selectedRun=runs.some(r=>r.id===previous)?previous:runs[0]?.id;if(selectedRun)$('view-model').value=selectedRun;if($('scope').value!=='all')$('view-input').value=$('scope').value;renderViewer();
+$('footer').textContent='Built '+new Date(DATA.generated_at).toLocaleString()+'. All charts, data, and saved extraction text are embedded in this file. No network connection is required.'}
+function renderViewer(preserveVersion=false){selectedRun=$('view-model').value;const r=DATA.runs.find(r=>r.id===selectedRun),t=r?.tasks.find(t=>t.task===Number($('view-input').value));document.querySelectorAll('[data-run]').forEach(row=>row.classList.toggle('selected-row',row.dataset.run===selectedRun));if(!t){$('output').textContent='No matching extraction.';$('detail-meta').textContent='';return}
+$('detail-meta').innerHTML=[['Status',t.status],['CLI time',seconds(t.elapsed_seconds)],['Reported duration',seconds(t.provider_seconds)],['Input tokens',number(t.input_tokens)],['Output tokens',number(t.output_tokens)],['Reasoning tokens',number(t.thinking_tokens)],['Unreadable markers',number(t.unreadable)]].map(([k,v])=>`<span>${k}: <strong>${esc(v)}</strong></span>`).join('');const previous=$('view-version').value;$('view-version').replaceChildren();if(t.original_output!==null)$('view-version').add(new Option('Original model response','original'));$('view-version').add(new Option(t.saved_changed?'Current saved file':'Original model response','saved'));$('view-version').disabled=t.original_output===null;if(preserveVersion&&[...$('view-version').options].some(o=>o.value===previous))$('view-version').value=previous;$('output').textContent=($('view-version').value==='original'?t.original_output:t.output)??t.error??'This extraction has not been saved yet.';$('prompt').textContent=t.prompt;$('run-note').textContent=(t.saved_changed?'Saved file differs from the recorded model output; both versions are retained where available. ':'')+(r.earlier_prompt?'Earlier Astra prompt revision. ':'')+'Recorded failed requests: '+t.failed_attempts+'. '+(t.retry_seconds?'Failed-attempt CLI time: '+seconds(t.retry_seconds)+'. ':'')+'Run metadata: '+t.metadata_path}
+['date','scope','family','time-mode'].forEach(id=>$(id).addEventListener('change',render));['view-model','view-input'].forEach(id=>$(id).addEventListener('change',()=>renderViewer()));$('view-version').addEventListener('change',()=>renderViewer(true));$('rows').addEventListener('click',event=>{const b=event.target.closest('[data-inspect]');if(b){$('view-model').value=b.dataset.inspect;renderViewer();$('viewer').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'instant':'smooth',block:'start'})}});
+$('export').addEventListener('click',()=>{const quote=v=>'"'+String(v??'').replace(/"/g,'""')+'"';const rows=[['configuration','date','scope','saved','total','mean_cli_seconds','total_cli_seconds','mean_reported_seconds','input_tokens','output_tokens','thinking_tokens','total_tokens','unreadable_markers','output_bytes','failed_attempts']];filteredRuns().forEach(r=>{const all=selectedTasks(r),t=all.filter(t=>t.status==='completed');rows.push([r.name,r.date,$('scope').value,t.length,all.length,mean(t,'elapsed_seconds'),sum(t,'elapsed_seconds'),mean(t,'provider_seconds'),sum(all,'input_tokens'),sum(all,'output_tokens'),sum(all,'thinking_tokens'),sum(all,'total_tokens'),sum(t,'unreadable'),sum(t,'output_bytes'),sum(all,'failed_attempts')])});const url=URL.createObjectURL(new Blob([rows.map(r=>r.map(quote).join(',')).join('\r\n')],{type:'text/csv;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='benchmark-'+$('date').value+'.csv';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)});render();
+</script></body></html>'''
+
+def main():
+    data = collect()
+    encoded = json.dumps(data, ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c').replace('>', '\\u003e').replace('&', '\\u0026')
+    output = HERE / 'index.html'
+    output.write_text(TEMPLATE.replace('__BENCHMARK_DATA__', encoded))
+    saved = sum(t['status'] == 'completed' for r in data['runs'] for t in r['tasks'])
+    print(f'Built {output}: {len(data["runs"])} configurations, {saved} saved extractions, {output.stat().st_size:,} bytes')
+
+if __name__ == '__main__':
+    main()

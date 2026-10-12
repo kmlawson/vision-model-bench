@@ -1,0 +1,1 @@
+Error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'messages.0.content.1.image.source.base64: image exceeds 10 MB maximum: 10765524 bytes > 10485760 bytes'}, 'request_id': 'req_011Cfy1ETCHVB6fo76gpf4hH'}

@@ -1,0 +1,59 @@
+[
+  {
+    "id": "01m4ry4f1yhdyw82th1bh898sa",
+    "model": "anthropic/claude-sonnet-5-5",
+    "resolved_model": null,
+    "options_json": {},
+    "conversation_id": "01m4ry4f1w9100vgw95gvs9p15",
+    "duration_ms": 11210,
+    "datetime_utc": "2026-10-12T20:51:12.574087+00:00",
+    "input_tokens": 2408,
+    "output_tokens": 1767,
+    "token_details": "{\"output_tokens_details\": {\"thinking_tokens\": 1056}}",
+    "conversation_name": "Extract the text from difficult\u2026",
+    "conversation_model": "anthropic/claude-sonnet-5-5",
+    "schema_json": null,
+    "prompt": "Extract the text from difficult-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example \u4e09 \u2192 3 and \u4e8c\u5341\u4e09 \u2192 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+    "system": null,
+    "response": "\u5317\u5e73\u5e0224\u5e74\u5ea6\u5404\u9805\u6536\u5165\u6982\u6cc1\u8868(\u55ae\u4f4d:\u5143)\n\n| \u9805\u76ee | \u7e3d\u8a08 | \u7d93\u5e38\u6536\u5165 | \u81e8\u6642\u6536\u5165 |\n|---|---|---|---|\n| \u7e3d\u8a08 | 6,222,826.00 | 6,148,368.00 | 74,458.00 |\n| \u7a05\u6350\u6536\u5165 | 4,334,280.00 | 4,334,280.00 | [?] |\n| \u884c\u653f\u6536\u5165 | 769,738.00 | 769,738.00 | [?] |\n| \u8ca1\u7522\u6536\u5165 | 173,822.00 | 101,114.00 | 72,708.00 |\n| \u4e8b\u696d\u6536\u5165 | 120,588.00 | 120,588.00 | [?] |\n| \u88dc\u52a9\u6536\u5165 | 708,000.00 | 708,000.00 | [?] |\n| \u5176\u4ed6\u6536\u5165 | 116,398.00 | 114,648.00 | 1,750.00 |\n\n\u4f9d\u64da24\u5e74\u5ea6\u9810\u7b97\u586b\u9020\u3002\n\n\u5317\u5e73\u5e0224\u5e74\u5ea6\u5404\u9805\u652f\u51fa\u6982\u6cc1\u8868(\u55ae\u4f4d:\u5143)\n\n| \u9805\u76ee | \u7e3d\u8a08 | \u7d93\u5e38\u652f\u51fa | \u81e8\u6642\u652f\u51fa |\n|---|---|---|---|\n| \u7e3d\u8a08 | 6,222,826.00 | 5,766,091.00 | 456,735.00 |\n| \u884c\u653f\u8cbb | 531,523.00 | 889,506.00 | 142,017.00 |\n| \u8ca1\u52d9\u8cbb | 479,265.00 | 362,446.00 | 116,819.00 |\n| \u516c\u5b89\u8cbb | 2,172,857.00 | 2,157,361.00 | 15,496.00 |\n| \u5efa\u8a2d\u8cbb | 511,389.00 | 471,389.00 | 40,000.00 |\n| \u885b\u751f\u8cbb | 477,575.00 | 456,284.00 | 21,291.00 |\n| \u5be6\u696d\u8cbb | 176,158.00 | 176,158.00 | [?] |\n| \u6559\u80b2\u6587\u5316\u8cbb | 1,503,811.00 | 1,382,699.00 | 121,112.00 |\n| \u5354\u52a9\u8cbb | 297,498.00 | 297,496.00 | [?] |\n| \u6551\u5379\u8cbb | 26,539.00 | 26,539.00 | [?] |\n| \u9810\u5099\u8cbb | 46,213.00 | 46,213.00 | [?] |\n\n\u4f9d\u716724\u5e74\u5ea6\u9810\u7b97\u586b\u9020\u3002",
+    "reasoning": null,
+    "prompt_json": null,
+    "response_json": {
+      "id": "msg_011Cfy1CA7L9t3owWDjm2hQQ",
+      "container": null,
+      "content": [
+        {
+          "signature": "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",
+          "thinking": "",
+          "type": "thinking"
+        },
+        {
+          "citations": null,
+          "text": "\u5317\u5e73\u5e0224\u5e74\u5ea6\u5404\u9805\u6536\u5165\u6982\u6cc1\u8868(\u55ae\u4f4d:\u5143)\n\n| \u9805\u76ee | \u7e3d\u8a08 | \u7d93\u5e38\u6536\u5165 | \u81e8\u6642\u6536\u5165 |\n|---|---|---|---|\n| \u7e3d\u8a08 | 6,222,826.00 | 6,148,368.00 | 74,458.00 |\n| \u7a05\u6350\u6536\u5165 | 4,334,280.00 | 4,334,280.00 | [?] |\n| \u884c\u653f\u6536\u5165 | 769,738.00 | 769,738.00 | [?] |\n| \u8ca1\u7522\u6536\u5165 | 173,822.00 | 101,114.00 | 72,708.00 |\n| \u4e8b\u696d\u6536\u5165 | 120,588.00 | 120,588.00 | [?] |\n| \u88dc\u52a9\u6536\u5165 | 708,000.00 | 708,000.00 | [?] |\n| \u5176\u4ed6\u6536\u5165 | 116,398.00 | 114,648.00 | 1,750.00 |\n\n\u4f9d\u64da24\u5e74\u5ea6\u9810\u7b97\u586b\u9020\u3002\n\n\u5317\u5e73\u5e0224\u5e74\u5ea6\u5404\u9805\u652f\u51fa\u6982\u6cc1\u8868(\u55ae\u4f4d:\u5143)\n\n| \u9805\u76ee | \u7e3d\u8a08 | \u7d93\u5e38\u652f\u51fa | \u81e8\u6642\u652f\u51fa |\n|---|---|---|---|\n| \u7e3d\u8a08 | 6,222,826.00 | 5,766,091.00 | 456,735.00 |\n| \u884c\u653f\u8cbb | 531,523.00 | 889,506.00 | 142,017.00 |\n| \u8ca1\u52d9\u8cbb | 479,265.00 | 362,446.00 | 116,819.00 |\n| \u516c\u5b89\u8cbb | 2,172,857.00 | 2,157,361.00 | 15,496.00 |\n| \u5efa\u8a2d\u8cbb | 511,389.00 | 471,389.00 | 40,000.00 |\n| \u885b\u751f\u8cbb | 477,575.00 | 456,284.00 | 21,291.00 |\n| \u5be6\u696d\u8cbb | 176,158.00 | 176,158.00 | [?] |\n| \u6559\u80b2\u6587\u5316\u8cbb | 1,503,811.00 | 1,382,699.00 | 121,112.00 |\n| \u5354\u52a9\u8cbb | 297,498.00 | 297,496.00 | [?] |\n| \u6551\u5379\u8cbb | 26,539.00 | 26,539.00 | [?] |\n| \u9810\u5099\u8cbb | 46,213.00 | 46,213.00 | [?] |\n\n\u4f9d\u716724\u5e74\u5ea6\u9810\u7b97\u586b\u9020\u3002",
+          "type": "text"
+        }
+      ],
+      "model": "claude-sonnet-5-5",
+      "role": "assistant",
+      "stop_details": null,
+      "stop_reason": "end_turn",
+      "stop_sequence": null,
+      "type": "message"
+    },
+    "prompt_fragments": [],
+    "system_fragments": [],
+    "tools": [],
+    "tool_calls": [],
+    "tool_results": [],
+    "attachments": [
+      {
+        "id": "6e8030417069ffea318f62aa0734952ce6f272a2ab03c1e898b3743ca4fd7c7a",
+        "type": "image/png",
+        "path": "/Users/kml/shell/projects/extract-benchmark/files/difficult-table.png",
+        "url": null,
+        "content": null,
+        "content_length": null
+      }
+    ]
+  }
+]

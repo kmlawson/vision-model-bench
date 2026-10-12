@@ -1,0 +1,54 @@
+[
+  {
+    "id": "01m4ry4777pm2yg7vm5ja7y7ca",
+    "model": "anthropic/claude-sonnet-5-5",
+    "resolved_model": null,
+    "options_json": {},
+    "conversation_id": "01m4ry4776qm0hnjf77cbjyvtq",
+    "duration_ms": 7012,
+    "datetime_utc": "2026-10-12T20:51:04.551800+00:00",
+    "input_tokens": 3242,
+    "output_tokens": 1042,
+    "token_details": "{\"output_tokens_details\": {\"thinking_tokens\": 0}}",
+    "conversation_name": "Extract just the table title, d\u2026",
+    "conversation_model": "anthropic/claude-sonnet-5-5",
+    "schema_json": null,
+    "prompt": "Extract just the table title, data, and table notes from the top of 1931-table-english.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example \u4e09 \u2192 3 and \u4e8c\u5341\u4e09 \u2192 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+    "system": null,
+    "response": "TABLE 2\nPOPULATION AND CULTIVATED AREA OF 131 FLOODED HSIEN IN THE 1931 FLOOD AREA IN THE YANGTZE AND HWAI VALLEYS, CHINA.*\n\n| Province | Number of flooded hsien in the province included in the study | Total farm families affected (00 omitted) | Per cent. of cultivated area flooded | Cultivated area (mow) flooded (00 omitted) | Total farm families (00 omitted) | Total cultivated area (mow) (00 omitted) |\n|---|---|---|---|---|---|---|\n| Hunan | 15 | 4,242 | 51 | 89,634 | 9,088 | 174,059 |\n| Hupeh | 30 | 10,227 | 55 | 139,183 | 19,919 | 253,427 |\n| Kiangsi | 14 | 2,433 | 51 | 49,427 | 4,792 | 96,348 |\n| South Anhwei | 24 | 6,132 | 62 | 86,797 | 9,906 | 140,227 |\n| South Kiangsu | 11 | 2,243 | 43 | 40,255 | 5,375 | 93,675 |\n| Honan | 1 | 636 | 85 | 31,875 | 748 | 37,500 |\n| North Anhwei | 19 | 7,670 | 60 | 237,678 | 12,965 | 394,309 |\n| North Kiangsu | 17 | 8,741 | 53 | 196,716 | 15,790 | 368,333 |\n| Total | 131 | 42,324 | 56 | 871,565 | 78,583 | 1,557,878 |\n\n*Most of the information on total farm families and total cultivated area per hsien is from data published under the direction of C. C. Chang of the former Statistical Bureau of the Legislative Yuan and from data collected in connection with the 1931 flood survey of The University of Nanking. Other sources were chiefly provincial government figures.\n\nThe percentages of cultivated area flooded are chiefly from estimates obtained from the 1931 flood survey of The University of Nanking and from planimetered data of land area flooded. Percentages from these two sources were checked with those obtained under the direction of C. C. Chang of the Directorate of Statistics and those reported by Magistrates to the National Flood Relief Commission, and with maps of area flooded.\n\nFor some hsien different sources gave great variation in the number of farm families and the amount of cultivated area. Determination of the more reasonable number was reached in part by computation of the density of population per square mile of cultivated area. Even the best figures give densities of great variation and often appear to be too high or too low. The average density of 1160 persons per square mile of cultivated area, for the entire area of the 131 hsien appears to be fairly reasonable as it checks with population densities previously obtained by the Department of Agricultural Economics, University of Nanking.\n\nIn cases of individual hsien, however, there may be serious underestimates of either number of families or of amount of cultivated area. For various reasons the amount of cultivated area is likely to be understated by at least 10-20 per cent.",
+    "reasoning": null,
+    "prompt_json": null,
+    "response_json": {
+      "id": "msg_011Cfy1Bawo29gPdswZfYeoX",
+      "container": null,
+      "content": [
+        {
+          "citations": null,
+          "text": "TABLE 2\nPOPULATION AND CULTIVATED AREA OF 131 FLOODED HSIEN IN THE 1931 FLOOD AREA IN THE YANGTZE AND HWAI VALLEYS, CHINA.*\n\n| Province | Number of flooded hsien in the province included in the study | Total farm families affected (00 omitted) | Per cent. of cultivated area flooded | Cultivated area (mow) flooded (00 omitted) | Total farm families (00 omitted) | Total cultivated area (mow) (00 omitted) |\n|---|---|---|---|---|---|---|\n| Hunan | 15 | 4,242 | 51 | 89,634 | 9,088 | 174,059 |\n| Hupeh | 30 | 10,227 | 55 | 139,183 | 19,919 | 253,427 |\n| Kiangsi | 14 | 2,433 | 51 | 49,427 | 4,792 | 96,348 |\n| South Anhwei | 24 | 6,132 | 62 | 86,797 | 9,906 | 140,227 |\n| South Kiangsu | 11 | 2,243 | 43 | 40,255 | 5,375 | 93,675 |\n| Honan | 1 | 636 | 85 | 31,875 | 748 | 37,500 |\n| North Anhwei | 19 | 7,670 | 60 | 237,678 | 12,965 | 394,309 |\n| North Kiangsu | 17 | 8,741 | 53 | 196,716 | 15,790 | 368,333 |\n| Total | 131 | 42,324 | 56 | 871,565 | 78,583 | 1,557,878 |\n\n*Most of the information on total farm families and total cultivated area per hsien is from data published under the direction of C. C. Chang of the former Statistical Bureau of the Legislative Yuan and from data collected in connection with the 1931 flood survey of The University of Nanking. Other sources were chiefly provincial government figures.\n\nThe percentages of cultivated area flooded are chiefly from estimates obtained from the 1931 flood survey of The University of Nanking and from planimetered data of land area flooded. Percentages from these two sources were checked with those obtained under the direction of C. C. Chang of the Directorate of Statistics and those reported by Magistrates to the National Flood Relief Commission, and with maps of area flooded.\n\nFor some hsien different sources gave great variation in the number of farm families and the amount of cultivated area. Determination of the more reasonable number was reached in part by computation of the density of population per square mile of cultivated area. Even the best figures give densities of great variation and often appear to be too high or too low. The average density of 1160 persons per square mile of cultivated area, for the entire area of the 131 hsien appears to be fairly reasonable as it checks with population densities previously obtained by the Department of Agricultural Economics, University of Nanking.\n\nIn cases of individual hsien, however, there may be serious underestimates of either number of families or of amount of cultivated area. For various reasons the amount of cultivated area is likely to be understated by at least 10-20 per cent.",
+          "type": "text"
+        }
+      ],
+      "model": "claude-sonnet-5-5",
+      "role": "assistant",
+      "stop_details": null,
+      "stop_reason": "end_turn",
+      "stop_sequence": null,
+      "type": "message"
+    },
+    "prompt_fragments": [],
+    "system_fragments": [],
+    "tools": [],
+    "tool_calls": [],
+    "tool_results": [],
+    "attachments": [
+      {
+        "id": "b9e5a06aa10503fa8aeb0cbcff7369a03069eea5b3c62404a9e896da188c1fac",
+        "type": "image/png",
+        "path": "/Users/kml/shell/projects/extract-benchmark/files/1931-table-english.png",
+        "url": null,
+        "content": null,
+        "content_length": null
+      }
+    ]
+  }
+]

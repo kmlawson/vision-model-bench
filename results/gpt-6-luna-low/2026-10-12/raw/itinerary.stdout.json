@@ -1,0 +1,4 @@
+{
+  "response": "第三案（往路北鮮経由）\n\n| 日次 | 日付 | 行程・発着地 | 備考 |\n|---|---|---|---|\n| 1 | 十月一日 | 京城 | 日本海汽船 ○○丸、船中二泊 |\n| 2 | 十月二日 | 津津 |  |\n| 3 | 十月三日 | 羅津 |  |\n| 4 | 十月四日 | 吉林 |  |\n| 5 | 十月五日 | 吉林 |  |\n| 6 | 十月六日 | 哈爾濱 |  |\n| 7 | 十月七日 | 新京 |  |\n| 8 | 十月八日 | 哈爾濱 |  |\n| 9 | 十月九日 | 奉天 |  |\n| 10 | 十月十日 | 奉天 |  |\n| 11 | 十一日 | 順天 |  |\n| 12 | 十二日 | 大連 |  |\n| 13 | 十三日 | 順連 |  |\n| 14 | 十四日 | 天津 |  |\n| 15 | 十五日 | 李塘 |  |\n| 16 | 十六日 | 京城 |  |\n| 17 | 十七日 | 船中 |  |\n",
+  "source": "Agent extraction snapshot retained from the previously built dashboard; verified against original recorded output hash. No native API timing or token metadata available."
+}

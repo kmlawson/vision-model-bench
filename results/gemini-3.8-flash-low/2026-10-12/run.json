@@ -1,0 +1,350 @@
+{
+  "model": "gemini-3.8-flash-low",
+  "reasoning_effort": "low",
+  "backend": "agy",
+  "date": "2026-10-12",
+  "started_at": "2026-10-12T21:47:54.842937+01:00",
+  "instructions_sha256": "48bf7c9a7be01aa02742fc25453a458bee826a3e6513d628fd4c3d0a37efcb9f",
+  "execution": "Fresh CLI invocation per image; no conversation continuation, OCR, reference answers, or editorial corrections.",
+  "reference_status": "No accepted reference or scoring method yet.",
+  "tasks": [
+    {
+      "task": 1,
+      "input": "files/1931-table-english.png",
+      "input_sha256": "b9e5a06aa10503fa8aeb0cbcff7369a03069eea5b3c62404a9e896da188c1fac",
+      "output": "1931-table-english.md",
+      "prompt": "Extract just the table title, data, and table notes from the top of 1931-table-english.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "status": "completed",
+      "started_at": "2026-10-12T21:47:54.845678+01:00",
+      "command": [
+        "agy",
+        "--model",
+        "gemini-3.8-flash-low",
+        "--mode",
+        "plan",
+        "--disable-slash-commands",
+        "--output-format",
+        "json",
+        "--print-timeout",
+        "10m",
+        "--print",
+        "Extract just the table title, data, and table notes from the top of 1931-table-english.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.\n\nThe sole visual input is /var/folders/8b/_s8w2d7n0gjbg7kprvvsnxm80000gn/T/extract-benchmark-agy-rbe3cgo3/1931-table-english.png. Inspect this image visually exactly once, then return only the requested extraction. Do not read other files, use terminal tools, run OCR, perform Git operations, use other task results, or write files. Do not ask follow-up questions."
+      ],
+      "submitted_prompt": "Extract just the table title, data, and table notes from the top of 1931-table-english.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.\n\nThe sole visual input is /var/folders/8b/_s8w2d7n0gjbg7kprvvsnxm80000gn/T/extract-benchmark-agy-rbe3cgo3/1931-table-english.png. Inspect this image visually exactly once, then return only the requested extraction. Do not read other files, use terminal tools, run OCR, perform Git operations, use other task results, or write files. Do not ask follow-up questions.",
+      "raw_stdout": "raw/1931-table-english.stdout.json",
+      "raw_stderr": "raw/1931-table-english.stderr.txt",
+      "exit_code": 0,
+      "output_bytes": 2667,
+      "output_sha256": "9ed4cc65832a3ed03932bafcee654ba051d2911157809937619ed6c016f9a04f",
+      "response_metadata": {
+        "usage": {
+          "input_tokens": 25610,
+          "output_tokens": 978,
+          "thinking_tokens": 0,
+          "cache_read_tokens": 0,
+          "total_tokens": 26588
+        },
+        "num_turns": 1,
+        "conversation_id": "9bc2a405-9159-4eed-aaf1-9b185571b734"
+      },
+      "finished_at": "2026-10-12T21:48:11.561487+01:00",
+      "elapsed_seconds": 16.715
+    },
+    {
+      "task": 2,
+      "input": "files/difficult-table.png",
+      "input_sha256": "6e8030417069ffea318f62aa0734952ce6f272a2ab03c1e898b3743ca4fd7c7a",
+      "output": "difficult-table.md",
+      "prompt": "Extract the text from difficult-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "status": "completed",
+      "started_at": "2026-10-12T21:48:30.749281+01:00",
+      "command": [
+        "agy",
+        "--model",
+        "gemini-3.8-flash-low",
+        "--mode",
+        "plan",
+        "--disable-slash-commands",
+        "--output-format",
+        "json",
+        "--print-timeout",
+        "10m",
+        "--print",
+        "Extract the text from difficult-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.\n\nThe sole visual input is /var/folders/8b/_s8w2d7n0gjbg7kprvvsnxm80000gn/T/extract-benchmark-agy-0zxb0lom/difficult-table.png. Inspect this image visually exactly once, then return only the requested extraction. Do not read other files, use terminal tools, run OCR, perform Git operations, use other task results, or write files. Do not ask follow-up questions."
+      ],
+      "submitted_prompt": "Extract the text from difficult-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.\n\nThe sole visual input is /var/folders/8b/_s8w2d7n0gjbg7kprvvsnxm80000gn/T/extract-benchmark-agy-0zxb0lom/difficult-table.png. Inspect this image visually exactly once, then return only the requested extraction. Do not read other files, use terminal tools, run OCR, perform Git operations, use other task results, or write files. Do not ask follow-up questions.",
+      "raw_stdout": "raw/difficult-table.stdout.json",
+      "raw_stderr": "raw/difficult-table.stderr.txt",
+      "exit_code": 0,
+      "output_bytes": 1257,
+      "output_sha256": "eb2ee27378aa4e40cb104f99502af4418186389a95daa87454bcf4575d9380a9",
+      "response_metadata": {
+        "usage": {
+          "input_tokens": 25537,
+          "output_tokens": 904,
+          "thinking_tokens": 0,
+          "cache_read_tokens": 0,
+          "total_tokens": 26441
+        },
+        "num_turns": 1,
+        "conversation_id": "806a69bd-96d4-4a7a-a5a3-85abe364e8c9"
+      },
+      "finished_at": "2026-10-12T21:48:44.081061+01:00",
+      "elapsed_seconds": 13.33
+    },
+    {
+      "task": 3,
+      "input": "files/english-page.png",
+      "input_sha256": "d25aacc8656b521b220e00c04262b6079ac1de0a37cd3e663e055a3bf1a25681",
+      "output": "english-page.md",
+      "prompt": "Extract the text from the right page of english-page.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "status": "completed",
+      "started_at": "2026-10-12T21:48:44.084942+01:00",
+      "command": [
+        "agy",
+        "--model",
+        "gemini-3.8-flash-low",
+        "--mode",
+        "plan",
+        "--disable-slash-commands",
+        "--output-format",
+        "json",
+        "--print-timeout",
+        "10m",
+        "--print",
+        "Extract the text from the right page of english-page.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.\n\nThe sole visual input is /var/folders/8b/_s8w2d7n0gjbg7kprvvsnxm80000gn/T/extract-benchmark-agy-aqqdvjsc/english-page.png. Inspect this image visually exactly once, then return only the requested extraction. Do not read other files, use terminal tools, run OCR, perform Git operations, use other task results, or write files. Do not ask follow-up questions."
+      ],
+      "submitted_prompt": "Extract the text from the right page of english-page.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.\n\nThe sole visual input is /var/folders/8b/_s8w2d7n0gjbg7kprvvsnxm80000gn/T/extract-benchmark-agy-aqqdvjsc/english-page.png. Inspect this image visually exactly once, then return only the requested extraction. Do not read other files, use terminal tools, run OCR, perform Git operations, use other task results, or write files. Do not ask follow-up questions.",
+      "raw_stdout": "raw/english-page.stdout.json",
+      "raw_stderr": "raw/english-page.stderr.txt",
+      "exit_code": 0,
+      "output_bytes": 3614,
+      "output_sha256": "e932cc64c24355bc26bdd41bafa5a01d0b8cca2d4af4678fef77d5d1f564d5f9",
+      "response_metadata": {
+        "usage": {
+          "input_tokens": 25538,
+          "output_tokens": 942,
+          "thinking_tokens": 0,
+          "cache_read_tokens": 0,
+          "total_tokens": 26480
+        },
+        "num_turns": 1,
+        "conversation_id": "2d7f879c-295a-49fa-8365-b6cd7bef3a20"
+      },
+      "finished_at": "2026-10-12T21:49:01.606476+01:00",
+      "elapsed_seconds": 17.521
+    },
+    {
+      "task": 4,
+      "input": "files/itinerary.png",
+      "input_sha256": "aa8703d508f7f417d18677747adfa9f54ccc9fbac2509e55f2b26665be03e55b",
+      "output": "itinerary.md",
+      "prompt": "Extract the itinerary number 3 from itinerary.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "status": "completed",
+      "started_at": "2026-10-12T21:49:01.621116+01:00",
+      "command": [
+        "agy",
+        "--model",
+        "gemini-3.8-flash-low",
+        "--mode",
+        "plan",
+        "--disable-slash-commands",
+        "--output-format",
+        "json",
+        "--print-timeout",
+        "10m",
+        "--print",
+        "Extract the itinerary number 3 from itinerary.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.\n\nThe sole visual input is /var/folders/8b/_s8w2d7n0gjbg7kprvvsnxm80000gn/T/extract-benchmark-agy-ksb2jrc7/itinerary.png. Inspect this image visually exactly once, then return only the requested extraction. Do not read other files, use terminal tools, run OCR, perform Git operations, use other task results, or write files. Do not ask follow-up questions."
+      ],
+      "submitted_prompt": "Extract the itinerary number 3 from itinerary.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.\n\nThe sole visual input is /var/folders/8b/_s8w2d7n0gjbg7kprvvsnxm80000gn/T/extract-benchmark-agy-ksb2jrc7/itinerary.png. Inspect this image visually exactly once, then return only the requested extraction. Do not read other files, use terminal tools, run OCR, perform Git operations, use other task results, or write files. Do not ask follow-up questions.",
+      "raw_stdout": "raw/itinerary.stdout.json",
+      "raw_stderr": "raw/itinerary.stderr.txt",
+      "exit_code": 0,
+      "output_bytes": 3151,
+      "output_sha256": "3e1c22889c94ca0b0b971cd8919e6e0118b409aa1d8b08d2b9a008b420f7d338",
+      "response_metadata": {
+        "usage": {
+          "input_tokens": 25568,
+          "output_tokens": 1451,
+          "thinking_tokens": 0,
+          "cache_read_tokens": 0,
+          "total_tokens": 27019
+        },
+        "num_turns": 1,
+        "conversation_id": "56da0061-784a-467e-a125-6e4dba589f85"
+      },
+      "finished_at": "2026-10-12T21:49:21.475863+01:00",
+      "elapsed_seconds": 19.854
+    },
+    {
+      "task": 5,
+      "input": "files/population-stats-japanese.png",
+      "input_sha256": "f535e12869d328add857874f694999fb811855b6d3f7d71ba71a647b9a8b8e33",
+      "output": "population-stats-japanese.md",
+      "prompt": "Extract the table of population statistics from population-stats-japanese.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "status": "completed",
+      "started_at": "2026-10-12T21:49:21.479833+01:00",
+      "command": [
+        "agy",
+        "--model",
+        "gemini-3.8-flash-low",
+        "--mode",
+        "plan",
+        "--disable-slash-commands",
+        "--output-format",
+        "json",
+        "--print-timeout",
+        "10m",
+        "--print",
+        "Extract the table of population statistics from population-stats-japanese.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.\n\nThe sole visual input is /var/folders/8b/_s8w2d7n0gjbg7kprvvsnxm80000gn/T/extract-benchmark-agy-6uyiqrjb/population-stats-japanese.png. Inspect this image visually exactly once, then return only the requested extraction. Do not read other files, use terminal tools, run OCR, perform Git operations, use other task results, or write files. Do not ask follow-up questions."
+      ],
+      "submitted_prompt": "Extract the table of population statistics from population-stats-japanese.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.\n\nThe sole visual input is /var/folders/8b/_s8w2d7n0gjbg7kprvvsnxm80000gn/T/extract-benchmark-agy-6uyiqrjb/population-stats-japanese.png. Inspect this image visually exactly once, then return only the requested extraction. Do not read other files, use terminal tools, run OCR, perform Git operations, use other task results, or write files. Do not ask follow-up questions.",
+      "raw_stdout": "raw/population-stats-japanese.stdout.json",
+      "raw_stderr": "raw/population-stats-japanese.stderr.txt",
+      "exit_code": 0,
+      "output_bytes": 1470,
+      "output_sha256": "36fcb71cea95d2e7ac3fd268bf4eb6d344eb185b2193c218647da5be9416394f",
+      "response_metadata": {
+        "usage": {
+          "input_tokens": 25555,
+          "output_tokens": 1084,
+          "thinking_tokens": 0,
+          "cache_read_tokens": 0,
+          "total_tokens": 26639
+        },
+        "num_turns": 1,
+        "conversation_id": "74c12a11-69f4-46ae-b539-cf98219a9170"
+      },
+      "finished_at": "2026-10-12T21:49:37.123677+01:00",
+      "elapsed_seconds": 15.643
+    },
+    {
+      "task": 6,
+      "input": "files/sideways-table.png",
+      "input_sha256": "89b8fd891f136ef2998a982af74b1bddd34389be9e68b20b990a816985c7882e",
+      "output": "sideways-table.md",
+      "prompt": "Extract the table title, data, and notes from sideways-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "status": "completed",
+      "started_at": "2026-10-12T21:49:37.125874+01:00",
+      "command": [
+        "agy",
+        "--model",
+        "gemini-3.8-flash-low",
+        "--mode",
+        "plan",
+        "--disable-slash-commands",
+        "--output-format",
+        "json",
+        "--print-timeout",
+        "10m",
+        "--print",
+        "Extract the table title, data, and notes from sideways-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.\n\nThe sole visual input is /var/folders/8b/_s8w2d7n0gjbg7kprvvsnxm80000gn/T/extract-benchmark-agy-_cog2_yl/sideways-table.png. Inspect this image visually exactly once, then return only the requested extraction. Do not read other files, use terminal tools, run OCR, perform Git operations, use other task results, or write files. Do not ask follow-up questions."
+      ],
+      "submitted_prompt": "Extract the table title, data, and notes from sideways-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.\n\nThe sole visual input is /var/folders/8b/_s8w2d7n0gjbg7kprvvsnxm80000gn/T/extract-benchmark-agy-_cog2_yl/sideways-table.png. Inspect this image visually exactly once, then return only the requested extraction. Do not read other files, use terminal tools, run OCR, perform Git operations, use other task results, or write files. Do not ask follow-up questions.",
+      "raw_stdout": "raw/sideways-table.stdout.json",
+      "raw_stderr": "raw/sideways-table.stderr.txt",
+      "exit_code": 0,
+      "output_bytes": 2220,
+      "output_sha256": "da48cf3faba83b9185b82d0aa2571935e5fc1ac6983875fc01e5432e0782d0af",
+      "response_metadata": {
+        "usage": {
+          "input_tokens": 25514,
+          "output_tokens": 1286,
+          "thinking_tokens": 0,
+          "cache_read_tokens": 0,
+          "total_tokens": 26800
+        },
+        "num_turns": 1,
+        "conversation_id": "b451bf45-0f72-4af7-9543-d25ddef3bee3"
+      },
+      "finished_at": "2026-10-12T21:49:50.442356+01:00",
+      "elapsed_seconds": 13.316
+    },
+    {
+      "task": 7,
+      "input": "files/text-two-columns-plus-tables.png",
+      "input_sha256": "f43913ccdbd7d78cd4268e7afa298c4a1b388d5330c77bc9bc7e8ae39d7e1bdd",
+      "output": "text-two-columns-plus-tables.md",
+      "prompt": "Extract the text and tables from text-two-columns-plus-tables.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "status": "completed",
+      "started_at": "2026-10-12T21:49:50.449575+01:00",
+      "command": [
+        "agy",
+        "--model",
+        "gemini-3.8-flash-low",
+        "--mode",
+        "plan",
+        "--disable-slash-commands",
+        "--output-format",
+        "json",
+        "--print-timeout",
+        "10m",
+        "--print",
+        "Extract the text and tables from text-two-columns-plus-tables.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.\n\nThe sole visual input is /var/folders/8b/_s8w2d7n0gjbg7kprvvsnxm80000gn/T/extract-benchmark-agy-vjswbf0l/text-two-columns-plus-tables.png. Inspect this image visually exactly once, then return only the requested extraction. Do not read other files, use terminal tools, run OCR, perform Git operations, use other task results, or write files. Do not ask follow-up questions."
+      ],
+      "submitted_prompt": "Extract the text and tables from text-two-columns-plus-tables.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.\n\nThe sole visual input is /var/folders/8b/_s8w2d7n0gjbg7kprvvsnxm80000gn/T/extract-benchmark-agy-vjswbf0l/text-two-columns-plus-tables.png. Inspect this image visually exactly once, then return only the requested extraction. Do not read other files, use terminal tools, run OCR, perform Git operations, use other task results, or write files. Do not ask follow-up questions.",
+      "raw_stdout": "raw/text-two-columns-plus-tables.stdout.json",
+      "raw_stderr": "raw/text-two-columns-plus-tables.stderr.txt",
+      "exit_code": 0,
+      "output_bytes": 2469,
+      "output_sha256": "0c0f41488a410ff28c2fe1be1da14dc3c8d90573c205cf288c6954fdd48bdb20",
+      "response_metadata": {
+        "usage": {
+          "input_tokens": 25585,
+          "output_tokens": 988,
+          "thinking_tokens": 0,
+          "cache_read_tokens": 0,
+          "total_tokens": 26573
+        },
+        "num_turns": 1,
+        "conversation_id": "2c5e791d-f8ac-4fa0-998b-1d53c1311527"
+      },
+      "finished_at": "2026-10-12T21:50:06.814354+01:00",
+      "elapsed_seconds": 16.364
+    },
+    {
+      "task": 8,
+      "input": "files/wide-table.png",
+      "input_sha256": "d7b1b756316bfb1f661960562835bdcc68743140ef32610a8559806f145a1544",
+      "output": "wide-table.md",
+      "prompt": "Extract the text from wide-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "status": "completed",
+      "started_at": "2026-10-12T21:50:06.816724+01:00",
+      "command": [
+        "agy",
+        "--model",
+        "gemini-3.8-flash-low",
+        "--mode",
+        "plan",
+        "--disable-slash-commands",
+        "--output-format",
+        "json",
+        "--print-timeout",
+        "10m",
+        "--print",
+        "Extract the text from wide-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.\n\nThe sole visual input is /var/folders/8b/_s8w2d7n0gjbg7kprvvsnxm80000gn/T/extract-benchmark-agy-utsvstm9/wide-table.png. Inspect this image visually exactly once, then return only the requested extraction. Do not read other files, use terminal tools, run OCR, perform Git operations, use other task results, or write files. Do not ask follow-up questions."
+      ],
+      "submitted_prompt": "Extract the text from wide-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.\n\nThe sole visual input is /var/folders/8b/_s8w2d7n0gjbg7kprvvsnxm80000gn/T/extract-benchmark-agy-utsvstm9/wide-table.png. Inspect this image visually exactly once, then return only the requested extraction. Do not read other files, use terminal tools, run OCR, perform Git operations, use other task results, or write files. Do not ask follow-up questions.",
+      "raw_stdout": "raw/wide-table.stdout.json",
+      "raw_stderr": "raw/wide-table.stderr.txt",
+      "exit_code": 0,
+      "output_bytes": 2417,
+      "output_sha256": "bf81c85a9c15d68ce5a3b7e74fc97470a4c07981224e4c9024e432b32a2c10cf",
+      "response_metadata": {
+        "usage": {
+          "input_tokens": 25534,
+          "output_tokens": 1832,
+          "thinking_tokens": 0,
+          "cache_read_tokens": 0,
+          "total_tokens": 27366
+        },
+        "num_turns": 1,
+        "conversation_id": "d087663b-0065-4f99-90cf-f13734639d87"
+      },
+      "finished_at": "2026-10-12T21:50:23.044793+01:00",
+      "elapsed_seconds": 16.227
+    }
+  ],
+  "status": "completed",
+  "finished_at": "2026-10-12T21:50:23.045354+01:00"
+}

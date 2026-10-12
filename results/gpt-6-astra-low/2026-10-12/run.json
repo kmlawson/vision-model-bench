@@ -1,0 +1,193 @@
+{
+  "model": "gpt-6-astra",
+  "reasoning_effort": "low",
+  "model_directory": "gpt-6-astra-low",
+  "date": "2026-10-12",
+  "execution": "Independent fresh agents, one image inspection each; approximation of one-shot API requests, not direct API calls. Raw extractions are uncorrected.",
+  "shared_extraction_instruction": "Extract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use [illegible] for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+  "input_preparation": {
+    "1931-table-english.png": "PDF rasterized with pdftoppm -r 200 -png -singlefile; original PDF deleted at user request.",
+    "english-page.png": "PDF rasterized with pdftoppm -r 200 -png -singlefile; original PDF deleted at user request.",
+    "itinerary.png": "HEIC converted to PNG with ImageMagick; original HEIC retained.",
+    "other_png_inputs": "Original PNGs without modification."
+  },
+  "reference_status": "No accepted reference or scoring method yet.",
+  "tasks": [
+    {
+      "task": 1,
+      "input": "files/1931-table-english.png",
+      "output": "1931-table-english.md",
+      "prompt": "Extract just the table title, data, and table notes from the top of 1931-table-english.png.",
+      "agent_prompt": "Extract just the table title, data, and table notes from the top of 1931-table-english.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Represent tables in Markdown, preserving the association between headers, rows, and values. Use [illegible] for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.\n\nExecution: This is an independent one-shot visual extraction benchmark. Inspect the image at /Users/kml/shell/projects/extract-benchmark/files/1931-table-english.png exactly once using tools.view_image with detail original via functions.exec (emit it with image(result.image_url)). Then write your extraction directly to /Users/kml/shell/projects/extract-benchmark/results/gpt-6-astra-low/2026-10-12/1931-table-english.md without further visual inspections or correction passes. Do not read any other task outputs or use OCR/text extraction. Do not perform Git operations. Return a brief saved-file status after saving; the file must contain only the extracted content.",
+      "status": "completed",
+      "input_sha256": "b9e5a06aa10503fa8aeb0cbcff7369a03069eea5b3c62404a9e896da188c1fac",
+      "image_dimensions": [
+        1220,
+        1861
+      ],
+      "agent": "/root/extract_1931",
+      "output_bytes": 2640,
+      "output_sha256": "a9605d3f123c361fdf40ead3fd0cf6c5a4c975e82ccbba32ce13dfb8ced2142e",
+      "raw_stdout": "raw/1931-table-english.stdout.json"
+    },
+    {
+      "task": 2,
+      "input": "files/difficult-table.png",
+      "output": "difficult-table.md",
+      "prompt": "Extract the text from difficult-table.png.",
+      "agent_prompt": "Extract the text from difficult-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use [illegible] for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.\n\nExecution: This is an independent one-shot visual extraction benchmark. Inspect the image at /Users/kml/shell/projects/extract-benchmark/files/difficult-table.png exactly once using tools.view_image with detail original via functions.exec (emit it with image(result.image_url)). Then write your extraction directly to /Users/kml/shell/projects/extract-benchmark/results/gpt-6-astra-low/2026-10-12/difficult-table.md without further visual inspections or correction passes. Do not read any other task outputs or use OCR/text extraction. Do not perform Git operations. Return a brief saved-file status after saving; the file must contain only the extracted content.",
+      "status": "completed",
+      "input_sha256": "6e8030417069ffea318f62aa0734952ce6f272a2ab03c1e898b3743ca4fd7c7a",
+      "image_dimensions": [
+        1562,
+        1062
+      ],
+      "agent": "/root/extract_difficult_digits",
+      "previous_attempts": [
+        {
+          "agent": "/root/extract_difficult",
+          "agent_prompt": "Extract the text from difficult-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Represent tables in Markdown, preserving the association between headers, rows, and values. Use [illegible] for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.\n\nExecution: This is an independent one-shot visual extraction benchmark. Inspect the image at /Users/kml/shell/projects/extract-benchmark/files/difficult-table.png exactly once using tools.view_image with detail original via functions.exec (emit it with image(result.image_url)). Then write your extraction directly to /Users/kml/shell/projects/extract-benchmark/results/gpt-6-astra-low/2026-10-12/difficult-table.md without further visual inspections or correction passes. Do not read any other task outputs or use OCR/text extraction. Do not perform Git operations. Return a brief saved-file status after saving; the file must contain only the extracted content.",
+          "output": "before-numeral-conversion/difficult-table.md",
+          "status": "completed",
+          "output_sha256": "f71ead289c46fb55723ff6f39ec1ac2c66d69270d005578b76552e337167c0c6"
+        }
+      ],
+      "output_bytes": 1270,
+      "output_sha256": "b0da8f38a0329423d9b8790e87c4abb5e884a40e584352bb09e550cc82500483",
+      "raw_stdout": "raw/difficult-table.stdout.json"
+    },
+    {
+      "task": 3,
+      "input": "files/english-page.png",
+      "output": "english-page.md",
+      "prompt": "Extract the text from the right page of english-page.png.",
+      "agent_prompt": "Extract the text from the right page of english-page.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Represent tables in Markdown, preserving the association between headers, rows, and values. Use [illegible] for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.\n\nExecution: This is an independent one-shot visual extraction benchmark. Inspect the image at /Users/kml/shell/projects/extract-benchmark/files/english-page.png exactly once using tools.view_image with detail original via functions.exec (emit it with image(result.image_url)). Then write your extraction directly to /Users/kml/shell/projects/extract-benchmark/results/gpt-6-astra-low/2026-10-12/english-page.md without further visual inspections or correction passes. Do not read any other task outputs or use OCR/text extraction. Do not perform Git operations. Return a brief saved-file status after saving; the file must contain only the extracted content.",
+      "status": "completed",
+      "input_sha256": "d25aacc8656b521b220e00c04262b6079ac1de0a37cd3e663e055a3bf1a25681",
+      "image_dimensions": [
+        1974,
+        1654
+      ],
+      "agent": "/root/extract_english",
+      "output_bytes": 3617,
+      "output_sha256": "0a878bd59a222a9bbd37af14d3a15c601add81ab4e90be0dd4cc899e00655099",
+      "raw_stdout": "raw/english-page.stdout.json"
+    },
+    {
+      "task": 4,
+      "input": "files/itinerary.png",
+      "output": "itinerary.md",
+      "prompt": "Extract the itinerary number 3 from itinerary.png.",
+      "agent_prompt": "Extract the itinerary number 3 from itinerary.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use [illegible] for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.\n\nExecution: This is an independent one-shot visual extraction benchmark. Inspect the image at /Users/kml/shell/projects/extract-benchmark/files/itinerary.png exactly once using tools.view_image with detail original via functions.exec (emit it with image(result.image_url)). Then write your extraction directly to /Users/kml/shell/projects/extract-benchmark/results/gpt-6-astra-low/2026-10-12/itinerary.md without further visual inspections or correction passes. Do not read any other task outputs or use OCR/text extraction. Do not perform Git operations. Return a brief saved-file status after saving; the file must contain only the extracted content.",
+      "status": "completed",
+      "input_sha256": "aa8703d508f7f417d18677747adfa9f54ccc9fbac2509e55f2b26665be03e55b",
+      "image_dimensions": [
+        2599,
+        3959
+      ],
+      "agent": "/root/extract_itinerary_digits",
+      "previous_attempts": [
+        {
+          "agent": "/root/extract_itinerary",
+          "agent_prompt": "Extract the itinerary number 3 from itinerary.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Represent tables in Markdown, preserving the association between headers, rows, and values. Use [illegible] for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.\n\nExecution: This is an independent one-shot visual extraction benchmark. Inspect the image at /Users/kml/shell/projects/extract-benchmark/files/itinerary.png exactly once using tools.view_image with detail original via functions.exec (emit it with image(result.image_url)). Then write your extraction directly to /Users/kml/shell/projects/extract-benchmark/results/gpt-6-astra-low/2026-10-12/itinerary.md without further visual inspections or correction passes. Do not read any other task outputs or use OCR/text extraction. Do not perform Git operations. Return a brief saved-file status after saving; the file must contain only the extracted content.",
+          "output": "before-numeral-conversion/itinerary.md",
+          "status": "completed",
+          "output_sha256": "9437c9d08c7a42eb5a463fec8df2e8049e729d27ba303ddfe85566fc3595a0e7"
+        }
+      ],
+      "output_bytes": 3049,
+      "output_sha256": "98b8a09ddd616996f30ccc99689cdb79ae7aa39805928d59eabc48c4e919df0d",
+      "raw_stdout": "raw/itinerary.stdout.json"
+    },
+    {
+      "task": 5,
+      "input": "files/population-stats-japanese.png",
+      "output": "population-stats-japanese.md",
+      "prompt": "Extract the table of population statistics from population-stats-japanese.png.",
+      "agent_prompt": "Extract the table of population statistics from population-stats-japanese.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use [illegible] for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.\n\nExecution: This is an independent one-shot visual extraction benchmark. Inspect the image at /Users/kml/shell/projects/extract-benchmark/files/population-stats-japanese.png exactly once using tools.view_image with detail original via functions.exec (emit it with image(result.image_url)). Then write your extraction directly to /Users/kml/shell/projects/extract-benchmark/results/gpt-6-astra-low/2026-10-12/population-stats-japanese.md without further visual inspections or correction passes. Do not read any other task outputs or use OCR/text extraction. Do not perform Git operations. Return a brief saved-file status after saving; the file must contain only the extracted content.",
+      "status": "completed",
+      "input_sha256": "f535e12869d328add857874f694999fb811855b6d3f7d71ba71a647b9a8b8e33",
+      "image_dimensions": [
+        1498,
+        1268
+      ],
+      "agent": "/root/extract_population_digits",
+      "previous_attempts": [
+        {
+          "agent": "/root/extract_population",
+          "agent_prompt": "Extract the table of population statistics from population-stats-japanese.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Represent tables in Markdown, preserving the association between headers, rows, and values. Use [illegible] for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.\n\nExecution: This is an independent one-shot visual extraction benchmark. Inspect the image at /Users/kml/shell/projects/extract-benchmark/files/population-stats-japanese.png exactly once using tools.view_image with detail original via functions.exec (emit it with image(result.image_url)). Then write your extraction directly to /Users/kml/shell/projects/extract-benchmark/results/gpt-6-astra-low/2026-10-12/population-stats-japanese.md without further visual inspections or correction passes. Do not read any other task outputs or use OCR/text extraction. Do not perform Git operations. Return a brief saved-file status after saving; the file must contain only the extracted content.",
+          "output": "before-numeral-conversion/population-stats-japanese.md",
+          "status": "completed",
+          "output_sha256": "a4156017c3c4fa5095c162dfc1c2638ec5a919a82aac165d932eeab263f3ac77"
+        }
+      ],
+      "output_bytes": 1555,
+      "output_sha256": "c13cd7356c47136fcae35b9ec5f8e2f30c1ffdaf54107f43f3b8fc990c59ed0a",
+      "raw_stdout": "raw/population-stats-japanese.stdout.json"
+    },
+    {
+      "task": 6,
+      "input": "files/sideways-table.png",
+      "output": "sideways-table.md",
+      "prompt": "Extract the table title, data, and notes from sideways-table.png.",
+      "agent_prompt": "Extract the table title, data, and notes from sideways-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Represent tables in Markdown, preserving the association between headers, rows, and values. Use [illegible] for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.\n\nExecution: This is an independent one-shot visual extraction benchmark. Inspect the image at /Users/kml/shell/projects/extract-benchmark/files/sideways-table.png exactly once using tools.view_image with detail original via functions.exec (emit it with image(result.image_url)). Then write your extraction directly to /Users/kml/shell/projects/extract-benchmark/results/gpt-6-astra-low/2026-10-12/sideways-table.md without further visual inspections or correction passes. Do not read any other task outputs or use OCR/text extraction. Do not perform Git operations. Return a brief saved-file status after saving; the file must contain only the extracted content.",
+      "status": "completed",
+      "input_sha256": "89b8fd891f136ef2998a982af74b1bddd34389be9e68b20b990a816985c7882e",
+      "image_dimensions": [
+        1364,
+        1012
+      ],
+      "agent": "/root/extract_sideways",
+      "output_bytes": 2206,
+      "output_sha256": "3b6643944ad82571183da5bd963e25701a0e085ae18545cf9ecd435eecac88b5",
+      "raw_stdout": "raw/sideways-table.stdout.json"
+    },
+    {
+      "task": 7,
+      "input": "files/text-two-columns-plus-tables.png",
+      "output": "text-two-columns-plus-tables.md",
+      "prompt": "Extract the text and tables from text-two-columns-plus-tables.png.",
+      "agent_prompt": "Extract the text and tables from text-two-columns-plus-tables.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use [illegible] for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.\n\nExecution: This is an independent one-shot visual extraction benchmark. Inspect the image at /Users/kml/shell/projects/extract-benchmark/files/text-two-columns-plus-tables.png exactly once using tools.view_image with detail original via functions.exec (emit it with image(result.image_url)). Then write your extraction directly to /Users/kml/shell/projects/extract-benchmark/results/gpt-6-astra-low/2026-10-12/text-two-columns-plus-tables.md without further visual inspections or correction passes. Do not read any other task outputs or use OCR/text extraction. Do not perform Git operations. Return a brief saved-file status after saving; the file must contain only the extracted content.",
+      "status": "completed",
+      "input_sha256": "f43913ccdbd7d78cd4268e7afa298c4a1b388d5330c77bc9bc7e8ae39d7e1bdd",
+      "image_dimensions": [
+        1100,
+        1218
+      ],
+      "agent": "/root/extract_columns_digits",
+      "previous_attempts": [
+        {
+          "agent": "/root/extract_columns",
+          "agent_prompt": "Extract the text and tables from text-two-columns-plus-tables.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Represent tables in Markdown, preserving the association between headers, rows, and values. Use [illegible] for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.\n\nExecution: This is an independent one-shot visual extraction benchmark. Inspect the image at /Users/kml/shell/projects/extract-benchmark/files/text-two-columns-plus-tables.png exactly once using tools.view_image with detail original via functions.exec (emit it with image(result.image_url)). Then write your extraction directly to /Users/kml/shell/projects/extract-benchmark/results/gpt-6-astra-low/2026-10-12/text-two-columns-plus-tables.md without further visual inspections or correction passes. Do not read any other task outputs or use OCR/text extraction. Do not perform Git operations. Return a brief saved-file status after saving; the file must contain only the extracted content.",
+          "output": "before-numeral-conversion/text-two-columns-plus-tables.md",
+          "status": "completed",
+          "output_sha256": "ac407b1c252b41f62d521fc761fde4679d53e0670694981346153459823394bf"
+        }
+      ],
+      "output_bytes": 2626,
+      "output_sha256": "f2816710e65d13dfeb1b1008282eae114896ab8ef7e2127058fb323162ed5090",
+      "raw_stdout": "raw/text-two-columns-plus-tables.stdout.json"
+    },
+    {
+      "task": 8,
+      "input": "files/wide-table.png",
+      "output": "wide-table.md",
+      "prompt": "Extract the text from wide-table.png.",
+      "agent_prompt": "Extract the text from wide-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Represent tables in Markdown, preserving the association between headers, rows, and values. Use [illegible] for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.\n\nExecution: This is an independent one-shot visual extraction benchmark. Inspect the image at /Users/kml/shell/projects/extract-benchmark/files/wide-table.png exactly once using tools.view_image with detail original via functions.exec (emit it with image(result.image_url)). Then write your extraction directly to /Users/kml/shell/projects/extract-benchmark/results/gpt-6-astra-low/2026-10-12/wide-table.md without further visual inspections or correction passes. Do not read any other task outputs or use OCR/text extraction. Do not perform Git operations. Return a brief saved-file status after saving; the file must contain only the extracted content.",
+      "status": "completed",
+      "input_sha256": "d7b1b756316bfb1f661960562835bdcc68743140ef32610a8559806f145a1544",
+      "image_dimensions": [
+        1596,
+        860
+      ],
+      "agent": "/root/extract_wide",
+      "output_bytes": 2349,
+      "output_sha256": "d79f8ee03f999769f35f70dad5cad461ef9d2c6e9986e8fc1cad223bf6b37157",
+      "raw_stdout": "raw/wide-table.stdout.json"
+    }
+  ],
+  "numeral_interpretation": "User confirmed ordinary digits 0-9.",
+  "prompt_update": "Numeral-conversion rule added during the run. Tasks whose initial outputs contain Asian text are rerun in fresh agents. Other outputs retain their original exact recorded prompts.",
+  "status": "completed",
+  "verification": "Verified eight nonempty UTF-8 extraction files, eight readable PNG inputs with matching recorded hashes, and retained prior attempts. Extraction accuracy has not been scored or corrected."
+}
