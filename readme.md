@@ -16,7 +16,7 @@ The eight completed text files in `corrected/` are the ground truth. Only those 
 
 See the [results index](results/index.md) for the additional model runs and their manifests.
 
-The [interactive dashboard](results/index.html) is a self-contained HTML file with inline JavaScript, styles, metrics, and extraction text. It works offline and includes timing/token charts, input and model filters, a response viewer, failure records, and CSV export. Rebuild it from all saved run manifests with:
+The [interactive dashboard](results/index.html) is a self-contained HTML file with inline JavaScript, styles, metrics, and extraction text. It works offline, with embedded clickable image thumbnails, a full-resolution image viewer, side-by-side colored extraction and reference text, error hover hints, and timing/token/cost charts, input and model filters, a response viewer, failure records, and CSV export. Rebuild it from all saved run manifests with:
 
 ```sh
 python3 results/build-index.py
@@ -46,13 +46,16 @@ Run the installed CLIs using:
 ```sh
 python3 run-cli-benchmark.py agy --workers 3
 python3 run-cli-benchmark.py llm --models claude-opus-5.5 claude-haiku-5.5 claude-sonnet-5.5 --workers 3
-python3 run-cli-benchmark.py codex --workers 3
+python3 run-cli-benchmark.py codex --models gpt-6.1-sol-low gpt-6.1-sol-medium gpt-6.1-sol-high --workers 3
+python3 run-cli-benchmark.py codex --models gpt-6-astra-low-cli gpt-6-luna-low-cli gpt-6-luna-medium-cli gpt-6-luna-high-cli --workers 1
 python3 run-cli-benchmark.py llm --models qwen3.5-35b-a3b qwen3.7-flash qwen3.8-flash --workers 1
 ```
 
 The `agy` run selects `gemini-3.8-flash-low`, `gemini-3.8-flash-medium`, and `gemini-3.8-flash-high`. Each request starts in a separate workspace containing only its input image. The Claude `llm` command selects `anthropic/claude-opus-5-5`, `anthropic/claude-haiku-5-5`, and `anthropic/claude-sonnet-5-5`, supplying the PNG with `-a`. Claude reasoning settings are left at provider defaults. Every CLI task starts a fresh conversation.
 
 GPT-6 Luna runs use independent Codex agents at low, medium, and high reasoning effort, with one fresh agent per input. CLI and agent runs use different execution environments; `run.json` records the exact prompts, model settings, input hashes, backend, and completion status. CLI runs also retain the raw JSON response and stderr under `raw/`.
+
+CLI reruns of Astra Low and Luna Low/Medium/High use directories ending in `-cli`, preserving the earlier fresh-agent outputs. They run consecutively with timing and reported token usage captured.
 
 GPT-6.1 Sol runs use the installed Codex CLI at low, medium, and high effort. In this CLI, `-p` selects a configuration profile; `codex exec` is the noninteractive command. Each image is attached with `--image` in a fresh temporary workspace, using explicit `model_reasoning_effort`, a read-only sandbox, ephemeral sessions, and no user configuration. The shared extraction prompt is followed by an instruction to return only the extraction without using tools. Raw JSONL events and stderr are retained. `stdout.json` is a normalized wrapper around the original final message and reported turn usage; reported reasoning tokens are shown without adding them again to output-token totals.
 

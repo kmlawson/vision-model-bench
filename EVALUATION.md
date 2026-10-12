@@ -40,3 +40,5 @@ This is literal transcription scoring, not semantic paraphrase grading. A differ
 ## Verification
 
 `python3 -m unittest discover -s tests -v` checks formatting invariance, reordered-layout tolerance, numeric aliases, preservation of proper names, wrong digits, unknown text, failed requests, and genuine spelling errors. Exact character distance is cross-checked against an independent dynamic-programming implementation on randomized short strings.
+
+The extraction viewer colors matching content green and surplus/incorrect content red, using the same normalized token counts as the headline score. Exact contextual matches are assigned first, then reordered matches. Source spelling and layout are preserved. Hover or keyboard-focus red spans for nearby normalized ground-truth replacements; these suggestions use text alignment and can be ambiguous when a table is reordered. Missing reference units are listed separately. These display annotations do not change any score. Input thumbnails open embedded full-resolution images and support original-size inspection without a network connection.

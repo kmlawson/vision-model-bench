@@ -170,6 +170,6 @@ if __name__ == '__main__':
     if 'evaluation' not in data:
         data['evaluation'] = evaluate_runs(data['runs'])
     report = ROOT / 'results/evaluation.json'
-    report.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n')
+    report.write_text(json.dumps({k:v for k,v in data.items() if k!='images'}, ensure_ascii=False, indent=2) + '\n')
     for run in sorted(data['runs'], key=lambda r: r['evaluation']['macro_content_f1'], reverse=True):
         print(f'{run["name"]:28} content={run["evaluation"]["macro_content_f1"]:7.2%} numbers={run["evaluation"]["macro_numeric_f1"]:7.2%}')

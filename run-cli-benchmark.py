@@ -21,6 +21,9 @@ CONFIGS = {
            [(f'qwen{variant}', f'openrouter/qwen/qwen{variant}', None)
             for variant in ('3.5-35b-a3b', '3.7-flash', '3.8-flash')],
     'codex': [(f'gpt-6.1-sol-{effort}', 'gpt-6.1-sol', effort)
+              for effort in ('low', 'medium', 'high')] +
+             [('gpt-6-astra-low-cli', 'gpt-6-astra', 'low')] +
+             [(f'gpt-6-luna-{effort}-cli', 'gpt-6-luna', effort)
               for effort in ('low', 'medium', 'high')],
 }
 
