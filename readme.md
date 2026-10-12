@@ -26,7 +26,7 @@ Agent timing and token counts were not captured and are shown as unavailable. Su
 
 ## Ground-truth evaluation
 
-The dashboard now shows text content F1, exact-number F1, per-input scores, reference text, omissions/additions, and ordered normalized differences. It also keeps timing and token charts. Active runs are excluded until finished; pending responses are not scored as failures. Rebuilding the dashboard regenerates `results/evaluation.json` and all scores; no third-party scoring package or model judge is required.
+The dashboard shows an overall average F1 chart (the arithmetic mean of text and number F1), text content F1, exact-number F1, independent chart and table sorting, per-input scores, reference text, omissions/additions, and ordered normalized differences. It also keeps timing and token charts. Active runs are excluded until finished; pending responses are not scored as failures. Rebuilding the dashboard regenerates `results/evaluation.json` and all scores; no third-party scoring package or model judge is required.
 
 Run `python3 evaluate.py` for a ranked console report and `python3 -m unittest discover -s tests -v` for the scoring checks. See [EVALUATION.md](EVALUATION.md) for the precise normalization rules, formulas, and interpretation. Ground-truth texts are read without modification. SHA-256 hashes identify the exact references and predictions used.
 
