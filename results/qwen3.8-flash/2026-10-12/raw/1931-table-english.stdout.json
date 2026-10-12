@@ -1,0 +1,113 @@
+[
+  {
+    "id": "01m4s4wnpjk5k2kkbytwc4eycy",
+    "model": "openrouter/qwen/qwen3.8-flash",
+    "resolved_model": null,
+    "options_json": {},
+    "conversation_id": "01m4s4wnphkxcearpx2gtvgmpz",
+    "duration_ms": 12028,
+    "datetime_utc": "2026-10-12T22:49:17.266780+00:00",
+    "input_tokens": 2451,
+    "output_tokens": 959,
+    "token_details": "{\"input_tokens_details\": {\"cache_write_tokens\": 0, \"cached_tokens\": 0}, \"output_tokens_details\": {\"reasoning_tokens\": 69}}",
+    "conversation_name": "Extract just the table title, d\u2026",
+    "conversation_model": "openrouter/qwen/qwen3.8-flash",
+    "schema_json": null,
+    "prompt": "Extract just the table title, data, and table notes from the top of 1931-table-english.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example \u4e09 \u2192 3 and \u4e8c\u5341\u4e09 \u2192 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+    "system": null,
+    "response": "TABLE 2\nPOPULATION AND CULTIVATED AREA OF 131 FLOODED *HSIEN*\nIN THE 1931 FLOOD AREA IN THE YANGTZEE\nAND HWAI VALLEYS, CHINA.*\n\n| Province | Number of flooded *hsien* in the province included in the study | Total farm families affected (00 omitted) | Per cent. of cultivated area flooded | Cultivated area (mow) flooded (00 omitted) | Total farm families (00 omitted) | Total cultivated area (mow) (00 omitted) |\n|---|---|---|---|---|---|---|\n| Hunan | 15 | 4,242 | 51 | 89,634 | 9,088 | 174,059 |\n| Hupeh | 30 | 10,227 | 55 | 139,183 | 19,919 | 253,427 |\n| Kiangsi | 14 | 2,433 | 51 | 49,427 | 4,792 | 96,348 |\n| South Anhwei | 24 | 6,132 | 62 | 86,797 | 9,906 | 140,227 |\n| South Kiangsu | 11 | 2,243 | 43 | 40,255 | 5,375 | 93,675 |\n| Honan | 1 | 636 | 85 | 31,875 | 748 | 37,500 |\n| North Anhwei | 19 | 7,670 | 60 | 237,678 | 12,965 | 394,309 |\n| North Kiangsu | 17 | 8,741 | 53 | 196,716 | 15,790 | 368,333 |\n| Total | 131 | 42,324 | 56 | 871,565 | 78,583 | 1,557,878 |\n\n\\*Most of the information on total farm families and total cultivated area per *hsien* is from data published under the direction of C. C. Chang of the former Statistical Bureau of the Legislative Yuan and from data collected in connection with the 1931 flood survey of The University of Nanking. Other sources were chiefly provincial government figures.\nThe percentages of cultivated area flooded are chiefly from estimates obtained from the 1931 flood survey of The University of Nanking and from planimetered data of land area flooded. Percentages from these two sources were checked with those obtained under the direction of C. C. Chang of the Directorate of Statistics and those reported by Magistrates to the National Flood Relief Commission, and with maps of area flooded.\nFor some *hsien* different sources gave great variation in the number of farm families and the amount of cultivated area. Determination of the more reasonable number was reached in part by computation of the density of population per square mile of cultivated area. Even the best figures give densities of great variation and often appear to be too high or too low. The average density of 1160 persons per square mile of cultivated area, for the entire area of the 131 *hsien* appears to be fairly reasonable as it checks with population densities previously obtained by the Department of Agricultural Economics, University of Nanking.\nIn cases of individual *hsien*, however, there may be serious underestimates of either number of families or of amount of cultivated area. For various reasons the amount of cultivated area is likely to be understated by at least 10-20 per cent.",
+    "reasoning": "The user wants the table title, data, and table notes extracted from the image. I need to focus on the top portion containing \"TABLE 2\" and its associated table and notes, stopping before the \"LOSSES\" section which is a new heading. Let me transcribe carefully, preserving the markdown table structure and the footnote text exactly.",
+    "prompt_json": null,
+    "response_json": {
+      "object": "response",
+      "parallel_tool_calls": true,
+      "temperature": 1.0,
+      "tool_choice": "auto",
+      "top_p": 1.0,
+      "background": false,
+      "service_tier": "auto",
+      "status": "completed",
+      "top_logprobs": 0,
+      "truncation": "disabled",
+      "frequency_penalty": 0,
+      "presence_penalty": 0,
+      "store": false,
+      "tools": [],
+      "id": "gen-1791845357-ujvBHyx5pKR9rbITgzx6",
+      "created_at": 1791845357.0,
+      "model": "qwen/qwen3.8-flash",
+      "output": [
+        {
+          "id": "rs_tmp_y15kpmxygyf",
+          "summary": [],
+          "type": "reasoning",
+          "content": [
+            {
+              "text": "The user wants the table title, data, and table notes extracted from the image. I need to focus on the top portion containing \"TABLE 2\" and its associated table and notes, stopping before the \"LOSSES\" section which is a new heading. Let me transcribe carefully, preserving the markdown table structure and the footnote text exactly.",
+              "type": "reasoning_text"
+            }
+          ],
+          "status": "completed",
+          "format": "unknown"
+        },
+        {
+          "role": "assistant",
+          "status": "completed",
+          "type": "message",
+          "id": "msg_tmp_128d953q8gz",
+          "content": [
+            {
+              "annotations": [],
+              "text": "TABLE 2\nPOPULATION AND CULTIVATED AREA OF 131 FLOODED *HSIEN*\nIN THE 1931 FLOOD AREA IN THE YANGTZEE\nAND HWAI VALLEYS, CHINA.*\n\n| Province | Number of flooded *hsien* in the province included in the study | Total farm families affected (00 omitted) | Per cent. of cultivated area flooded | Cultivated area (mow) flooded (00 omitted) | Total farm families (00 omitted) | Total cultivated area (mow) (00 omitted) |\n|---|---|---|---|---|---|---|\n| Hunan | 15 | 4,242 | 51 | 89,634 | 9,088 | 174,059 |\n| Hupeh | 30 | 10,227 | 55 | 139,183 | 19,919 | 253,427 |\n| Kiangsi | 14 | 2,433 | 51 | 49,427 | 4,792 | 96,348 |\n| South Anhwei | 24 | 6,132 | 62 | 86,797 | 9,906 | 140,227 |\n| South Kiangsu | 11 | 2,243 | 43 | 40,255 | 5,375 | 93,675 |\n| Honan | 1 | 636 | 85 | 31,875 | 748 | 37,500 |\n| North Anhwei | 19 | 7,670 | 60 | 237,678 | 12,965 | 394,309 |\n| North Kiangsu | 17 | 8,741 | 53 | 196,716 | 15,790 | 368,333 |\n| Total | 131 | 42,324 | 56 | 871,565 | 78,583 | 1,557,878 |\n\n\\*Most of the information on total farm families and total cultivated area per *hsien* is from data published under the direction of C. C. Chang of the former Statistical Bureau of the Legislative Yuan and from data collected in connection with the 1931 flood survey of The University of Nanking. Other sources were chiefly provincial government figures.\nThe percentages of cultivated area flooded are chiefly from estimates obtained from the 1931 flood survey of The University of Nanking and from planimetered data of land area flooded. Percentages from these two sources were checked with those obtained under the direction of C. C. Chang of the Directorate of Statistics and those reported by Magistrates to the National Flood Relief Commission, and with maps of area flooded.\nFor some *hsien* different sources gave great variation in the number of farm families and the amount of cultivated area. Determination of the more reasonable number was reached in part by computation of the density of population per square mile of cultivated area. Even the best figures give densities of great variation and often appear to be too high or too low. The average density of 1160 persons per square mile of cultivated area, for the entire area of the 131 *hsien* appears to be fairly reasonable as it checks with population densities previously obtained by the Department of Agricultural Economics, University of Nanking.\nIn cases of individual *hsien*, however, there may be serious underestimates of either number of families or of amount of cultivated area. For various reasons the amount of cultivated area is likely to be understated by at least 10-20 per cent.",
+              "type": "output_text",
+              "logprobs": []
+            }
+          ]
+        }
+      ],
+      "completed_at": 1791845369.0,
+      "reasoning": {
+        "effort": "medium"
+      },
+      "text": {
+        "format": {
+          "type": "text"
+        }
+      },
+      "usage": {
+        "input_tokens": 2451,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0
+        },
+        "output_tokens": 959,
+        "output_tokens_details": {
+          "reasoning_tokens": 69
+        },
+        "total_tokens": 3410,
+        "cost": 0.0008101962,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.00081838,
+          "upstream_inference_input_cost": 0.00036765,
+          "upstream_inference_output_cost": 0.00045073
+        }
+      }
+    },
+    "prompt_fragments": [],
+    "system_fragments": [],
+    "tools": [],
+    "tool_calls": [],
+    "tool_results": [],
+    "attachments": [
+      {
+        "id": "b9e5a06aa10503fa8aeb0cbcff7369a03069eea5b3c62404a9e896da188c1fac",
+        "type": "image/png",
+        "path": "/Users/kml/shell/projects/extract-benchmark/files/1931-table-english.png",
+        "url": null,
+        "content": null,
+        "content_length": null
+      }
+    ]
+  }
+]
