@@ -2,7 +2,7 @@
 
 Open [the interactive dashboard](index.html) for timing and token charts, filters, failure details, and all saved extraction text. It is self-contained and works offline. Rebuild with `python3 results/build-index.py` from the project root.
 
-The nine new configurations produced 70 saved extractions. Gemini High has six saved outputs and two failures, with no retry at user request. The earlier Astra run adds eight saved extractions to the dashboard. Original responses are retained. Work-in-progress corrected files are excluded from the dashboard until the user says they are done. Extraction accuracy is unscored; no reference answer has been selected.
+The nine new configurations produced 70 saved extractions. Gemini High has six saved outputs and two failures, with no retry at user request. The earlier Astra run adds eight saved extractions to the dashboard. Original responses are retained. The eight corrected Markdown texts are now ground truth. The dashboard ranks equally weighted content F1, shows exact-number F1, and offers reference text and normalized differences.
 
 | Configuration | Backend | Saved outputs | Status | Run details |
 |---|---|---:|---|---|

@@ -7,8 +7,10 @@ __pycache__/
 .codex/
 .agents/
 
-# Work in progress: leave corrected/reference files local until authorized.
-/corrected/
+# Track only the approved ground-truth text; copied metadata and raw files stay local.
+/corrected/*
+!/corrected/*.md
+/corrected/instructions.md
 /correct/
 /reference/
 /results/corrected/

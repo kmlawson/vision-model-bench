@@ -10,7 +10,7 @@ The reusable task instructions are in [agent-instructions.md](agent-instructions
 
 The initial run uses `gpt-6-astra` with reasoning effort `low`, recorded as `gpt-6-astra-low` in the results directory. This is a fresh-agent approximation of a one-shot API call, not a direct API invocation.
 
-Once we have reviewed and accepted one good result, we will use it as the reference against which to measure subsequent models. For now, collect the extractions; no reference answer or scoring method has been established.
+The eight completed text files in `corrected/` are the ground truth. Only those Markdown texts are references; copied run metadata, instructions, and raw files in that directory are excluded. Original model-response snapshots remain the predictions, even when editable result copies differ.
 
 ## Running additional models
 
@@ -24,7 +24,18 @@ python3 results/build-index.py
 
 Agent timing and token counts were not captured and are shown as unavailable. Successful-request timing excludes failed attempts; token charts include failed-request usage when reported. These metrics compare execution resources, not extraction accuracy.
 
-Corrected files are work in progress and must be left alone until the user says they are done. The builder currently uses retained original-response snapshots, without opening the editable extraction files. Reference/corrected result directories are excluded. Keep `DEFER_CORRECTED_FILES = True` in the builder until the user authorizes including corrected files. Agent snapshots were retained from the existing dashboard and verified against their original recorded hashes; no API timing or token measurements were invented.
+## Ground-truth evaluation
+
+The dashboard now shows text content F1, exact-number F1, per-input scores, reference text, omissions/additions, and ordered normalized differences. It also keeps timing and token charts. Rebuilding the dashboard regenerates `results/evaluation.json` and all scores; no third-party scoring package or model judge is required.
+
+Run `python3 evaluate.py` for a ranked console report and `python3 -m unittest discover -s tests -v` for the scoring checks. See [EVALUATION.md](EVALUATION.md) for the precise normalization rules, formulas, and interpretation. Ground-truth texts are read without modification. SHA-256 hashes identify the exact references and predictions used.
+
+The primary rank uses mean content F1 across all eight inputs with equal weights. Empty/failed extractions score zero. Character error rate is an ordered diagnostic, so layout reordering does not lower the headline score. Content F1 does not verify table-cell placement.
+
+## GitHub Pages
+
+The workflow in `.github/workflows/pages.yml` tests scoring, rebuilds the evaluated dashboard, and publishes only the generated `index.html` at the site root. It does not publish the raw-result directories as website assets. The workflow builds privately but deploys only for a public repository; the current account plan rejected Pages for this private repository. Repository visibility must be approved before enabling public Pages.
+
 
 Gemini High was stopped at user request after six successful extractions. Its two-column request returned no final text and reported a denied RunCommand action; its wide-table request was cancelled. Both are recorded as failures without retry.
 

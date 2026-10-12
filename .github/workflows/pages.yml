@@ -1,0 +1,48 @@
+name: Build and deploy benchmark dashboard
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Test scoring
+        run: python3 -m unittest discover -s tests -v
+      - name: Build evaluated dashboard
+        run: |
+          python3 results/build-index.py
+          mkdir -p _site
+          cp results/index.html _site/index.html
+          touch _site/.nojekyll
+      - uses: actions/configure-pages@v5
+        if: github.event.repository.private == false
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+  deploy:
+    if: github.event.repository.private == false
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy dashboard
+        id: deployment
+        uses: actions/deploy-pages@v4
