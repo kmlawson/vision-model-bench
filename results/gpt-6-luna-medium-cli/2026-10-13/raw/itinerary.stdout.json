@@ -1,0 +1,12 @@
+{
+  "response": "第3案（往路北鮮経由）\n\n旅行日程\n\n| 日 | [?] |\n|---:|---|\n| 1 | [?] |\n| 2 | [?] |\n| 3 | [?] |\n| 4 | [?] |\n| 5 | [?] |\n| 6 | [?] |\n| 7 | [?] |\n| 8 | [?] |\n| 9 | [?] |\n| 10 | [?] |\n| 11 | [?] |\n| 12 | [?] |\n| 13 | [?] |\n| 14 | [?] |\n| 15 | [?] |\n| 16 | [?] |\n| 17 | [?] |\n| 18 | [?] |\n| 19 | [?] |",
+  "usage": {
+    "input_tokens": 16731,
+    "cached_input_tokens": 11008,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 631,
+    "reasoning_output_tokens": 464
+  },
+  "raw_format": "Normalized from retained Codex JSONL events and final message",
+  "tool_items": []
+}
