@@ -26,7 +26,7 @@ Agent timing and token counts were not captured and are shown as unavailable. Su
 
 ## Ground-truth evaluation
 
-The dashboard now shows text content F1, exact-number F1, per-input scores, reference text, omissions/additions, and ordered normalized differences. It also keeps timing and token charts. Rebuilding the dashboard regenerates `results/evaluation.json` and all scores; no third-party scoring package or model judge is required.
+The dashboard now shows text content F1, exact-number F1, per-input scores, reference text, omissions/additions, and ordered normalized differences. It also keeps timing and token charts. Active runs are excluded until finished; pending responses are not scored as failures. Rebuilding the dashboard regenerates `results/evaluation.json` and all scores; no third-party scoring package or model judge is required.
 
 Run `python3 evaluate.py` for a ranked console report and `python3 -m unittest discover -s tests -v` for the scoring checks. See [EVALUATION.md](EVALUATION.md) for the precise normalization rules, formulas, and interpretation. Ground-truth texts are read without modification. SHA-256 hashes identify the exact references and predictions used.
 
@@ -34,7 +34,7 @@ The primary rank uses mean content F1 across all eight inputs with equal weights
 
 ## GitHub Pages
 
-The workflow in `.github/workflows/pages.yml` tests scoring, rebuilds the evaluated dashboard, and publishes only the generated `index.html` at the site root. It does not publish the raw-result directories as website assets. The workflow builds privately but deploys only for a public repository; the current account plan rejected Pages for this private repository. Repository visibility must be approved before enabling public Pages.
+The public dashboard is at [kmlawson.github.io/vision-model-bench](https://kmlawson.github.io/vision-model-bench/). The repository was made public with approval to enable Pages. The workflow in `.github/workflows/pages.yml` tests scoring, rebuilds the evaluated dashboard, and publishes the generated `index.html` at the site root after each push to `main`.
 
 
 Gemini High was stopped at user request after six successful extractions. Its two-column request returned no final text and reported a denied RunCommand action; its wide-table request was cancelled. Both are recorded as failures without retry.
@@ -45,12 +45,18 @@ Run the installed CLIs using:
 
 ```sh
 python3 run-cli-benchmark.py agy --workers 3
-python3 run-cli-benchmark.py llm --workers 3
+python3 run-cli-benchmark.py llm --models claude-opus-5.5 claude-haiku-5.5 claude-sonnet-5.5 --workers 3
+python3 run-cli-benchmark.py codex --workers 3
+python3 run-cli-benchmark.py llm --models qwen3.5-35b-a3b qwen3.7-flash qwen3.8-flash --workers 1
 ```
 
-The `agy` run selects `gemini-3.8-flash-low`, `gemini-3.8-flash-medium`, and `gemini-3.8-flash-high`. Each request starts in a separate workspace containing only its input image. The `llm` run selects `anthropic/claude-opus-5-5`, `anthropic/claude-haiku-5-5`, and `anthropic/claude-sonnet-5-5`, supplying the PNG with `-a`. Claude reasoning settings are left at provider defaults. Every CLI task starts a fresh conversation.
+The `agy` run selects `gemini-3.8-flash-low`, `gemini-3.8-flash-medium`, and `gemini-3.8-flash-high`. Each request starts in a separate workspace containing only its input image. The Claude `llm` command selects `anthropic/claude-opus-5-5`, `anthropic/claude-haiku-5-5`, and `anthropic/claude-sonnet-5-5`, supplying the PNG with `-a`. Claude reasoning settings are left at provider defaults. Every CLI task starts a fresh conversation.
 
 GPT-6 Luna runs use independent Codex agents at low, medium, and high reasoning effort, with one fresh agent per input. CLI and agent runs use different execution environments; `run.json` records the exact prompts, model settings, input hashes, backend, and completion status. CLI runs also retain the raw JSON response and stderr under `raw/`.
+
+GPT-6.1 Sol runs use the installed Codex CLI at low, medium, and high effort. In this CLI, `-p` selects a configuration profile; `codex exec` is the noninteractive command. Each image is attached with `--image` in a fresh temporary workspace, using explicit `model_reasoning_effort`, a read-only sandbox, ephemeral sessions, and no user configuration. The shared extraction prompt is followed by an instruction to return only the extraction without using tools. Raw JSONL events and stderr are retained. `stdout.json` is a normalized wrapper around the original final message and reported turn usage; reported reasoning tokens are shown without adding them again to output-token totals.
+
+Qwen runs use `openrouter/qwen/qwen3.5-35b-a3b`, `openrouter/qwen/qwen3.7-flash`, and `openrouter/qwen/qwen3.8-flash` through the installed `llm-openrouter` plugin. These models run consecutively with `--workers 1`, with one fresh request per image and provider-default reasoning settings. Canonical input images are attached directly. The dashboard includes reasoning tokens, cached tokens, and provider-reported charges from the raw OpenRouter usage object. These are recorded charges, rather than estimates from a pricing table. See [OpenRouter usage accounting](https://github.com/OpenRouterTeam/docs/blob/main/cookbook/administration/usage-accounting.mdx) for the reported fields.
 
 For Claude, the itinerary PNG needs lossless recompression to fit the provider's encoded image limit. Its prepared attachment is retained under `raw/inputs/`; identical decoded pixels are verified and recorded in the manifest. The canonical input in `files/` stays unchanged. Failed transport attempts are retained under `raw/attempts/`.
 

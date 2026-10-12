@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run independent visual extraction requests using installed agy or llm."""
+"""Run independent visual extraction requests using installed agy, llm, or codex."""
 import argparse
 import concurrent.futures
 from datetime import datetime
@@ -17,8 +17,27 @@ CONFIGS = {
     'agy': [(f'gemini-3.8-flash-{effort}', f'gemini-3.8-flash-{effort}', effort)
             for effort in ('low', 'medium', 'high')],
     'llm': [(f'claude-{family}-5.5', f'anthropic/claude-{family}-5-5', None)
-            for family in ('opus', 'haiku', 'sonnet')],
+            for family in ('opus', 'haiku', 'sonnet')] +
+           [(f'qwen{variant}', f'openrouter/qwen/qwen{variant}', None)
+            for variant in ('3.5-35b-a3b', '3.7-flash', '3.8-flash')],
+    'codex': [(f'gpt-6.1-sol-{effort}', 'gpt-6.1-sol', effort)
+              for effort in ('low', 'medium', 'high')],
 }
+
+def codex_response(stdout, final_path):
+    events = [json.loads(line) for line in stdout.splitlines() if line.strip()]
+    completions = [e for e in events if e.get('type') == 'turn.completed']
+    errors = [e for e in events if e.get('type') == 'turn.failed']
+    if errors or not completions:
+        raise ValueError('Codex did not complete a turn: ' + str(errors)[:500])
+    content = final_path.read_text() if final_path.exists() else ''
+    if not content.strip():
+        raise ValueError('Codex returned no final extraction')
+    usage = completions[-1].get('usage', {})
+    return {'response': content, 'usage': usage,
+            'raw_format': 'Normalized from retained Codex JSONL events and final message',
+            'tool_items': [e['item'] for e in events if e.get('type') == 'item.completed'
+                           and e.get('item', {}).get('type') not in ('agent_message', 'reasoning')]}
 
 def now():
     return datetime.now(ZoneInfo('Europe/London')).isoformat()
@@ -102,7 +121,7 @@ def run_config(backend, config, run_date, selected):
                'backend': backend, 'date': run_date, 'started_at': now(),
                'instructions_sha256': hashlib.sha256(instructions.encode()).hexdigest(),
                'execution': 'Fresh CLI invocation per image; no conversation continuation, OCR, reference answers, or editorial corrections.',
-               'reference_status': 'No accepted reference or scoring method yet.',
+               'reference_status': 'Ground truth is used only after extraction, never supplied to the model.',
                'tasks': tasks}
         (outdir / 'instructions.md').write_text(instructions)
     run['status'] = 'running'
@@ -141,8 +160,20 @@ def run_config(backend, config, run_date, selected):
             command = ['agy', '--model', model, '--mode', 'plan', '--disable-slash-commands',
                        '--output-format', 'json', '--print-timeout', '10m', '--print', prompt]
             cwd = workspace.name
+        elif backend == 'codex':
+            workspace = tempfile.TemporaryDirectory(prefix='extract-benchmark-codex-')
+            prompt += ('\n\nThe visual input is attached to this request. Inspect it visually once.'
+                       ' Return the extraction as your final response. Do not use tools, read files,'
+                       ' run terminal commands, perform Git operations, write files, or ask questions.')
+            final_path = Path(workspace.name) / 'final.md'
+            command = ['codex', '--no-daemon', '-a', 'never', 'exec', '--ignore-user-config',
+                       '--ephemeral', '--skip-git-repo-check', '--sandbox', 'read-only',
+                       '--model', model, '-c', f'model_reasoning_effort="{effort}"',
+                       '--image', str(source), '--json', '--output-last-message', str(final_path), prompt]
+            cwd = workspace.name
+            task['raw_events'] = 'raw/' + stem + '.events.jsonl'
         else:
-            attachment, preparation = llm_attachment(source, outdir)
+            attachment, preparation = llm_attachment(source, outdir) if model.startswith('anthropic/') else (source, None)
             if preparation:
                 task['attachment_preparation'] = preparation
             command = ['llm', '-m', model, '-a', str(attachment), '--no-log', '--hide-reasoning', '--json', prompt]
@@ -155,12 +186,20 @@ def run_config(backend, config, run_date, selected):
         start = time.monotonic()
         try:
             completed = subprocess.run(command, cwd=cwd, capture_output=True, text=True, timeout=660)
-            (rawdir / (stem + '.stdout.json')).write_text(completed.stdout)
             (rawdir / (stem + '.stderr.txt')).write_text(completed.stderr)
             task['exit_code'] = completed.returncode
+            if backend == 'codex':
+                (outdir / task['raw_events']).write_text(completed.stdout)
+                response_value = {'events_file': task['raw_events']}
+                save_json(rawdir / (stem + '.stdout.json'), response_value)
+                if completed.returncode == 0:
+                    response_value = codex_response(completed.stdout, final_path)
+                save_json(rawdir / (stem + '.stdout.json'), response_value)
+            else:
+                (rawdir / (stem + '.stdout.json')).write_text(completed.stdout)
             if completed.returncode:
                 raise RuntimeError(f'CLI exit {completed.returncode}: {completed.stderr[-1000:]}')
-            content, response = extract_response(completed.stdout, backend)
+            content, response = extract_response(json.dumps(response_value) if backend == 'codex' else completed.stdout, backend)
             output = outdir / task['output']
             output.write_text(content)
             task.update({'status': 'completed', 'output_bytes': output.stat().st_size,
@@ -177,7 +216,8 @@ def run_config(backend, config, run_date, selected):
         except subprocess.TimeoutExpired as error:
             for suffix, data in (('stdout.json', error.stdout), ('stderr.txt', error.stderr)):
                 if data is not None:
-                    (rawdir / (stem + '.' + suffix)).write_bytes(data.encode() if isinstance(data, str) else data)
+                    target = outdir / task['raw_events'] if backend == 'codex' and suffix == 'stdout.json' else rawdir / (stem + '.' + suffix)
+                    target.write_bytes(data.encode() if isinstance(data, str) else data)
             task.update({'status': 'failed', 'error': 'CLI exceeded 660-second timeout'})
         except Exception as error:
             task.update({'status': 'failed', 'error': str(error)})
