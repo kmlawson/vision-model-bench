@@ -1,0 +1,12 @@
+{
+  "response": "第三案（往路北鮮經由）\n\n| 日次 | 地名 | 發著時刻 | 備考 |\n|---|---|---|---|\n| 1 | 京城 |  |  |\n| 2 | 羅津 |  |  |\n| 3 | 吉林 |  |  |\n| 4 | 同 |  |  |\n| 5 | 同 |  |  |\n| 6 | 新京 |  |  |\n| 7 | 哈爾濱 |  |  |\n| 8 | 同 |  |  |\n| 9 | 奉天 |  |  |\n\n同滿洲鐵道、日本海汽船○○丸、船中二泊、宿泊\n旅行館、大東旅館、吉田旅館、北山旅館、旅館\n\n發著時刻、列車船名、視察箇所並に順路\n市内一巡\n\n料金\n三等 26.10\n二等 32.00\n一等 45.00\n三等 34.00\n二等 45.00\n三等 30.00\n三等 27.00",
+  "usage": {
+    "input_tokens": 16727,
+    "cached_input_tokens": 11008,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 257,
+    "reasoning_output_tokens": 0
+  },
+  "raw_format": "Normalized from retained Codex JSONL events and final message",
+  "tool_items": []
+}
