@@ -172,6 +172,20 @@ def main():
     output.write_text(TEMPLATE.replace('__BENCHMARK_DATA__', encoded))
     (HERE/'evaluation.json').write_text(json.dumps({k:v for k,v in data.items() if k!='images'}, ensure_ascii=False, indent=2)+'\n')
     saved = sum(t['status'] == 'completed' for r in data['runs'] for t in r['tasks'])
+    total = sum(len(r['tasks']) for r in data['runs'])
+    lines = ['# Benchmark results', '',
+             'Open [the interactive dashboard](index.html) or [the live site](https://kmlawson.github.io/vision-model-bench/). The dashboard is a single offline HTML file with embedded input images, accuracy scores, colored extraction review, timing, tokens, and reported costs.', '',
+             f'{len(data["runs"])} finished configurations, {saved} saved extractions out of {total} tasks. Active runs are excluded until finished. Failed or missing final responses score zero; the eight corrected Markdown files are ground truth.', '',
+             '| Configuration | Date | Backend | Saved | Content F1 | Number F1 | Status | Details |',
+             '|---|---|---|---:|---:|---:|---|---|']
+    for run in sorted(data['runs'], key=lambda r:r['evaluation']['macro_content_f1'], reverse=True):
+        count = sum(t['status']=='completed' for t in run['tasks'])
+        e = run['evaluation']
+        lines.append(f'| [{run["name"]}]({run["id"]}/) | {run["date"]} | {run["backend"]} | {count}/{len(run["tasks"])} | {e["macro_content_f1"]:.2%} | {e["macro_numeric_f1"]:.2%} | {run["status"]} | [Metadata]({run["id"]}/run.json) |')
+    lines += ['', 'Exact prompts, input hashes, model settings, original responses, and failure details are retained in each run directory. Scores always use original responses, preserving any user-edited copies.', '',
+              'The earlier Astra agent run uses earlier prompt revisions. CLI reruns have names ending in `-cli`; the original agent runs remain available. Agent time and token counts were not captured and remain unavailable. CLI timing includes startup; task totals sum request durations. Provider-reported charges are shown where available. Claude itinerary attachments were losslessly recompressed with identical decoded pixels.', '',
+              'Rebuild this index, the HTML dashboard, and the evaluation report with `python3 results/build-index.py`. Completed model runs are committed and pushed as they finish.', '']
+    (HERE/'index.md').write_text('\n'.join(lines))
     print(f'Built {output}: {len(data["runs"])} configurations, {saved} saved extractions, {output.stat().st_size:,} bytes')
 
 if __name__ == '__main__':
