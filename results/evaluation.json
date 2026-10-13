@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-12T23:18:28.264387+00:00",
+  "generated_at": "2026-10-13T06:47:32.589759+00:00",
   "runs": [
     {
       "id": "gemini-3.8-flash-low/2026-10-12",
@@ -32918,7 +32918,24 @@
         "macro_numeric_f1": 0.8946775919811879,
         "macro_cer": 0.09929007338568666,
         "tasks": 8,
-        "macro_overall_f1": 0.9186499763905098
+        "macro_overall_f1": 0.9186499763905098,
+        "input_group_f1": {
+          "english": {
+            "content": 0.9892462061276603,
+            "number": 0.9960472470238095,
+            "overall": 0.9926467265757349
+          },
+          "english_asian": {
+            "content": 0.9821326597250166,
+            "number": 0.9888377976190477,
+            "overall": 0.9854852286720321
+          },
+          "japanese": {
+            "content": 0.8767718625911902,
+            "number": 0.7377439159180884,
+            "overall": 0.8072578892546394
+          }
+        }
       }
     },
     {
@@ -67156,7 +67173,24 @@
         "macro_numeric_f1": 0.8726186147831552,
         "macro_cer": 0.11219884040748719,
         "tasks": 8,
-        "macro_overall_f1": 0.9056134792621988
+        "macro_overall_f1": 0.9056134792621988,
+        "input_group_f1": {
+          "english": {
+            "content": 0.9885805663932903,
+            "number": 0.9953142386869436,
+            "overall": 0.9919474025401169
+          },
+          "english_asian": {
+            "content": 0.9864200086701878,
+            "number": 0.9882513909495548,
+            "overall": 0.9873356998098712
+          },
+          "japanese": {
+            "content": 0.8589222355263333,
+            "number": 0.679897321172489,
+            "overall": 0.7694097783494112
+          }
+        }
       }
     },
     {
@@ -95155,7 +95189,24 @@
         "macro_numeric_f1": 0.6644458439914218,
         "macro_cer": 0.3400540858854114,
         "tasks": 8,
-        "macro_overall_f1": 0.6867028212001476
+        "macro_overall_f1": 0.6867028212001476,
+        "input_group_f1": {
+          "english": {
+            "content": 0.7480181359522218,
+            "number": 0.7470238095238095,
+            "overall": 0.7475209727380157
+          },
+          "english_asian": {
+            "content": 0.7961922865395552,
+            "number": 0.7896190476190477,
+            "overall": 0.7929056670793014
+          },
+          "japanese": {
+            "content": 0.5635723181910706,
+            "number": 0.4558238379453789,
+            "overall": 0.5096980780682248
+          }
+        }
       }
     },
     {
@@ -124987,7 +125038,24 @@
         "macro_numeric_f1": 0.7534149752991212,
         "macro_cer": 0.286807973625573,
         "tasks": 8,
-        "macro_overall_f1": 0.7783874494214694
+        "macro_overall_f1": 0.7783874494214694,
+        "input_group_f1": {
+          "english": {
+            "content": 0.8804747926567887,
+            "number": 0.9643360515453538,
+            "overall": 0.9224054221010713
+          },
+          "english_asian": {
+            "content": 0.8898245780607409,
+            "number": 0.9674688412362832,
+            "overall": 0.928646709648512
+          },
+          "japanese": {
+            "content": 0.6592521660156122,
+            "number": 0.396658532070518,
+            "overall": 0.5279553490430651
+          }
+        }
       }
     },
     {
@@ -155677,7 +155745,24 @@
         "macro_numeric_f1": 0.8604670853447486,
         "macro_cer": 0.12347585634435836,
         "tasks": 8,
-        "macro_overall_f1": 0.8988790507860054
+        "macro_overall_f1": 0.8988790507860054,
+        "input_group_f1": {
+          "english": {
+            "content": 0.990132849449914,
+            "number": 0.9923862693584071,
+            "overall": 0.9912595594041606
+          },
+          "english_asian": {
+            "content": 0.9855845404294964,
+            "number": 0.9859090154867257,
+            "overall": 0.985746777958111
+          },
+          "japanese": {
+            "content": 0.8568018092235382,
+            "number": 0.6513972017747868,
+            "overall": 0.7540995054991625
+          }
+        }
       }
     },
     {
@@ -183067,7 +183152,24 @@
         "macro_numeric_f1": 0.9417427523212397,
         "macro_cer": 0.012708400269639234,
         "tasks": 8,
-        "macro_overall_f1": 0.9605811659308134
+        "macro_overall_f1": 0.9605811659308134,
+        "input_group_f1": {
+          "english": {
+            "content": 0.999113475177305,
+            "number": 0.9990234375,
+            "overall": 0.9990684563386525
+          },
+          "english_asian": {
+            "content": 0.9970685579196218,
+            "number": 0.99121875,
+            "overall": 0.994143653959811
+          },
+          "japanese": {
+            "content": 0.9500046155749958,
+            "number": 0.8592827561899727,
+            "overall": 0.9046436858824842
+          }
+        }
       }
     },
     {
@@ -213929,7 +214031,24 @@
         "macro_numeric_f1": 0.8774599845695734,
         "macro_cer": 0.06311315227395321,
         "tasks": 8,
-        "macro_overall_f1": 0.9172397563529304
+        "macro_overall_f1": 0.9172397563529304,
+        "input_group_f1": {
+          "english": {
+            "content": 0.9906281661600811,
+            "number": 0.9884029580860534,
+            "overall": 0.9895155621230672
+          },
+          "english_asian": {
+            "content": 0.9880580884836204,
+            "number": 0.9827223664688427,
+            "overall": 0.9853902274762316
+          },
+          "japanese": {
+            "content": 0.905288594224066,
+            "number": 0.7020226814041247,
+            "overall": 0.8036556378140953
+          }
+        }
       }
     },
     {
@@ -247241,7 +247360,24 @@
         "macro_numeric_f1": 0.678705115782279,
         "macro_cer": 0.2769701490544612,
         "tasks": 8,
-        "macro_overall_f1": 0.7342754370931277
+        "macro_overall_f1": 0.7342754370931277,
+        "input_group_f1": {
+          "english": {
+            "content": 0.9420418779053482,
+            "number": 0.9206007077550342,
+            "overall": 0.9313212928301913
+          },
+          "english_asian": {
+            "content": 0.9351552414547133,
+            "number": 0.9164805662040274,
+            "overall": 0.9258179038293703
+          },
+          "japanese": {
+            "content": 0.5476632866527485,
+            "number": 0.2824126984126984,
+            "overall": 0.41503799253272344
+          }
+        }
       }
     },
     {
@@ -279172,7 +279308,24 @@
         "macro_numeric_f1": 0.6657361143994203,
         "macro_cer": 0.31799976412682224,
         "tasks": 8,
-        "macro_overall_f1": 0.7272026694934137
+        "macro_overall_f1": 0.7272026694934137,
+        "input_group_f1": {
+          "english": {
+            "content": 0.9283545050260638,
+            "number": 0.9034156581324899,
+            "overall": 0.9158850815792768
+          },
+          "english_asian": {
+            "content": 0.9285531692382424,
+            "number": 0.9067325265059919,
+            "overall": 0.9176428478721171
+          },
+          "japanese": {
+            "content": 0.5555293168360153,
+            "number": 0.2640754275551343,
+            "overall": 0.4098023721955748
+          }
+        }
       }
     },
     {
@@ -310368,7 +310521,24 @@
         "macro_numeric_f1": 0.6865015838869408,
         "macro_cer": 0.2973759946316709,
         "tasks": 8,
-        "macro_overall_f1": 0.7375530663982481
+        "macro_overall_f1": 0.7375530663982481,
+        "input_group_f1": {
+          "english": {
+            "content": 0.9326206810917077,
+            "number": 0.9267356425251162,
+            "overall": 0.929678161808412
+          },
+          "english_asian": {
+            "content": 0.9372076559844773,
+            "number": 0.933388514020093,
+            "overall": 0.9352980850022852
+          },
+          "japanese": {
+            "content": 0.5409327037846859,
+            "number": 0.27502336699835395,
+            "overall": 0.40797803539151994
+          }
+        }
       }
     },
     {
@@ -340821,7 +340991,24 @@
         "macro_numeric_f1": 0.879078794612996,
         "macro_cer": 0.06914639137813185,
         "tasks": 8,
-        "macro_overall_f1": 0.9166697485086455
+        "macro_overall_f1": 0.9166697485086455,
+        "input_group_f1": {
+          "english": {
+            "content": 0.9898682877406282,
+            "number": 0.9839519195103857,
+            "overall": 0.986910103625507
+          },
+          "english_asian": {
+            "content": 0.986339074636947,
+            "number": 0.9711615356083086,
+            "overall": 0.9787503051226278
+          },
+          "japanese": {
+            "content": 0.9007967486832084,
+            "number": 0.7256075596208081,
+            "overall": 0.8132021541520082
+          }
+        }
       }
     },
     {
@@ -374580,7 +374767,24 @@
         "macro_numeric_f1": 0.7785167208423963,
         "macro_cer": 0.07277494259034824,
         "tasks": 8,
-        "macro_overall_f1": 0.8458078484346238
+        "macro_overall_f1": 0.8458078484346238,
+        "input_group_f1": {
+          "english": {
+            "content": 0.9890806088911953,
+            "number": 0.9853603078358208,
+            "overall": 0.987220458363508
+          },
+          "english_asian": {
+            "content": 0.9857089315574006,
+            "number": 0.9802882462686566,
+            "overall": 0.9829985889130286
+          },
+          "japanese": {
+            "content": 0.7920823834759353,
+            "number": 0.44223084513196237,
+            "overall": 0.6171566143039489
+          }
+        }
       }
     },
     {
@@ -408586,7 +408790,24 @@
         "macro_numeric_f1": 0.7936729597033773,
         "macro_cer": 0.07667078525998147,
         "tasks": 8,
-        "macro_overall_f1": 0.8521528160926053
+        "macro_overall_f1": 0.8521528160926053,
+        "input_group_f1": {
+          "english": {
+            "content": 0.9795651476251604,
+            "number": 0.9821893601190477,
+            "overall": 0.980877253872104
+          },
+          "english_asian": {
+            "content": 0.9803187847667949,
+            "number": 0.9777514880952382,
+            "overall": 0.9790351364310166
+          },
+          "japanese": {
+            "content": 0.7944891520068973,
+            "number": 0.48687541238360915,
+            "overall": 0.6406822821952532
+          }
+        }
       }
     },
     {
@@ -447397,7 +447618,24 @@
         "macro_numeric_f1": 0.7114235210847664,
         "macro_cer": 0.23209033945702048,
         "tasks": 8,
-        "macro_overall_f1": 0.7868635101174922
+        "macro_overall_f1": 0.7868635101174922,
+        "input_group_f1": {
+          "english": {
+            "content": 0.9763422503249416,
+            "number": 0.9742314653065333,
+            "overall": 0.9752868578157374
+          },
+          "english_asian": {
+            "content": 0.9555780495517379,
+            "number": 0.9633851722452267,
+            "overall": 0.9594816108984823
+          },
+          "japanese": {
+            "content": 0.7068459151476848,
+            "number": 0.2914874358173327,
+            "overall": 0.49916667548250876
+          }
+        }
       }
     },
     {
@@ -469965,7 +470203,24 @@
         "macro_numeric_f1": 0.48225549768518516,
         "macro_cer": 0.5238472481197883,
         "tasks": 8,
-        "macro_overall_f1": 0.4826752604325696
+        "macro_overall_f1": 0.4826752604325696,
+        "input_group_f1": {
+          "english": {
+            "content": 0.9661900463599081,
+            "number": 0.9645109953703703,
+            "overall": 0.9653505208651392
+          },
+          "english_asian": {
+            "content": 0.7729520370879265,
+            "number": 0.7716087962962963,
+            "overall": 0.7722804166921113
+          },
+          "japanese": {
+            "content": 0.0,
+            "number": 0.0,
+            "overall": 0.0
+          }
+        }
       }
     },
     {
@@ -497188,7 +497443,24 @@
         "macro_numeric_f1": 0.6138065905448717,
         "macro_cer": 0.29713841177104167,
         "tasks": 8,
-        "macro_overall_f1": 0.6432417450696719
+        "macro_overall_f1": 0.6432417450696719,
+        "input_group_f1": {
+          "english": {
+            "content": 0.9836591213177958,
+            "number": 0.9838719223484849,
+            "overall": 0.9837655218331403
+          },
+          "english_asian": {
+            "content": 0.9762830393511553,
+            "number": 0.9750975378787878,
+            "overall": 0.9756902886149716
+          },
+          "japanese": {
+            "content": 0.16666666666666666,
+            "number": 0.011655011655011656,
+            "overall": 0.08916083916083915
+          }
+        }
       }
     },
     {
@@ -530434,7 +530706,24 @@
         "macro_numeric_f1": 0.7887089480225625,
         "macro_cer": 0.07044353847380518,
         "tasks": 8,
-        "macro_overall_f1": 0.853261050220136
+        "macro_overall_f1": 0.853261050220136,
+        "input_group_f1": {
+          "english": {
+            "content": 0.9926249255589844,
+            "number": 0.9900414015718563,
+            "overall": 0.9913331635654203
+          },
+          "english_asian": {
+            "content": 0.9863221626694096,
+            "number": 0.9760331212574851,
+            "overall": 0.9811776419634474
+          },
+          "japanese": {
+            "content": 0.8036314686648757,
+            "number": 0.47650199263102483,
+            "overall": 0.6400667306479503
+          }
+        }
       }
     },
     {
@@ -564197,7 +564486,24 @@
         "macro_numeric_f1": 0.6866184364192625,
         "macro_cer": 0.27912342518729916,
         "tasks": 8,
-        "macro_overall_f1": 0.7375386690643853
+        "macro_overall_f1": 0.7375386690643853,
+        "input_group_f1": {
+          "english": {
+            "content": 0.9545365722804663,
+            "number": 0.9422516179503592,
+            "overall": 0.9483940951154127
+          },
+          "english_asian": {
+            "content": 0.9462379534765469,
+            "number": 0.9338012943602874,
+            "overall": 0.9400196239184171
+          },
+          "japanese": {
+            "content": 0.5254938154311102,
+            "number": 0.2746470065175544,
+            "overall": 0.40007041097433227
+          }
+        }
       }
     },
     {
@@ -596994,7 +597300,24 @@
         "macro_numeric_f1": 0.6970585630185683,
         "macro_cer": 0.2895575671100831,
         "tasks": 8,
-        "macro_overall_f1": 0.7217448532791456
+        "macro_overall_f1": 0.7217448532791456,
+        "input_group_f1": {
+          "english": {
+            "content": 0.9442089284147291,
+            "number": 0.9183378887511993,
+            "overall": 0.9312734085829641
+          },
+          "english_asian": {
+            "content": 0.8836280122970006,
+            "number": 0.9106703110009594,
+            "overall": 0.89714916164898
+          },
+          "japanese": {
+            "content": 0.5177696956109267,
+            "number": 0.3410389830479165,
+            "overall": 0.42940433932942157
+          }
+        }
       }
     },
     {
@@ -629976,7 +630299,24 @@
         "macro_numeric_f1": 0.7165862374279369,
         "macro_cer": 0.29616888653545304,
         "tasks": 8,
-        "macro_overall_f1": 0.7596322439517404
+        "macro_overall_f1": 0.7596322439517404,
+        "input_group_f1": {
+          "english": {
+            "content": 0.9466267916845172,
+            "number": 0.9394408919494999,
+            "overall": 0.9430338418170086
+          },
+          "english_asian": {
+            "content": 0.9417458777920583,
+            "number": 0.9315527135596,
+            "overall": 0.9366492956758292
+          },
+          "japanese": {
+            "content": 0.5708988716146869,
+            "number": 0.3583087772084985,
+            "overall": 0.4646038244115927
+          }
+        }
       }
     }
   ],
@@ -630025,5 +630365,43 @@
       }
     },
     "method": "Exact multiset token F1: Latin words, individual CJK characters, atomic numbers. Macro means weight each input equally; missing responses score zero. Character error rate is an ordered diagnostic, not part of ranking."
-  }
+  },
+  "input_groups": [
+    {
+      "id": "english",
+      "name": "English only",
+      "short": "EN",
+      "tasks": [
+        1,
+        3,
+        6,
+        8
+      ],
+      "color": "#547ab9"
+    },
+    {
+      "id": "english_asian",
+      "name": "English + Asian text with Western numerals",
+      "short": "EN+AS",
+      "tasks": [
+        1,
+        2,
+        3,
+        6,
+        8
+      ],
+      "color": "#be823e"
+    },
+    {
+      "id": "japanese",
+      "name": "Japanese",
+      "short": "JP",
+      "tasks": [
+        4,
+        5,
+        7
+      ],
+      "color": "#469776"
+    }
+  ]
 }

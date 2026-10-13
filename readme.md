@@ -26,7 +26,7 @@ Agent timing and token counts were not captured and are shown as unavailable. Su
 
 ## Ground-truth evaluation
 
-The dashboard shows an overall average F1 chart (the arithmetic mean of text and number F1), text content F1, exact-number F1, independent chart and table sorting, per-input scores, reference text, omissions/additions, and ordered normalized differences. It also keeps timing and token charts. The date selector defaults to All dates so runs that cross midnight can be compared. Active runs are excluded until finished; pending responses are not scored as failures. Rebuilding the dashboard regenerates `results/evaluation.json` and all scores; no third-party scoring package or model judge is required.
+The dashboard shows an overall average F1 chart (the arithmetic mean of text and number F1), text content F1, exact-number F1, independent chart and table sorting, a language/numeral-group comparison, per-input scores, reference text, omissions/additions, and ordered normalized differences. The input groups are English only (1, 3, 6, 8), English plus Asian text with Western numerals (1, 2, 3, 6, 8), and Japanese (4, 5, 7). The middle group includes the English set plus Chinese input 2. Their chart uses equal input weights and offers text, number, or overall average F1; date/family filters apply while the single-input filter does not. Full-group scores are included in the evaluation report and CSV export. Per-input exact 100% scores are light green and scores below 90% are light red. Extraction and ground-truth text use smaller type and flow down the whole page. It also keeps timing and token charts. The date selector defaults to All dates so runs that cross midnight can be compared. Active runs are excluded until finished; pending responses are not scored as failures. Rebuilding the dashboard regenerates `results/evaluation.json` and all scores; no third-party scoring package or model judge is required.
 
 Run `python3 evaluate.py` for a ranked console report and `python3 -m unittest discover -s tests -v` for the scoring checks. See [EVALUATION.md](EVALUATION.md) for the precise normalization rules, formulas, and interpretation. Ground-truth texts are read without modification. SHA-256 hashes identify the exact references and predictions used.
 
@@ -64,3 +64,7 @@ Qwen runs use `openrouter/qwen/qwen3.5-35b-a3b`, `openrouter/qwen/qwen3.7-flash`
 For Claude, the itinerary PNG needs lossless recompression to fit the provider's encoded image limit. Its prepared attachment is retained under `raw/inputs/`; identical decoded pixels are verified and recorded in the manifest. The canonical input in `files/` stays unchanged. Failed transport attempts are retained under `raw/attempts/`.
 
 The runner resumes completed tasks without overwriting their outputs. Its `--models`, `--tasks`, and `--date` options can select a subset or a new run date.
+
+## Future blind-with-analysis category
+
+The [proposed benchmark plan](docs/blind-with-analysis-benchmarks.md) describes isolated analysis tools, ground-truth access restrictions, leakage checks, measurement, and a separate OCR category. It is saved for later implementation; no tools-enabled cohort has been started.
