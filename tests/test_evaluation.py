@@ -15,6 +15,12 @@ class EvaluationTests(unittest.TestCase):
         self.assertEqual(result['numbers']['f1'],1)
         self.assertEqual(normalize('1、2、3')['numbers'],['1','2','3'])
 
+    def test_cjk_variants_fold_but_simplified_chinese_does_not(self):
+        self.assertEqual(score('二萬以上の町村（國勢調査）','二万以上の町村（国勢調查）')['content']['f1'],1)
+        self.assertEqual(score('經濟發展','経済発展')['content']['f1'],1)
+        self.assertEqual(score('內德增產','内徳増産')['content']['f1'],1)
+        self.assertLess(score('經費總計','经费总计')['content']['f1'],1)
+
     def test_layout_reordering_not_penalized_by_headline(self):
         result=score('alpha 12 beta 23','beta 23 alpha 12')
         self.assertEqual(result['content']['f1'],1)

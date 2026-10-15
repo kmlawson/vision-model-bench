@@ -26,10 +26,10 @@ Exact unit-cost Levenshtein distance over normalized character streams counts th
 
 The dashboard's diff aligns normalized content tokens with a sequence matcher for readable context. These diff hunks are an inspection aid; they are not the minimal Levenshtein edit decomposition and are not additional score penalties.
 
-## Normalization policy (content-v2)
+## Normalization policy (content-v3)
 
 - Strip HTML/Markdown presentation, table separators, code fences, and hyperlink destinations; retain visible link text.
-- Apply Unicode NFKC and case folding. Width, ligature, superscript, and quote styles become comparable. Traditional and modern CJK glyphs remain distinct when NFKC does not equate them.
+- Apply Unicode NFKC and case folding. Width, ligature, superscript, and quote styles become comparable. CJK character variants are then folded with the table in `cjk_variants.py`: traditional (kyūjitai) and modern (shinjitai) Japanese forms agree (`經`/`経`, `國`/`国`, `發`/`発`), as do regional glyph variants of the same character (`查`/`査`, `內`/`内`). Where shinjitai merged formerly distinct characters (`藝`/`芸`, `缺`/`欠`, `餘`/`余`, `臺`/`台`, `辨`/`辯` → `弁`), those also agree. Simplified Chinese forms (`费`, `总`, `计`) are not folded and remain errors.
 - Ignore punctuation and layout whitespace. Numeric signs and decimal values remain meaningful. Currency and percent-symbol placement is not scored; textual unit labels remain content.
 - Join English words broken by line-end hyphens.
 - Normalize numeric representations as described above. Asian numerals inside nonnumeric proper names are not changed. Era `元年` and `1年` agree. The source's `ます〳〵` repetition notation and `ますます` agree.

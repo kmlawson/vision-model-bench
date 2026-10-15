@@ -4,7 +4,7 @@ from difflib import SequenceMatcher
 import re
 from evaluate import ASIAN, normalize
 
-VISIBLE = re.compile(r'\[(?:\?|illegible|unreadable)\]|[+−-]?\d+(?:,\d{3})*(?:\.\d+)?|[A-Za-z]+(?:[’\x27][A-Za-z]+)*|[' + ASIAN + r']+|[^\W\d_]', re.I)
+VISIBLE = re.compile(r'\[(?:\?|illegible|unreadable)\]|[+−-]?\d+(?:[,、]\d{3})*(?:\.\d+)?|[A-Za-z]+(?:[’\x27][A-Za-z]+)*|[' + ASIAN + r']+|[^\W\d_]', re.I)
 
 
 def annotate(reference, candidate, input_name=''):

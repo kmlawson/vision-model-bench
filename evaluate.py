@@ -10,7 +10,9 @@ from pathlib import Path
 import re
 import unicodedata
 
-VERSION = 'content-v2'
+from cjk_variants import fold as fold_variants
+
+VERSION = 'content-v3'
 ROOT = Path(__file__).resolve().parent
 DIGITS = {'零': 0, '〇': 0, **dict(zip('一二三四五六七八九', range(1, 10)))}
 DIGITS.update({'兩': 2, '两': 2, '両': 2})
@@ -45,7 +47,7 @@ def normalize(text, input_name=''):
     text = re.sub(r'(?i)\[(?:\?|illegible|unreadable)\]', '\ufffd', text)
     # Line-end hyphenation is a presentation choice, not a different word.
     text = re.sub(r'([A-Za-z])-\s*\n\s*([A-Za-z])', r'\1\2', text)
-    text = unicodedata.normalize('NFKC', text).casefold()
+    text = fold_variants(unicodedata.normalize('NFKC', text).casefold())
     text = text.replace('−', '-').replace('’', "'").replace('‘', "'").replace('○', '〇')
     text = re.sub(r'ます(?:〳〵|/\\)', 'ますます', text)
     text = text.replace('元年', '1年')
@@ -56,7 +58,7 @@ def normalize(text, input_name=''):
         before = text[match.start()-1:match.start()]
         after = text[match.end():]
         isolated = (not before or not before.isalnum()) and (not after or not after[0].isalnum())
-        numeric_context = before == '第' or bool(re.match(r'(?:以上|以下|年|月|日|人|戶|泊|巡|次|案|區|郡|陣|個|ケ|ヶ|時|分|秒|番|號|回|枚)', after))
+        numeric_context = before == '第' or bool(re.match(r'(?:以上|以下|年|月|日|人|戸|泊|巡|次|案|区|郡|陣|個|ケ|ヶ|時|分|秒|番|号|回|枚)', after))
         if isolated or numeric_context or any(c.isascii() and c.isdigit() for c in value):
             return str(asian_number(value))
         return value  # Do not turn 三笠山 or 百貨店 into numeric quantities.
