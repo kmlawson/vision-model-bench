@@ -18,7 +18,7 @@ Token order does not affect this score. Reordered paragraphs, table rows, or col
 
 ## Exact-number F1
 
-The same multiset formula applies only to complete numeric values. A single incorrect digit makes that whole value fail to match. Thousands commas, Unicode width, leading zeros, and trailing decimal zeros are normalized: `1,234.00` and `1234` are equal. Numbers in numeric Asian quantity/date/ordinal contexts are converted, so `二萬`, `2萬`, and `20,000` agree. Proper names such as `三笠山` are preserved. Itinerary clock styles such as `05・23` and `5:23` agree. Repeated numbers must match in count; their row/column association is not established by this metric.
+The same multiset formula applies only to complete numeric values. A single incorrect digit makes that whole value fail to match. Thousands commas (including the ideographic `、` used as a thousands separator, so `5、158` and `5,158` agree), Unicode width, leading zeros, and trailing decimal zeros are normalized: `1,234.00` and `1234` are equal. Numbers in numeric Asian quantity/date/ordinal contexts are converted, so `二萬`, `2萬`, and `20,000` agree. Proper names such as `三笠山` are preserved. Itinerary clock styles such as `05・23` and `5:23` agree. Repeated numbers must match in count; their row/column association is not established by this metric.
 
 ## Ordered diagnostic: character error rate
 
@@ -26,7 +26,7 @@ Exact unit-cost Levenshtein distance over normalized character streams counts th
 
 The dashboard's diff aligns normalized content tokens with a sequence matcher for readable context. These diff hunks are an inspection aid; they are not the minimal Levenshtein edit decomposition and are not additional score penalties.
 
-## Normalization policy (content-v1)
+## Normalization policy (content-v2)
 
 - Strip HTML/Markdown presentation, table separators, code fences, and hyperlink destinations; retain visible link text.
 - Apply Unicode NFKC and case folding. Width, ligature, superscript, and quote styles become comparable. Traditional and modern CJK glyphs remain distinct when NFKC does not equate them.

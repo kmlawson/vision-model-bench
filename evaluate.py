@@ -10,7 +10,7 @@ from pathlib import Path
 import re
 import unicodedata
 
-VERSION = 'content-v1'
+VERSION = 'content-v2'
 ROOT = Path(__file__).resolve().parent
 DIGITS = {'零': 0, '〇': 0, **dict(zip('一二三四五六七八九', range(1, 10)))}
 DIGITS.update({'兩': 2, '两': 2, '両': 2})
@@ -61,7 +61,8 @@ def normalize(text, input_name=''):
             return str(asian_number(value))
         return value  # Do not turn 三笠山 or 百貨店 into numeric quantities.
     text = re.sub('[' + ASIAN + r'0-9]+', replace_asian, text)
-    text = re.sub(r'(?<=\d),(?=\d{3}(?:\D|$))', '', text)
+    # Japanese typesetting often uses the ideographic comma as a thousands separator.
+    text = re.sub(r'(?<=\d)[,、](?=\d{3}(?:\D|$))', '', text)
     if input_name == 'itinerary.png':
         text = re.sub(r'(?<!\d)([0-2]?\d)[・:.](\d{2})(?!\d)', lambda m: str(int(m[1])) + ':' + m[2], text)
     tokens, numbers = [], []

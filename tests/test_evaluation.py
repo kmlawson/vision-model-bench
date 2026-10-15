@@ -9,6 +9,12 @@ class EvaluationTests(unittest.TestCase):
         self.assertEqual(score(a,b)['content']['f1'],1)
         self.assertEqual(score(a,b)['numbers']['f1'],1)
 
+    def test_ideographic_comma_thousands_separator(self):
+        result=score('| 岩見澤町 | 5,158 | 29,229 | 1,234,567 |','| 岩見澤町 | 5、158 | 29、229 | 1、234、567 |')
+        self.assertEqual(result['content']['f1'],1)
+        self.assertEqual(result['numbers']['f1'],1)
+        self.assertEqual(normalize('1、2、3')['numbers'],['1','2','3'])
+
     def test_layout_reordering_not_penalized_by_headline(self):
         result=score('alpha 12 beta 23','beta 23 alpha 12')
         self.assertEqual(result['content']['f1'],1)
