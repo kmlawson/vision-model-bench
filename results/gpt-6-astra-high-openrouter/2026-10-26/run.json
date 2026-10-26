@@ -1,0 +1,497 @@
+{
+  "model": "openrouter/openai/gpt-6-astra",
+  "reasoning_effort": "high",
+  "backend": "llm",
+  "date": "2026-10-26",
+  "started_at": "2026-10-26T15:05:19.499917+00:00",
+  "instructions_sha256": "48bf7c9a7be01aa02742fc25453a458bee826a3e6513d628fd4c3d0a37efcb9f",
+  "execution": "Fresh CLI invocation per image; no conversation continuation, OCR, reference answers, or editorial corrections.",
+  "reference_status": "Ground truth is used only after extraction, never supplied to the model.",
+  "tasks": [
+    {
+      "task": 1,
+      "input": "files/1931-table-english.png",
+      "input_sha256": "b9e5a06aa10503fa8aeb0cbcff7369a03069eea5b3c62404a9e896da188c1fac",
+      "output": "1931-table-english.md",
+      "prompt": "Extract just the table title, data, and table notes from the top of 1931-table-english.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "status": "completed",
+      "started_at": "2026-10-26T15:05:19.500584+00:00",
+      "command": [
+        "llm",
+        "-m",
+        "openrouter/openai/gpt-6-astra",
+        "-a",
+        "/Users/kml/shell/projects/extract-benchmark/files/1931-table-english.png",
+        "--no-log",
+        "--hide-reasoning",
+        "--json",
+        "-o",
+        "reasoning_effort",
+        "high",
+        "Extract just the table title, data, and table notes from the top of 1931-table-english.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs."
+      ],
+      "submitted_prompt": "Extract just the table title, data, and table notes from the top of 1931-table-english.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "raw_stdout": "raw/1931-table-english.stdout.json",
+      "raw_stderr": "raw/1931-table-english.stderr.txt",
+      "exit_code": 0,
+      "output_bytes": 2645,
+      "output_sha256": "ac959a563d1af18ef800239630f42a08a6dd89ca7a84c83fdf877083dcc29271",
+      "response_metadata": {
+        "model": "openrouter/openai/gpt-6-astra",
+        "resolved_model": null,
+        "options_json": {
+          "reasoning_effort": "high"
+        },
+        "duration_ms": 22419,
+        "input_tokens": 2948,
+        "output_tokens": 1495,
+        "token_details": "{\"input_tokens_details\": {\"cache_write_tokens\": 2945, \"cached_tokens\": 0}, \"output_tokens_details\": {\"reasoning_tokens\": 760}}",
+        "conversation_id": "01m5wbx7ky1s3xdwqjk4v6f57e",
+        "provider_model": "openai/gpt-6-astra",
+        "provider_status": "completed",
+        "provider_usage": {
+          "input_tokens": 2948,
+          "input_tokens_details": {
+            "cache_write_tokens": 2945,
+            "cached_tokens": 0
+          },
+          "output_tokens": 1495,
+          "output_tokens_details": {
+            "reasoning_tokens": 760
+          },
+          "total_tokens": 4443,
+          "cost": 0.110476575,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0.1115925,
+            "upstream_inference_input_cost": 0.0368425,
+            "upstream_inference_output_cost": 0.07475
+          }
+        }
+      },
+      "finished_at": "2026-10-26T15:05:43.488410+00:00",
+      "elapsed_seconds": 23.983
+    },
+    {
+      "task": 2,
+      "input": "files/difficult-table.png",
+      "input_sha256": "6e8030417069ffea318f62aa0734952ce6f272a2ab03c1e898b3743ca4fd7c7a",
+      "output": "difficult-table.md",
+      "prompt": "Extract the text from difficult-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "status": "completed",
+      "started_at": "2026-10-26T15:05:43.489570+00:00",
+      "command": [
+        "llm",
+        "-m",
+        "openrouter/openai/gpt-6-astra",
+        "-a",
+        "/Users/kml/shell/projects/extract-benchmark/files/difficult-table.png",
+        "--no-log",
+        "--hide-reasoning",
+        "--json",
+        "-o",
+        "reasoning_effort",
+        "high",
+        "Extract the text from difficult-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs."
+      ],
+      "submitted_prompt": "Extract the text from difficult-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "raw_stdout": "raw/difficult-table.stdout.json",
+      "raw_stderr": "raw/difficult-table.stderr.txt",
+      "exit_code": 0,
+      "output_bytes": 1269,
+      "output_sha256": "2d8951e337680b1115adcb87ff695203bb0930b1ce8504e22d768fbf99f90c39",
+      "response_metadata": {
+        "model": "openrouter/openai/gpt-6-astra",
+        "resolved_model": null,
+        "options_json": {
+          "reasoning_effort": "high"
+        },
+        "duration_ms": 92018,
+        "input_tokens": 2171,
+        "output_tokens": 3922,
+        "token_details": "{\"input_tokens_details\": {\"cache_write_tokens\": 2168, \"cached_tokens\": 0}, \"output_tokens_details\": {\"reasoning_tokens\": 3336}}",
+        "conversation_id": "01m5wbxz1b195kw5qs558sjxbw",
+        "provider_model": "openai/gpt-6-astra",
+        "provider_status": "completed",
+        "provider_usage": {
+          "input_tokens": 2171,
+          "input_tokens_details": {
+            "cache_write_tokens": 2168,
+            "cached_tokens": 0
+          },
+          "output_tokens": 3922,
+          "output_tokens_details": {
+            "reasoning_tokens": 3336
+          },
+          "total_tokens": 6093,
+          "cost": 0.2209977,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0.22323,
+            "upstream_inference_input_cost": 0.02713,
+            "upstream_inference_output_cost": 0.1961
+          }
+        }
+      },
+      "finished_at": "2026-10-26T15:07:17.095405+00:00",
+      "elapsed_seconds": 93.576
+    },
+    {
+      "task": 3,
+      "input": "files/english-page.png",
+      "input_sha256": "d25aacc8656b521b220e00c04262b6079ac1de0a37cd3e663e055a3bf1a25681",
+      "output": "english-page.md",
+      "prompt": "Extract the text from the right page of english-page.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "status": "completed",
+      "started_at": "2026-10-26T15:07:17.098482+00:00",
+      "command": [
+        "llm",
+        "-m",
+        "openrouter/openai/gpt-6-astra",
+        "-a",
+        "/Users/kml/shell/projects/extract-benchmark/files/english-page.png",
+        "--no-log",
+        "--hide-reasoning",
+        "--json",
+        "-o",
+        "reasoning_effort",
+        "high",
+        "Extract the text from the right page of english-page.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs."
+      ],
+      "submitted_prompt": "Extract the text from the right page of english-page.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "raw_stdout": "raw/english-page.stdout.json",
+      "raw_stderr": "raw/english-page.stderr.txt",
+      "exit_code": 0,
+      "output_bytes": 3622,
+      "output_sha256": "053ce16a9f351f59aa5db71cf2eb7f58bbaf721a5b81c980a446d1a12f8e4211",
+      "response_metadata": {
+        "model": "openrouter/openai/gpt-6-astra",
+        "resolved_model": null,
+        "options_json": {
+          "reasoning_effort": "high"
+        },
+        "duration_ms": 48022,
+        "input_tokens": 4044,
+        "output_tokens": 2376,
+        "token_details": "{\"input_tokens_details\": {\"cache_write_tokens\": 4041, \"cached_tokens\": 0}, \"output_tokens_details\": {\"reasoning_tokens\": 1552}}",
+        "conversation_id": "01m5wc0thn3yvj4s5vp44jbm28",
+        "provider_model": "openai/gpt-6-astra",
+        "provider_status": "completed",
+        "provider_usage": {
+          "input_tokens": 4044,
+          "input_tokens_details": {
+            "cache_write_tokens": 4041,
+            "cached_tokens": 0
+          },
+          "output_tokens": 2376,
+          "output_tokens_details": {
+            "reasoning_tokens": 1552
+          },
+          "total_tokens": 6420,
+          "cost": 0.167649075,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0.1693425,
+            "upstream_inference_input_cost": 0.0505425,
+            "upstream_inference_output_cost": 0.1188
+          }
+        }
+      },
+      "finished_at": "2026-10-26T15:08:06.768645+00:00",
+      "elapsed_seconds": 49.67
+    },
+    {
+      "task": 4,
+      "input": "files/itinerary.png",
+      "input_sha256": "aa8703d508f7f417d18677747adfa9f54ccc9fbac2509e55f2b26665be03e55b",
+      "output": "itinerary.md",
+      "prompt": "Extract the itinerary number 3 from itinerary.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "status": "completed",
+      "started_at": "2026-10-26T15:08:06.774634+00:00",
+      "command": [
+        "llm",
+        "-m",
+        "openrouter/openai/gpt-6-astra",
+        "-a",
+        "/Users/kml/shell/projects/extract-benchmark/files/itinerary.png",
+        "--no-log",
+        "--hide-reasoning",
+        "--json",
+        "-o",
+        "reasoning_effort",
+        "high",
+        "Extract the itinerary number 3 from itinerary.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs."
+      ],
+      "submitted_prompt": "Extract the itinerary number 3 from itinerary.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "raw_stdout": "raw/itinerary.stdout.json",
+      "raw_stderr": "raw/itinerary.stderr.txt",
+      "exit_code": 0,
+      "output_bytes": 2836,
+      "output_sha256": "240e252ea181a57b3b6a2d06a4bc0732d1b7efe4b864f56e2d0917f7e3a2ee6a",
+      "response_metadata": {
+        "model": "openrouter/openai/gpt-6-astra",
+        "resolved_model": null,
+        "options_json": {
+          "reasoning_effort": "high"
+        },
+        "duration_ms": 301265,
+        "input_tokens": 12375,
+        "output_tokens": 11856,
+        "token_details": "{\"input_tokens_details\": {\"cache_write_tokens\": 12372, \"cached_tokens\": 0}, \"output_tokens_details\": {\"reasoning_tokens\": 10730}}",
+        "conversation_id": "01m5wc2as9900h1kaaj5yvfjs1",
+        "provider_model": "openai/gpt-6-astra",
+        "provider_status": "completed",
+        "provider_usage": {
+          "input_tokens": 12375,
+          "input_tokens_details": {
+            "cache_write_tokens": 12372,
+            "cached_tokens": 0
+          },
+          "output_tokens": 11856,
+          "output_tokens_details": {
+            "reasoning_tokens": 10730
+          },
+          "total_tokens": 24231,
+          "cost": 0.7400052,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0.74748,
+            "upstream_inference_input_cost": 0.15468,
+            "upstream_inference_output_cost": 0.5928
+          }
+        }
+      },
+      "finished_at": "2026-10-26T15:13:09.489377+00:00",
+      "elapsed_seconds": 302.714
+    },
+    {
+      "task": 5,
+      "input": "files/population-stats-japanese.png",
+      "input_sha256": "f535e12869d328add857874f694999fb811855b6d3f7d71ba71a647b9a8b8e33",
+      "output": "population-stats-japanese.md",
+      "prompt": "Extract the table of population statistics from population-stats-japanese.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "status": "completed",
+      "started_at": "2026-10-26T15:13:09.491470+00:00",
+      "command": [
+        "llm",
+        "-m",
+        "openrouter/openai/gpt-6-astra",
+        "-a",
+        "/Users/kml/shell/projects/extract-benchmark/files/population-stats-japanese.png",
+        "--no-log",
+        "--hide-reasoning",
+        "--json",
+        "-o",
+        "reasoning_effort",
+        "high",
+        "Extract the table of population statistics from population-stats-japanese.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs."
+      ],
+      "submitted_prompt": "Extract the table of population statistics from population-stats-japanese.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "raw_stdout": "raw/population-stats-japanese.stdout.json",
+      "raw_stderr": "raw/population-stats-japanese.stderr.txt",
+      "exit_code": 0,
+      "output_bytes": 1738,
+      "output_sha256": "b4ed26f4b86b153e278fcfa9177d9347ab3c91d9e82379cb2f00c599f816b75a",
+      "response_metadata": {
+        "model": "openrouter/openai/gpt-6-astra",
+        "resolved_model": null,
+        "options_json": {
+          "reasoning_effort": "high"
+        },
+        "duration_ms": 293443,
+        "input_tokens": 2434,
+        "output_tokens": 12619,
+        "token_details": "{\"input_tokens_details\": {\"cache_write_tokens\": 2431, \"cached_tokens\": 0}, \"output_tokens_details\": {\"reasoning_tokens\": 11869}}",
+        "conversation_id": "01m5wcbjndhe0a8ehrqa31zz6d",
+        "provider_model": "openai/gpt-6-astra",
+        "provider_status": "completed",
+        "provider_usage": {
+          "input_tokens": 2434,
+          "input_tokens_details": {
+            "cache_write_tokens": 2431,
+            "cached_tokens": 0
+          },
+          "output_tokens": 12619,
+          "output_tokens_details": {
+            "reasoning_tokens": 11869
+          },
+          "total_tokens": 15053,
+          "cost": 0.654753825,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0.6613675,
+            "upstream_inference_input_cost": 0.0304175,
+            "upstream_inference_output_cost": 0.63095
+          }
+        }
+      },
+      "finished_at": "2026-10-26T15:18:04.583943+00:00",
+      "elapsed_seconds": 295.092
+    },
+    {
+      "task": 6,
+      "input": "files/sideways-table.png",
+      "input_sha256": "89b8fd891f136ef2998a982af74b1bddd34389be9e68b20b990a816985c7882e",
+      "output": "sideways-table.md",
+      "prompt": "Extract the table title, data, and notes from sideways-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "status": "completed",
+      "started_at": "2026-10-26T15:18:04.585246+00:00",
+      "command": [
+        "llm",
+        "-m",
+        "openrouter/openai/gpt-6-astra",
+        "-a",
+        "/Users/kml/shell/projects/extract-benchmark/files/sideways-table.png",
+        "--no-log",
+        "--hide-reasoning",
+        "--json",
+        "-o",
+        "reasoning_effort",
+        "high",
+        "Extract the table title, data, and notes from sideways-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs."
+      ],
+      "submitted_prompt": "Extract the table title, data, and notes from sideways-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "raw_stdout": "raw/sideways-table.stdout.json",
+      "raw_stderr": "raw/sideways-table.stderr.txt",
+      "exit_code": 0,
+      "output_bytes": 2238,
+      "output_sha256": "dfdd64bc0e9ca7a6ffbdf3ce489c7f58709fd146d9b59c232ef83918f255937e",
+      "response_metadata": {
+        "model": "openrouter/openai/gpt-6-astra",
+        "resolved_model": null,
+        "options_json": {
+          "reasoning_effort": "high"
+        },
+        "duration_ms": 183873,
+        "input_tokens": 1829,
+        "output_tokens": 8332,
+        "token_details": "{\"input_tokens_details\": {\"cache_write_tokens\": 1826, \"cached_tokens\": 0}, \"output_tokens_details\": {\"reasoning_tokens\": 7216}}",
+        "conversation_id": "01m5wcmjdjerppqarnfh0bq2kt",
+        "provider_model": "openai/gpt-6-astra",
+        "provider_status": "completed",
+        "provider_usage": {
+          "input_tokens": 1829,
+          "input_tokens_details": {
+            "cache_write_tokens": 1826,
+            "cached_tokens": 0
+          },
+          "output_tokens": 8332,
+          "output_tokens_details": {
+            "reasoning_tokens": 7216
+          },
+          "total_tokens": 10161,
+          "cost": 0.43506045,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0.439455,
+            "upstream_inference_input_cost": 0.022855,
+            "upstream_inference_output_cost": 0.4166
+          }
+        }
+      },
+      "finished_at": "2026-10-26T15:21:09.667626+00:00",
+      "elapsed_seconds": 185.082
+    },
+    {
+      "task": 7,
+      "input": "files/text-two-columns-plus-tables.png",
+      "input_sha256": "f43913ccdbd7d78cd4268e7afa298c4a1b388d5330c77bc9bc7e8ae39d7e1bdd",
+      "output": "text-two-columns-plus-tables.md",
+      "prompt": "Extract the text and tables from text-two-columns-plus-tables.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "status": "completed",
+      "started_at": "2026-10-26T15:21:09.670555+00:00",
+      "command": [
+        "llm",
+        "-m",
+        "openrouter/openai/gpt-6-astra",
+        "-a",
+        "/Users/kml/shell/projects/extract-benchmark/files/text-two-columns-plus-tables.png",
+        "--no-log",
+        "--hide-reasoning",
+        "--json",
+        "-o",
+        "reasoning_effort",
+        "high",
+        "Extract the text and tables from text-two-columns-plus-tables.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs."
+      ],
+      "submitted_prompt": "Extract the text and tables from text-two-columns-plus-tables.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "raw_stdout": "raw/text-two-columns-plus-tables.stdout.json",
+      "raw_stderr": "raw/text-two-columns-plus-tables.stderr.txt",
+      "exit_code": 0,
+      "output_bytes": 2679,
+      "output_sha256": "e323309cf8fea31569287f8983538fba8d3aaaef9d50b0c0aa0077ef29fea6a4",
+      "response_metadata": {
+        "model": "openrouter/openai/gpt-6-astra",
+        "resolved_model": null,
+        "options_json": {
+          "reasoning_effort": "high"
+        },
+        "duration_ms": 306167,
+        "input_tokens": 1816,
+        "output_tokens": 14746,
+        "token_details": "{\"input_tokens_details\": {\"cache_write_tokens\": 1813, \"cached_tokens\": 0}, \"output_tokens_details\": {\"reasoning_tokens\": 13761}}",
+        "conversation_id": "01m5wct7dh4x5xcsb9p98ttkw2",
+        "provider_model": "openai/gpt-6-astra",
+        "provider_status": "completed",
+        "provider_usage": {
+          "input_tokens": 1816,
+          "input_tokens_details": {
+            "cache_write_tokens": 1813,
+            "cached_tokens": 0
+          },
+          "output_tokens": 14746,
+          "output_tokens_details": {
+            "reasoning_tokens": 13761
+          },
+          "total_tokens": 16562,
+          "cost": 0.752392575,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0.7599925,
+            "upstream_inference_input_cost": 0.0226925,
+            "upstream_inference_output_cost": 0.7373
+          }
+        }
+      },
+      "finished_at": "2026-10-26T15:26:17.319783+00:00",
+      "elapsed_seconds": 307.648
+    },
+    {
+      "task": 8,
+      "input": "files/wide-table.png",
+      "input_sha256": "d7b1b756316bfb1f661960562835bdcc68743140ef32610a8559806f145a1544",
+      "output": "wide-table.md",
+      "prompt": "Extract the text from wide-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "status": "failed",
+      "started_at": "2026-10-26T15:26:17.321469+00:00",
+      "command": [
+        "llm",
+        "-m",
+        "openrouter/openai/gpt-6-astra",
+        "-a",
+        "/Users/kml/shell/projects/extract-benchmark/files/wide-table.png",
+        "--no-log",
+        "--hide-reasoning",
+        "--json",
+        "-o",
+        "reasoning_effort",
+        "high",
+        "Extract the text from wide-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs."
+      ],
+      "submitted_prompt": "Extract the text from wide-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "raw_stdout": "raw/wide-table.stdout.json",
+      "raw_stderr": "raw/wide-table.stderr.txt",
+      "exit_code": 1,
+      "error": "CLI exit 1: Error: Error code: 402 - {'error': {'message': \"This request requires more credits, or fewer max_tokens. You requested up to 65536 tokens, but can only afford 60282. To increase, visit https://openrouter.ai/workspaces/default/keys/512c6a7b271c583f019431d3a13b063c8a5bee7e3b68a8b8462f598c4bf023c4 and adjust the key's total limit\", 'code': 402, 'metadata': {'limit_source': 'openrouter_credits', 'remedy_hint': 'Add credits at https://openrouter.ai/settings/credits, or lower max_tokens / prompt size to fit your remaining balance.', 'provider_name': None, 'previous_errors': [{'code': 402, 'message': \"This request requires more credits, or fewer max_tokens. You requested up to 65536 tokens, but can only afford 60282. To increase, visit https://openrouter.ai/workspaces/default/keys/512c6a7b271c583f019431d3a13b063c8a5bee7e3b68a8b8462f598c4bf023c4 and adjust the key's total limit\"}]}}, 'user_id': 'user_2vKZASPEY12C1U5fl0NxCpA0vA8'}\n",
+      "finished_at": "2026-10-26T15:26:19.729488+00:00",
+      "elapsed_seconds": 2.408
+    }
+  ],
+  "status": "incomplete",
+  "finished_at": "2026-10-26T15:26:19.730254+00:00",
+  "cli_version": "llm, version 0.36",
+  "plugin": "llm-openrouter 0.7.1",
+  "model_catalog": "openrouter-model.json",
+  "measurement_notes": "Each canonical image was submitted once, consecutively, with explicit high reasoning effort (-o reasoning_effort high), confirmed in each raw response and no tools. CLI requests have the same 660-second timeout used for the earlier trials. Usage not returned by failed requests remains unavailable. Reported token fields are retained exactly; reasoning counts are displayed separately and never added to reported totals. Input 8 was rejected before generation with HTTP 402: available OpenRouter credits could not cover the default 65,536-token allowance. It remains a failed request without a retry or a changed token limit; no usage was returned for it.",
+  "display_name": "GPT-6 Astra High (OpenRouter)"
+}

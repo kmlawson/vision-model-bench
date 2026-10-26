@@ -1,0 +1,121 @@
+[
+  {
+    "id": "01m5wbx7m0t6pwp0j8r3v0yh26",
+    "model": "openrouter/openai/gpt-6-astra",
+    "resolved_model": null,
+    "options_json": {
+      "reasoning_effort": "high"
+    },
+    "conversation_id": "01m5wbx7ky1s3xdwqjk4v6f57e",
+    "duration_ms": 22419,
+    "datetime_utc": "2026-10-26T15:05:20.768210+00:00",
+    "input_tokens": 2948,
+    "output_tokens": 1495,
+    "token_details": "{\"input_tokens_details\": {\"cache_write_tokens\": 2945, \"cached_tokens\": 0}, \"output_tokens_details\": {\"reasoning_tokens\": 760}}",
+    "conversation_name": "Extract just the table title, d\u2026",
+    "conversation_model": "openrouter/openai/gpt-6-astra",
+    "schema_json": null,
+    "prompt": "Extract just the table title, data, and table notes from the top of 1931-table-english.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example \u4e09 \u2192 3 and \u4e8c\u5341\u4e09 \u2192 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+    "system": null,
+    "response": "TABLE 2\n\nPOPULATION AND CULTIVATED AREA OF 131 FLOODED *HSIEN*  \nIN THE 1931 FLOOD AREA IN THE YANGTZE  \nAND HWAI VALLEYS, CHINA.\\*\n\n| Province | Number of flooded *hsien* in the province included in the study | Total farm families affected (00 omitted) | Per cent. of cultivated area flooded | Cultivated area (mow) flooded (00 omitted) | Total farm families (00 omitted) | Total cultivated area (mow) (00 omitted) |\n|---|---|---|---|---|---|---|\n| Hunan | 15 | 4,242 | 51 | 89,634 | 9,088 | 174,059 |\n| Hupeh | 30 | 10,227 | 55 | 139,183 | 19,919 | 253,427 |\n| Kiangsi | 14 | 2,433 | 51 | 49,427 | 4,792 | 96,348 |\n| South Anhwei | 24 | 6,132 | 62 | 86,797 | 9,906 | 140,227 |\n| South Kiangsu | 11 | 2,243 | 43 | 40,255 | 5,375 | 93,675 |\n| Honan | 1 | 636 | 85 | 31,875 | 748 | 37,500 |\n| North Anhwei | 19 | 7,670 | 60 | 237,678 | 12,965 | 394,309 |\n| North Kiangsu | 17 | 8,741 | 53 | 196,716 | 15,790 | 368,333 |\n| Total | 131 | 42,324 | 56 | 871,565 | 78,583 | 1,557,878 |\n\n\\*Most of the information on total farm families and total cultivated area per *hsien* is from data published under the direction of C. C. Chang of the former Statistical Bureau of the Legislative Yuan and from data collected in connection with the 1931 flood survey of The University of Nanking. Other sources were chiefly provincial government figures.\n\nThe percentages of cultivated area flooded are chiefly from estimates obtained from the 1931 flood survey of The University of Nanking and from planimetered data of land area flooded. Percentages from these two sources were checked with those obtained under the direction of C. C. Chang of the Directorate of Statistics and those reported by Magistrates to the National Flood Relief Commission, and with maps of area flooded.\n\nFor some *hsien* different sources gave great variation in the number of farm families and the amount of cultivated area. Determination of the more reasonable number was reached in part by computation of the density of population per square mile of cultivated area. Even the best figures give densities of great variation and often appear to be too high or too low. The average density of 1160 persons per square mile of cultivated area, for the entire area of the 131 *hsien* appears to be fairly reasonable as it checks with population densities previously obtained by the Department of Agricultural Economics, University of Nanking.\n\nIn cases of individual *hsien*, however, there may be serious underestimates of either number of families or of amount of cultivated area. For various reasons the amount of cultivated area is likely to be understated by at least 10-20 per cent.",
+    "reasoning": null,
+    "prompt_json": null,
+    "response_json": {
+      "object": "response",
+      "parallel_tool_calls": true,
+      "temperature": 1.0,
+      "tool_choice": "auto",
+      "top_p": 1.0,
+      "background": false,
+      "service_tier": "default",
+      "status": "completed",
+      "top_logprobs": 0,
+      "truncation": "disabled",
+      "frequency_penalty": 0,
+      "presence_penalty": 0,
+      "store": false,
+      "tools": [],
+      "id": "gen-1793027121-ncp3vfWjjW1J0cnV8jUG",
+      "created_at": 1793027121.0,
+      "model": "openai/gpt-6-astra",
+      "output": [
+        {
+          "id": "rs_0360d78245c2bf44016adf6c368af487d18239ab5876cb2771",
+          "summary": [],
+          "type": "reasoning",
+          "encrypted_content": "gAAAAABq32w76p6NZUjxPS6abFra3rvDPzCFon1pOPguzPoZDtpgcTwbIJxECW7sQPp8ELVzm8ogJ4LfqG8iqjXXt3sChcMuKF_IKUlteE6ZzyqR0BkGnp5t2eEb2LvgkPpfY3vEzon61IT6eCEMOkxoTAptD9UC87yzr7vzWSlYNx38rJGc7w-RJ-7HjVMb5oeBA6z27ctsE4HdeXpaURR7PPKBiDBg24afamhOi5oGD1S1xO-VQdD3G3Y5OVkiG4FLagmA5m8-Iv2tmNxaFNEUA6PqePQox0-eVL_f0bDzbS6FqDlQIu6xinswVLwls6CrnTl1DDyQlPNk_JOY7bZlhRtZacy0FKBkHRTZJaUmO5keXUgj2jSskIhEHHyomh2nyBcxp3lex--UDlNQ2aHTf5Z4wHuGugRLQtYZxTNS550pbFDW2McP39wzzASsG6UtlZBB8Rw-Vs0p14nVJIHrGtZbl1tyEqTtKFS1ZBOKSMoCQsn8h2n0PBBW2OKOPVWN5bKxFbpbMTESloONeLQLSjfLZtWmV4XGLzScWpHHPMMYJA0n-Z7_CgddNkemSc5mux0HzVYEyhu3ZZdgLva4Rv3Kp1HW8BaVUbdEORilKxOIxhv5xafGHJYSYLk9ZLZYpJwSffuneaZBqbiVPKhRpWJjMSvJkvaj4VqicIgDC8-d5_b0b1tVvIGMP3ZD0_Xs01e-Hpnnz5IaASxxAsHco09ovnH24c0tvizRKC8W35ozoJDxz1iR8vzE6neaK3d6xHYyJyk3Xc5E4PQvNWDXaOb4vR52CAkgO_bTi3ERHdiY61xRnhfwfa3Z5ensSFQZUsRKwa7ly9xx-ut-rFgjJRb2P_u6vMLYmW-ZNsL883YpAdjDV-ObcJP67sES2aHHif3ISNIm-Kka284jRGric731AA0dRsAA7JrI-miLRV0ZH_bemW06K3OW6x-iqy18Govub72MyRZJm9bwPW_sb3_P08HRUxDQ14U4jv1PQXSmgSxvN4l6vkRmw4Cv-pmwjQjrsSVLAtyKbd9lYk4teAzb8c0BWJcFcCFr4QvGalHcVzmhR8hj0-7j9M8qO8G3Sl1PdQM3RajmKvDDJzrTN3fQS9wVNhfKm_uH8Jq858ii7JDi6ifli8in0N5djnlo2X73fnrPazec4w7KHKWCxk98kBLI5B_MoeHttexjYmYjS02QOOveh8TEeo3AP3e3X_ZUpSTgZHf3yzT-7DMQ6bPTpaSNn6PfhM8SnTqT6uQTtniABLayiIAOJnsVaqQr2IdPZYMGrhUH3BA2O4A8AiwDHCJw0BWmsH3X_WjTI4VKSXaKCIUCciZdCwjROW2mh5bDzuvCzhcTAaZFVsMmcB8WkZdELMMfgb2MO9CcD6a9OP6gfvl_616tvUDGtlTBfLEnxXBUlaKCiSNy7zpSMHOZr-TXUinRYMEmUtDR7HxFL5xo_8DyJ8wP5rBE5hYRbWqhNmz0FAMIuzOsM1RsmYG-dOubSv2-0dWWU5-3m4-2VXpetsIpX4RjXpP4WzaRuH0YUxcb3fNZ8C67PsrhWsRZi4GEOi_XcW-4IfsMIKhF5prgC8CZPOELx9GI5k4BzlQvyWO0_VMsVfKzeAVvt1pvTEPd6NM0Z8rc3cY8iT3-fllPA55FfCV6Rlpbo9XJ8-lLF3RJx011nKnpBzkzTJYxN97-CzpA7ghkKR3YYLkRdOH1DyGSeTmmi5L51RXRRyohsPcQaIcKn_Q5NgW93ag7TLRWaXJ15tEEy-iupo4444OPT133s1h1UbtFo5JnNMXjyGkrdU5IxVZoP-FEE8Tv7QawoIfF8asuhDAHDhIz0wskU7xW6oJqnImfDXo6fqgKSjW56t57y0qYBHhPIQefcLeEEeVeT8q9qH6mpQAF-nbxLBnR5Na1iW_VzLH77ok652XaQTGvg-pkBeOmu7sIS6slLcw_AgY_dcA8z4DcP1QKncwNxlaJjwPXOVG3elqzML7y_rDzGFkx8g_trXdDzzj7df_QFLMrzCg0exsE6QM9F47pbLQsUjATDcBZYf7ociXz2SrOvNNP8E0Ehi5x2Mwleb1YWBhO_JTz6ByIe8W0P1tKW6g-sGPMdQUQKPQj20cw-8_IEvSFHRPzs086qHdgPWwDiwPLByFy48siCrDIo2vUMDJ0zSyu2WsiEW3gWumlPCjNUCIA2kbEjUv8H_p91eJzqdUxfg5IfY9Bn4tU2_d1CZsWQ4nm8K9DjNzX14ISXImYGTYw8ot4TJrN_hwIrMlmvPxgAci-H-m1243nsTqjTLaQLMRkbSJWqUCDpQTONIT1CrLv2MeOJC9eWlYewMf9pyZ-KMudZFanQCdFGpKHjuzrO5RoTcKcXYHvUsNnvHTKzfhB3XCc_TA-dpzp9UcRwjERSN3UkZWOqXnsn9vgvqaoaRM8gfRBPEeRCI4RuVDeEDwyygXhvpvUDIvlZdleCFAwS4CKeGYmehnXrmBz0XF4YcIMQ8k8xQFkj5pqwd4rSAcw2lgcgsBc78K0foxV5XjW6p391SqsREW_JbWcPUkEv6N9rXCG2AsTnaAl6lv2Qu4Nrn2gzVe-iyLMV7SoI_xZ7GDh2-A5qIBghBXQP-m4AMPsG_21x-clZLp_qTJ53RRbxWFcAntPQbQ9H7kxxEQNsJeZIYpCMkoiw5yjRr1kzEUUcZKkIgNshKsAchuXiABdG3qH6eEYyHplVsLYMmqqqg1vIqcY3u3gre8S61bApLvRhIHtN--vpsAj5ImOpydONP4_rDej-fHtO9gCudxTpZBiZ_J8RtTI4OVynm5d1cjZCB3NUqNFAhHkC8tGmaEuBRdLw5xOYPVDZHObR2G4VWZ-E_JQCVzmHK06Ty02etn_9DIpUnXYUUWIEPN6_iGgM3GHWSpKBqRh2OrYanUU4Buwx9GD-N7_hI6sh4jVdPvLm5C1mGlfEbeTOJDKYqVmPOh3c-mjZuXhK8bBMlyPCSWZCIZct3G8WW7JxLvs70UcuW1PYARm51DPSCQSEfmtEONONlkgpnhJpDWdbrskA-YPmIWRvCbP2yquTzweBKYr3mwm0o75g11j443jaEntKQacq2iGZhR-B_ExYi0U7GMLbO5I5DjEeDyrbaubdiM3F-jaZkyXmnWPaCz0QhLldq0ZicIWGIKa4XAHltXu3Cb153gENjErNviNyFe6tTQpTCReMx8uzN130EonJ5geFgAHBYCjzhg7m077FwFRA0FwbcQBjS0e1vrqFSPbDcjSEnch8e_y1Bdl-qM7W_A1P5WlRvUl7qy0nbK9kONDOtOCwdo08hQFQC1wMpQnZHJ3ADIUsrnh9NvROWH9KvoN6XS_vOw02GYl43HKVCdT3ImqgGvCJS9qWT9YOufzLgYl2vTBmpZdAo4dhVSculFsU5MAOgLY2bpQ3dvsaH0-GWWTS4vHGBbWh9mh2fYPl4ZuoGoqFHj8VqdSlzkofjWCLbplsBmlkPi5zJHCLgAglcUEMWuyRnAIIORyYQGA41mWOU8I7ng1pPF9nG53t0RRQT4i_qIVU_NBNYysxsHzKG6EjPwr1csUZlwgr2f2w293flUKOb6r9S3J2Gp7ksqH2wXLRs9e4p5aFk6h2xF0voButxPcVFm1iPi0YD9tqZm11iqpPd-FMnOy9VfMpsEfN6zxWfHtuMh3-vBxiEQttx1GjiZ1LCzQdBsUhujcRNnSGIxsJVNgvaVpVlZhmP1fgvQFU9snfwu9h2tzcMbuby8-RvVC08ZU3QS0kVuXKnf6pu7uJUHyTmKaMHB5REAZ222oTlhjrWK7ED9MXE5IOM_z-3tSFL8JIF7nfWaG78reXQj8v2YE4h6kpZWxIM_CLRUjTfADTpW3xQH0uCESEwNaCj6qmAbULcOl3oAUnKB9CxkPvPqQZdhI7AOt6Lo2R0hOVUacnre9HlbFam2rLJl7TX_-HjNbkPBaim3mVPcgYfklZvE4N6EWmmP6JrBoY_odDwyCULtB2qfnQn9Y5Dfy5DB7I7ogD3GwzUvRh1cKrmkef0IqJqvjt1yoFob0QIuYhqWGpZy-gfSrpLyXTtWV7ElnxNG1naoeMJtCjBFiw1kaq4jwEjaBQ_5EFKdM7Zuw3Oe6N60BLuHj3KmGNHrxR3e9V2x26mxmQWEIqwSoUd-6wPBwKaNiP5yzjHRiyL9uZbDCUF4xYFqcojfSyjWGILE3ZtIPuqtzOsYbk8sqFUdex_DsQBe1u7PSAK0Syusn1jN0DatGpgxBsdFSmDlRMG7vT1rqGoLaiKbj6fPL8_FgZhl2ljZMdUa55sA11LgU3Ucha6Cy1S5W4WrGXYsJg29mPV3pq_-_FrREDmSQ4O_AECv_e1kSGR-7S_L77BStOv2fPhvvqur2bh0spgrXK2T3JZcDPhRQdA2-aI5JUhrz8FjV0WKwp42D6BdFyl1kkdR8hwY2tSxdSZiCVAAGESrLxdXqoveJwPu_RtBjTtzP6ZTnmx_WBp87cN7BCIyAj85eutibs40FGFYYscqKo3eXFbZpydLa7Lb-YDJzlR7qE8vYautpo7AzWIoPXjssLsl4A04JAIe2Qi0s5g0d7U2iYeMs19EtS80h6IK8rh9vr81vRdFhbgbFIuUK8WfObzEJzxxfs_75iKRR1xnonYgi79DISefKqylooSAHxT-Foax47OB-mQZcXc6xJCyjw33JNnspV_rzQvKG46HGi76Yl7fM85Tes6eH5LGq72jmchhiIFmbyfLd4PnMHvk-JqLT5xieD6InZD82MCGbhMZ9Dw2mYI8oDMKTxa7RdhvJnsG3OWe2vBQAntpU7OBUgxTmM_62rNG_Q-xovbzj9QdQbtiA0lfUX1aV1qpOhldrmdzBvTye6Y9kQ3puaXAIf5IFV7nUktm0ZfO3aP3Oiw4FtePxKkqziqu7PQ9WHrnj5Z1t4B8a6bS3QI_hekc1VCJgW9g_elUTpxpEv9b7Wb7d0dSXXw9P5KSI5mkr3DQmKacNGmCyLE8iz_3i9gpMEDevP4JHRRpGVTTiSTY_RSimpGacK8VdSiq8exnAX46gEFyG6-GMHFrHmiTJ1himr082KnLT66b4sJpH50mQxO7ROwhlh_Kd1fk8Yj64r0g7PTGJjElI9n9NK-VwbNDH4mTpVB_0PzC6aeYFLxbRrhQL0hNCjf8V9XEXyjoDXSuazecI_9xO9ZbCL7TdsojVljr5gEbSw2BblofSilZNJwDWhqmi78T7eZ_QQIpR92yyXWwJezv6Zqd5bj9EyI7Ee7BdWbwFuezjibccuI3Wj9XvdWWvgPccLJm3DLsO34laFqg60beVcGou78jceihgF8AuKgQmZulXbU13Vf2kHe8gvh_-ZPEw2Jii11wn0Wp1t_hg7b0UQOxr9M9hWTz665RFuCLmXAtJrrGKl-FEdr8hd-AZVsfgEcCJE-DfnY2q0s5_JOaSm5jyporFRc46Emw0-iTPb4f2_-YGb9hkkngJ3otvX2Y-2NFkBA0RjjqbPIjyDP56DZTMZLf468sGXmjsvIqDRBnJTTklESVEeZibGwg7rFRAmEUMkLacuMh0judNyoyd5G5IepAu_DxeZUsMqvH1ONL35JrIUWPrF31ue6oOBMvlWeY9ZSnkb3ZPRfL6s-qYvvui2IDDGVmER9jrlSV4rEc7Um8jV2M_xDyhlLdR6FNCcmw5RXUcwr2lyJfso_k2BmK1D-jfjOFjVuN7gRpcjQqW7oRd9GFoQ4oq7JinzUIlikX4u9Wj3X0nbju2dEvU3DwOrrQP3GB3KTcSmIpiuhcZXGezuAqQAj15zipRvKNzM_RDSoBFjgAaolMQk0z7KwqJVhOHxDpJcZRUBqqfh0iNZ-AFCFvzrSTGzYfeH24upG6cnHX6o64qyuRAYFvFSN1dB7cC26E8qPpxREU1yT1LLgok-lC_T-HZv67IrIj37cdH90YzoURN6nxYtMgruy7Nl9vXiO1UrgXM7rzL5am2BEvW2u67W0uFth0Q4va1v_U0j4PQJZFWwRC0Vs1P4IgVORWxJ8qSWARv2St5rBgtniCdiFQO3WlLUmNJLCzXIYt01GZw6q1en-XzvfC2PVk5VaP8goPKfAbYAEWAvkZ0b5yOoh1Ag0GAK722_B4lfoXr6jn9Wx0ar-tvLnjjvgnulLtl7HmvhnIG0CXlb8Q9TELDgFxCZDlqGs4DTla7YUHWsXtiRpi_Pv9FQJfFJ033p7C0x4Yr8QfZoaYtchzvnpzDbE2FM8i2aEd5dytKhiX6gsNIyygs8K6uZTC7uMwrSFbWhOiL05OD4_nDc8YazoRLdzRvHvAnI0OScYRl8yXxHkBySkhrL71pWk8yiLv-J0tGlg3aEypRfPIlEO95AtqW8hRUN5AJgqjMCR3b03VzE06-eTV5DOReoFRnwGOZRpzTtTpDSJTluE6apofH1BO4FJp9QVxC-Vk3qNuYzA098DARovUowY2E2SUJCuBpNh6VhP2h4muSrphMXYx1kpQKMR6b2qgWeg8F5oUhQqmRxo1fLNn-Rl00VoGk1byDld6J581Qkj2eeEMPGtjtpi0uuZ0CK3RigdKgpM0VhDKayuM_PfkkEE3h2V-tM9tsMg6RT1FwmMrT8DoqdMg0MJWwyr8ANQ1hhmMAOiKmWdmx_8nd8jPBZNQttMIRlW5nfi55GBcU_MyZijDatuSQcCjGLPDYMhgWQDNzSYyYTha3zZbyFZtP9nRb68qEXUI_i8cobNH8lw6NHuYnBwLgL1vrAsGwl9EMh2Btg1RsPGY72__AKhiQeJo01Bz8Eudzvrg90czFIgbOYM7jF66sp-5FdKiAHDC3iKBUv5CqH3SquXJWaFN2IzxG80WOSRYZi2hDwUsKgCn8a6nVNwZ0wa6bQmpWVU4u-cBKcmlTzrO0prDNaailh_GYlCo6VWcpukNaDvLH8JA3IpUw1x8qpsRnm_9j3bbtxgUGzoyuI5KSCJ-ibckNe-9_OyBVTK8RRT6pHY00_fJrE79vbVx2DrBGijrzoAMTR-FS6vjlq5JnaWWH-VfanXu5xJgJElnTWf5jh7Vd9QMtHUk7jPqeBq09B_VarVvpQ0kFYmHc2IO6QDV-8uNCEt3O1M-4PugrJKYYVUiCSLWEwVroLosvKrA62GSXOvqqPWjGneTwoVfa7rrp10skapCEqySAOj70oDYBoSAw5ITkBt2YYGf0LqWTfVZcG_y7o-NAgSUUEPvn_VfB6YoOWuN-sKwBekGueogHTg9I6Gp7ZFH07r8sYBr4sS7WRRi7HjuhkVTw6QVJjHlglC3Lgu5EtWUshsLMt9mG5IDg_0xFcmp2bSqFsw26EBgUO1QZuAH9AkNEBYgqQSff5Acf7AJrLZln8G2GXZJwyXApG3CFIbWWKm7thYvyvt7Dmt49NKg8NYfPf89XIRoImW_vVisknrXZM5WvhciMwHs-3gDjn7sl7jytUXVfaBeEd7nqCl9YgkjfA3wni2ym6Go7_ohLrbFXLFC-FKKUjGfG3z-fwmc32VdFCr4vPmu7XGouenoHL7_OqjgiCEOH1Fc9eEKCmXtSxIwg3IbVm8ZvOHMUE6KJYg==.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWFzdHJhLTIwMjYwOTAzfG9wZW5haSJ9",
+          "status": "completed",
+          "format": "openai-responses-v1"
+        },
+        {
+          "id": "rs_0360d78245c2bf44016adf6c3befcc87d19abf66f2a1077f89",
+          "encrypted_content": "gAAAAABq32xBda1awRTErRl8eMJLsMA-V8aGMpqJwaXzRUv5Db62p718_kQYrfN7CIhOZPGURRK2wgvhNcr0nEC07xkM3bqWV_XxxzCiNCenK2jK6Qmt336l1ufBHGfY8up-KYtIODzRPde6DZMWjDm0eLIGOUj09nh3CmuxBspYtPxvQarzt3jEz49ajJEUqFSh9ugX78WHs7na3aWscc7KN9uJrL7Vcs3zOW-c29OxGlxCEcjP79CmDP6dL7-QOG2n7K8e_itpoWeKBh-PWcZbDFS5cmLeeY-S_fSvGBCgWSkM6aWC7yBO0cUxsDP6i6aILHZtYE4JRKzSbjjnVHvAVOqauV8fOtl_uercauKM__tUZoK-IOPtklvlFaKYlWMn8-_MxwxzirVyfZyUMXvAT4SCdauSntDUNhnTfP5PtGwpz6i6MzD4Jluhn12R_k0ssKNMJK17AA0wrFuK_VA1qNQDMySHOwMRPvnmnlDK_aHooksbiobsNWTCD8zKd0yxj3-ipMPSzJ6vju-K5ij8mFdkKj7d_AdIennQQF2IpVykNYkTZRNp6UMR7KVsrmHEB2Xg0gZ4ElB--FA0OlIlbam51CWAd6xABzKVmCvKRlVYZX5fT2Kw_pqTEOfbtLH8rYxFk6_6Ua-sIrD76VfCmK1gVPOh2wUTsS78EDnYUWmjzs4M6AQYWLwOc21kVZb03n3x-fKMQeurNSABaxJ2TJx09WBIGwkjTNOI5L8MDm8NEqiabvLcelFa-fbQc5_dsci5zEfarid7rGjeLNx7WcCT_DBbt0ddvfnHBVT_W99Sol8Sy5F80s6LIMOoFcUV3TVyI05OerWn3R6RUw8MOU21SSWkMJADfLFoHxg2RDqZVuUFCHSHvK2mcCZhNRD8DZplZlut4qoNRBJ9R7w_dYnAOm8v6JArCsYZAaBdlE7_q8V6glUi8zxHiWvCyCUMzrdTjJuR3hVx1muRV5MP0D10_m4jnZa5cF2oYSGCAyee7x4M8DX2TFUklAxhFXKCGQBPcMyB-zMmcVbp_3SL11YO7ubvRRw-bC_C6LuxHYB59SUDp3JRkXlr7XNuWTD-HoyqYUTF1Oc8kvETkgAYHDD3B4YkxyvxhixJseHYY1O062OEQsHsPXFo07y3nLD0flsfxaewav1xo95KoKQtpenrGWrbCTNZns9M0oEQRVSksSKWlQ8xzNUR5fADiOWKMi0Oywccg25yEj3rKrpOODJ3lbRDnH32ZZfTYZRSLVa2v0Il0CwRCdNiwxCVM5vyC7mcljL5CD42kVdmRcq_S-C_XE8hvARo8vSLkHU-jlqzIT4CXAtuWDVMFouMciFa6essCcnKGVR0HCBuiYg65OLsxRpxK_7GgHr2GuH19mk6kH5zKqdngWmFwvZIurnGRw5E1DGdGgJ8taJsuimfbWBEhcobvVd6oJFkIpodwRlUfUYLzRT8txI_vURybLO5NoAqQWQOqRO-xZE88CgPno0ySa61Qdm5JFQZD4SRncchVkwR3g1X5YY_qWbZVot0Jf_TWiuifKtokEaGM5wMqmIwPm7gjDp7uh_oVberRtPgogeKxnh8xRe1VIfoqAd9IYiM2WusL9N0aoAW7dTpDitNrNJ2AlLUje0-2mci4gsgn2Z1NJv1LRmZBT0ux1mVVoDIz6LidO7XIMnrryx7uuCoFlNyEwOxHe9aZzh0-ObpRL1D2uzkH4woves4podcfTeus6U14weaxYYMzRNyhqLRiXbw6jK1ONE3L4RhC0jn4Egl06ofN3REX0oUnps-eUzcE0OFuWCtWmDhFjAxExng3bAsAFDWCbUGtzSpATC2eIsb9unSGNoX3Skz9l7or4MlRmplpkcEbpIgUlcCaCkXvNEO3iAYnu_E7E1b0yM8BEJXpfJv5O48Brmh7iwSNuBHbB7A1FhLlKM6PnkTMKwfiFr31IfKhCNBR3087-qJel4Nx4rvsuuFbo6GSbhAVrh88xmFt8WwxvlHXQywcBiVGHnVm3tVuSUu3k-zLR3Ql-Q8ycWQGnWR_OjqzJxUkVoYuHdYDNidyxLhZpNCdHX8CrcxVofOKIukj2WppvIxiBRdJOLVyff9EpyIFpMRGYyJUlOBIdShtg4K8LoOqSheQHRoaFBHlaswFlqR3jxA_xZq4tcjRld20YRGIEap5z_zS2Cyv60RHpcX18kLECgOnuMo8PF-2FJovoFfYZ9TBWwdlCHf5AoSFLRu4w-EWERXi2pjwKCqTsUdvhW-oUXg9JhTgbLCmEOf5LDJEDNvPou1QQUGLttmJs-Brq3LiunxUh-69Oul58qLoRjua6FV-kco39lubbWtio9o3L3OhfvsrHHjrSQFfgK_lGBzRoXTq9Icys4Tf82BZcpe5jE0Ts-KKMCx9Y5nl6aWjz5XlZOYTFUUZ2gxBUZZiwz0DbHvupu_Sq5e-aK7a5wrvhs_lF8KWQwyfu8vl_xjPZPRPTfHLxTk2AgO45L2Uhg62-k6-7hU9OKiEfgQFHD4OO-xp0N9KVZo7alvqe008WBg2PA_BB1EFitQzrzPn35n3J6s6B6f6sE4CYwLR8BXgcKrAkJ883YIlrD2wvdQdoO1Wk2PGOwpO6MY_l9k0DYU0EzdQDV6-1g4bbRdZLrBjJeGBtgY6g3gNdTPB0pgKwF0Px-MpVkbnBTTM6Rt_kAuek7tzpJ7HvO09p514Lmk4AHLseG_ctMVT-n_JBYXUzLQNvfzKQAxmHIWOQ4s0CYyAO_eQP0Z3YXkpCLxF1A9r3uFUVvflZhBCAbNmi3Hg1wzwpPWNE8uYlJ-q1UQVNF45bVA1svQyi6FUtVLYdDesmldzHQ7SDQ92DpMfIuTs2gaxXFM5Yk93_cYBfV1ZqjK6p5bsiQHicYs6T_UAJnGP8bX0IdRE8eF-uvgKFSzkHRtmBl4NvOpqvw3wlvDvfZja9pjWMrcXxni3jsKP8mDykJiJhMWtj1g9UswT0XuqNgtjx5pR4BQFn6qChE7wgaWZQ_YRWZwiQcJFqG9plzpTHjgbywWAXjN_0CXxOPZpZFNVFVgtx5iCsnB4t6X661EcSavXY4KDIbL7Ayo4bT0oZRZRGXtTz_QeQr5pxmkUF7-TuuzFdKApCHi4UlhvUAvSRnPN2-sKY7dP6b89zdQyBVvinFGzGmpsBxsxcCrkFdWgxueZyVWKcTE1FRhCKejY0JNDlfzsAHvtyI8z-TRTpkclyAP40udn8bZQY3Nl6g34EMaG637d777TZ5R9A0PC2SMCF4XEDdrR8n6XG2bMqSZ3kTvCCtiOo3wbTvmE-6IA6mzqos-yjaCEMhpYCV4QEVmtvq-PmfnV_RHW8iYgsdV4oXLVG53HPhM4t_CHAMxFEGqcnsr_Xp8-Y17g3jpY5JwZV-K1r-y3-hUacLPf32KZFPODVBlQly9l9filaeA42Na8gHJLGw7G2M-LUidj43HCTxm8gGR8y8SL6vAU0xCQu-Q4_zug8Z8UBFQxalXUJ13fjRasysR0dVVvHU-vYuML7h6k7IEz5EdNN07VDurzbq4Rw-jIfDNgDGR1zBAh9QMmV0IH_gqthibmWjuXXCBgPQjeLKT3M2F9a-yyUjA89LJKWelVbBOT4ka5_viEJ2t2iVouG56Di4IgEXERx6saosmAaICklJ4zIXPGPUbWiMlRMJ-n_pwQDHvL7j53fpkXmzUm-mYr0C1nqQ68s3uc1Ce0WlemOcVyPBXX9yb-lGcY9e7fXDQ8-tUvtHdsf0nLLEx8AKtx_18Y9RdflM-dMTNZBe1ccmXyBPLcAUsOhERzm7050u6lZBeFIlUF_e3xwwiASQQi8NzgxCNjitKDSZmfQ7DXWmbN5XJ6xUcdllV5Tt068cmXKyIgZ8C6nPY6-C0aEn3Kw123jWX3gWUUoX9Tnxe7nlfXL0jjE7e_AnDj8C36UUf1EhzBZXRSvlOe_xMMH6xWIKh6mMjYjm6PbjghOPxSXaYAxYf8Tj0CN_s7Lze78vDltozKwZ20WQrcWebbjcgZrUSlTUua_2OtqudJtfwK-q8GD_6Lzv_iAq1qSsYnY6PNDpiJ6yVU38cHquMXIpglYAUR38T8whbigJDtf6PmByZOhTfunJyRhFUUq8LMFO71dLS3gXLQHMk0UXuxlzaaGk_73Te3cUnrwm8d4wXsFoPi9kDodTuUqkq28DBvY_OF5KqH21WI9cfmgftdHlHSNVOrdPtzWqDSc3IE8S12h6svgbyui4Zzm6s7Xx63N945WDdiFb384OmaC_aAvtSmzp897qk5IQ7daZAj9IaZuGDRZitiuGic_Ftm4NEo0QouGj8xdDed7abiRr41-N0u8xAUTTi1K9Vr_z37pU2_ArLauTwpyg-dobRq3vJ2r9T1GGIsw8P3VHf6Z3yA59kcrWb0LAv-tlZgkBUuppVVERAuah_BNjP-DHjNl9tT_nFEffRUN7FI1vQjlvvOpx9Z4AimdD_O-DBdNuvniW4HKROchC5q3JrabvkSDoTHM0u6kd6dFX--j8MuNZUUCzGwtQoLnOd8uTwuIUMsWZYCcwOD1hk8bMwQnq9UlfK03gqsNr6oZpm9MZUXUL5ftmNORwPy8M1DuXc0brhoMnts8ad3Baj3e41tZnAWtV5VAncfslcM_CFwzx7vlGPtoFNw303AjNcqBt9tUBx.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWFzdHJhLTIwMjYwOTAzfG9wZW5haSJ9",
+          "summary": [],
+          "type": "reasoning",
+          "status": "completed",
+          "format": "openai-responses-v1"
+        },
+        {
+          "role": "assistant",
+          "status": "completed",
+          "type": "message",
+          "phase": "final_answer",
+          "id": "msg_tmp_mz889to8hxr",
+          "content": [
+            {
+              "annotations": [],
+              "text": "TABLE 2\n\nPOPULATION AND CULTIVATED AREA OF 131 FLOODED *HSIEN*  \nIN THE 1931 FLOOD AREA IN THE YANGTZE  \nAND HWAI VALLEYS, CHINA.\\*\n\n| Province | Number of flooded *hsien* in the province included in the study | Total farm families affected (00 omitted) | Per cent. of cultivated area flooded | Cultivated area (mow) flooded (00 omitted) | Total farm families (00 omitted) | Total cultivated area (mow) (00 omitted) |\n|---|---|---|---|---|---|---|\n| Hunan | 15 | 4,242 | 51 | 89,634 | 9,088 | 174,059 |\n| Hupeh | 30 | 10,227 | 55 | 139,183 | 19,919 | 253,427 |\n| Kiangsi | 14 | 2,433 | 51 | 49,427 | 4,792 | 96,348 |\n| South Anhwei | 24 | 6,132 | 62 | 86,797 | 9,906 | 140,227 |\n| South Kiangsu | 11 | 2,243 | 43 | 40,255 | 5,375 | 93,675 |\n| Honan | 1 | 636 | 85 | 31,875 | 748 | 37,500 |\n| North Anhwei | 19 | 7,670 | 60 | 237,678 | 12,965 | 394,309 |\n| North Kiangsu | 17 | 8,741 | 53 | 196,716 | 15,790 | 368,333 |\n| Total | 131 | 42,324 | 56 | 871,565 | 78,583 | 1,557,878 |\n\n\\*Most of the information on total farm families and total cultivated area per *hsien* is from data published under the direction of C. C. Chang of the former Statistical Bureau of the Legislative Yuan and from data collected in connection with the 1931 flood survey of The University of Nanking. Other sources were chiefly provincial government figures.\n\nThe percentages of cultivated area flooded are chiefly from estimates obtained from the 1931 flood survey of The University of Nanking and from planimetered data of land area flooded. Percentages from these two sources were checked with those obtained under the direction of C. C. Chang of the Directorate of Statistics and those reported by Magistrates to the National Flood Relief Commission, and with maps of area flooded.\n\nFor some *hsien* different sources gave great variation in the number of farm families and the amount of cultivated area. Determination of the more reasonable number was reached in part by computation of the density of population per square mile of cultivated area. Even the best figures give densities of great variation and often appear to be too high or too low. The average density of 1160 persons per square mile of cultivated area, for the entire area of the 131 *hsien* appears to be fairly reasonable as it checks with population densities previously obtained by the Department of Agricultural Economics, University of Nanking.\n\nIn cases of individual *hsien*, however, there may be serious underestimates of either number of families or of amount of cultivated area. For various reasons the amount of cultivated area is likely to be understated by at least 10-20 per cent.",
+              "type": "output_text",
+              "logprobs": []
+            }
+          ]
+        }
+      ],
+      "completed_at": 1793027143.0,
+      "reasoning": {
+        "context": "all_turns",
+        "effort": "high",
+        "mode": "standard"
+      },
+      "text": {
+        "format": {
+          "type": "text"
+        }
+      },
+      "usage": {
+        "input_tokens": 2948,
+        "input_tokens_details": {
+          "cache_write_tokens": 2945,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1495,
+        "output_tokens_details": {
+          "reasoning_tokens": 760
+        },
+        "total_tokens": 4443,
+        "cost": 0.110476575,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.1115925,
+          "upstream_inference_input_cost": 0.0368425,
+          "upstream_inference_output_cost": 0.07475
+        }
+      }
+    },
+    "prompt_fragments": [],
+    "system_fragments": [],
+    "tools": [],
+    "tool_calls": [],
+    "tool_results": [],
+    "attachments": [
+      {
+        "id": "b9e5a06aa10503fa8aeb0cbcff7369a03069eea5b3c62404a9e896da188c1fac",
+        "type": "image/png",
+        "path": "/Users/kml/shell/projects/extract-benchmark/files/1931-table-english.png",
+        "url": null,
+        "content": null,
+        "content_length": null
+      }
+    ]
+  }
+]
