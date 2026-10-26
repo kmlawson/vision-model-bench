@@ -1,0 +1,37 @@
+{
+  "source": "https://api.mistral.ai/v1/models",
+  "checked_date": "2026-10-26",
+  "model": {
+    "id": "mistral-large-4",
+    "capabilities": {
+      "completion_chat": true,
+      "function_calling": true,
+      "reasoning": true,
+      "completion_fim": false,
+      "fine_tuning": false,
+      "vision": true,
+      "ocr": false,
+      "classification": false,
+      "moderation": false,
+      "audio": false,
+      "audio_transcription": false,
+      "audio_transcription_realtime": false,
+      "audio_speech": false,
+      "unified_resources": true
+    },
+    "object": "model",
+    "created": 1793023480,
+    "owned_by": "mistralai",
+    "name": "mistral-large-4",
+    "description": "Official mistral-large-4 Mistral AI model",
+    "max_context_length": 1048576,
+    "aliases": [
+      "mistral-large-4-0"
+    ],
+    "deprecation": null,
+    "deprecation_replacement_model": null,
+    "default_model_temperature": 1.0,
+    "billing_model_name": "mistral-large-4-0",
+    "type": "base"
+  }
+}

@@ -1,0 +1,46 @@
+TABLE 16
+
+Percentage Distribution of Expenditure for the Principal Items in the Budgets of Families in Different Countries
+
+APPENDIX II — 323
+
+| Study | Annual Income | Food | Clothing | Rent | Heat | Misc. |
+|---|---|---|---|---|---|---|
+| Australia | $970 | 41.2% | 13.6% | 12.4% | 4.5% | 28.3% |
+| Belgium | Fr. 856 | 65.8 | 13.2 | 8.7 | 5.5 | 5.8 |
+| India (Bombay) | Rup. 630 | 56.8 | 9.6 | 7.7 | 7.4 | 18.5 |
+| India (Bombay) | Rup. 1800 | 43.4 | 10.4 | 14.8 | 5.5 | 25.9* |
+| Japan: | | | | | | |
+| Primary Poverty | Y. 200 | 65.0 | 6.0 | 12.0 | b | 17.0 |
+| Efficient Standard | Y. 960 | 35.0 | 10.0 | 17.0 | b | 38.0 |
+| Manual Workers | Y. 1097 | 35.1ᶜ | 13.0 | 12.2ᵈ | 4.8 | 34.9 |
+| Salaried Workers | Y. 1492 | 29.4ᶜ | 13.8 | 14.6ᵈ | 4.8 | 37.4 |
+| Russia (Large Cities) | R. 1214 | 45.1 | 19.4 | 7.2 | 6.1 | 22.4 |
+| Saxony: | | | | | | |
+| Working Class | below Fr. 1200 | 62.0 | 16.0 | 12.0 | 5.0 | 5.0 |
+| Well-to-do | over Fr. 3000 | 50.0 | 18.0 | 12.0 | 5.0 | 15.0 |
+| U. S. A.: | | | | | | |
+| Farm Families | $1983 | 39.5 | 13.8 | 11.6 | 7.2 | 28.0 |
+| Nat. Ind. Conf. Bd. | | 43.1 | 13.2 | 17.7 | 5.6 | 20.4 |
+| Dallas, Texas: | | | | | | |
+| Lowest Bare Exist. | $744 | 48.2 | 18.2 | 19.3 | 6.7ᵉ | 7.6 |
+| Average Budget | $1134 | 45.0 | 12.6 | 14.5 | 9.1ᵉ | 18.8 |
+| New York City: | | | | | | |
+| (Relief by C.O.S.) | $1637 | 40.0 | 18.3 | 32.3 | f | 12.3 |
+| Philadelphia: | | | | | | |
+| San Francisco: | | | | | | |
+| Semi-Skilled | $2100 | 38.0 | 11.2 | 17.9 | 3.6 | 29.3 |
+| Professional | $6500 | 16.0 | 13.7 | 20.7 | 3.3 | 46.3 |
+| Peiping | L. C. $210 | 58.2 | 4.6 | 9.4 | 11.8 | 16.0 |
+| Peiping | $2860 | 21.3 | 8.4 | 13.1 | 5.3 | 51.9 |
+
+Notes
+
+1 No. 1. 2 No. 15. 3 No. 3. 4 No. 4. 5 No. 31. 6 No. 29. 7 No. 40.
+8 No. 27. 9 No. 34. 10 No. 13. 11 No. 8. 12 No. 2. 13 No. 24. 14 No. 25.
+a Includes 2.5% spent for bedding and household necessities.
+b Heat included in Miscellaneous.
+c Drinks and tobacco moved from Food to Miscellaneous.
+d Repairs, furniture, furnishings shifted to Miscellaneous. Water to Heat.
+e Maintenance and Operation.
+f Rent includes Heat and Upkeep.

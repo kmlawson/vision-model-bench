@@ -65,9 +65,15 @@ def collect(embed_images=False):
             provider = object_value(metadata.get('response_json'))
             usage = {**object_value(provider.get('usage')), **object_value(metadata.get('usage'))}
             details = object_value(metadata.get('token_details'))
-            output_details = {**object_value(details.get('output_tokens_details')), **object_value(usage.get('output_tokens_details'))}
+            output_details = {**object_value(details.get('completion_tokens_details')),
+                              **object_value(details.get('output_tokens_details')),
+                              **object_value(usage.get('completion_tokens_details')),
+                              **object_value(usage.get('output_tokens_details'))}
             thinking = usage.get('thinking_tokens', usage.get('reasoning_output_tokens', output_details.get('thinking_tokens', output_details.get('reasoning_tokens', details.get('thoughtsTokenCount')))))
-            input_details = {**object_value(details.get('input_tokens_details')), **object_value(usage.get('input_tokens_details'))}
+            input_details = {**object_value(details.get('prompt_tokens_details')),
+                             **object_value(details.get('input_tokens_details')),
+                             **object_value(usage.get('prompt_tokens_details')),
+                             **object_value(usage.get('input_tokens_details'))}
             input_tokens = metadata.get('input_tokens') if metadata.get('input_tokens') is not None else usage.get('input_tokens')
             output_tokens = metadata.get('output_tokens') if metadata.get('output_tokens') is not None else usage.get('output_tokens')
             total_tokens = usage.get('total_tokens')
