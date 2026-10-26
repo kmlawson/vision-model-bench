@@ -1,0 +1,47 @@
+[
+  {
+    "id": "01m5wahnt4skkhtnyf4fj0ee56",
+    "model": "gemini/gemini-4-argon",
+    "resolved_model": "gemini-4-argon",
+    "options_json": {},
+    "conversation_id": "01m5wahnt3b5s79ga27swsg4p6",
+    "duration_ms": 21123,
+    "datetime_utc": "2026-10-26T14:41:33.508570+00:00",
+    "input_tokens": 1310,
+    "output_tokens": 1122,
+    "token_details": "{\"candidatesTokenCount\": 1122, \"promptTokensDetails\": [{\"modality\": \"TEXT\", \"tokenCount\": 203}, {\"modality\": \"IMAGE\", \"tokenCount\": 1107}], \"candidatesTokensDetails\": [{\"modality\": \"TEXT\", \"tokenCount\": 1122}]}",
+    "conversation_name": "Extract the itinerary number 3 \u2026",
+    "conversation_model": "gemini/gemini-4-argon",
+    "schema_json": null,
+    "prompt": "Extract the itinerary number 3 from itinerary.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example \u4e09 \u2192 3 and \u4e8c\u5341\u4e09 \u2192 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+    "system": null,
+    "response": "### \u7b2c3\u6848 \uff08\u5f80\u8def\u5317\u9bae\u7d93\u7531\uff09\n\uff081\uff09\u65c5\u884c\u65e5\u7a0b\n\n| \u65e5\u6b21 | \u5730\u540d | \u767c\u8457\u6642\u523b | \u5217\u8eca\u8239\u540d | \u8996\u5bdf\u7b87\u6240\u7add\u306b\u9806\u8def | \u5bbf\u6cca |\n| --- | --- | --- | --- | --- | --- |\n| 1\u65e5 | \u6566\u8cc0\u767c | \u2015 | \u65e5\u672c\u6d77\u6c7d\u8239\u3007\u3007\u4e38 | | \u8239\u4e2d2\u6cca |\n| 3\u65e5 | \u6e05\u6d25\u8457 | \u2015 | | \u5e02\u5167 \u4e00\u5de1 | |\n| 4\u65e5 | \u540c \u767c | \u2015 | | | |\n| \u540c | \u7f85\u6d25\u8457 | \u2015 | | \u540c | \u7f85\u6d25 |\n| 5\u65e5 | \u540c \u767c | \u2015 | | | |\n| 6\u65e5 | \u5409\u6797\u8457 | 5.23 | 204 | | \u5409\u6797 |\n| 6\u65e5 | \u5409\u6797 | \u6eef\u5728 | | \u65c5\u9928\u2015\u5927\u99ac\u8def\u2015\u6587\u5edf\u2015\u6cb3\u5357\u8857\u2015\u725b\u99ac\u8857\u2015\u5fb7\u52dd\u9580\u2015\u5317\u5c71\u2015\u5c0f\u767d\u5c71\u2015\u5409\u6797\u7701\u516c\u7f72\u2015\u5718\u5c71\u5b50\u2015\u9f8d\u6f6d\u5c71\u2015\u9a5b | \u540c |\n| 7\u65e5 | \u540c \u767c<br>\u65b0\u4eac\u8457 | 17.54<br>20.50 | 208 | \u65c5\u9928\u2015\u65e5\u672c\u6a4b\u901a\u2015\u820a\u5546\u57e0\u5730\u2015\u570b\u52d9\u9662\u2015\u5bae\u5167\u5e9c\u2015\u5317\u5927\u71df\u2015\u57ce\u5167\u2015\u5357\u5dba\u6230\u8de1\u2015\u5927\u540c\u5ee3\u5834\u2015\u95dc\u6771\u8ecd\u53f8\u4ee4\u90e8\u2015\u5152\u7389\u516c\u5712\u2015\u5b88\u5099\u968a\u2015\u5927\u4f7f\u9928\u2015\u5bdb\u57ce\u5b50\u6230\u8de1\u2015\u65c5\u9928 | \u65b0\u4eac |\n| 8\u65e5 | \u540c \u767c<br>\u54c8\u723e\u6ff1\u8457 | 23.50<br>7.50 | 903 | \u65c5\u9928\u2015\u90f5\u653f\u7ba1\u7406\u5c40\u2015\u6ff1\u6c5f\u7701\u516c\u7f72\u2015\u535a\u7269\u9928\u2015\u4e2d\u592e\u5bfa\u9662\u2015\u98db\u884c\u5834\u2015\u5fd7\u58eb\u306e\u7891\u2015\u30df\u30eb\u30ec\u30eb\u5175\u71df\u2015\u9435\u9053\u30af\u30e9\u30d6\u2015\u9435\u8def\u5c40\u2015\u6975\u6a02\u5bfa\u2015\u9732\u4eba\u5893\u5730\u2015\u5b54\u5b50\u5edf\u2015\u5085\u5bb6\u7538\u2015\u30e8\u30c4\u30c8\u30af\u30e9\u30d6\u2015\u65c5\u9928 | \u54c8\u723e\u6ff1 |\n| 9\u65e5 | \u540c \u767c | 9.30 | 20 | | \u8eca\u4e2d |\n| 9\u65e5<br>10\u65e5 | \u5949\u5929\u8457<br>\u6eef\u5728 | 23.36 | | \u65c5\u9928\u2015\u5949\u5929\u795e\u793e\u2015\u5fe0\u9748\u5854\u2015\u570b\u7acb\u535a\u7269\u9928\u2015\u540c\u5584\u5802\u2015\u5317\u9675\u2015\u5317\u5927\u71df\u2015\u5bae\u6bbf\u524d\u2015\u5409\u9806\u7d72\u623f\u2015\u6eff\u6bdb\u767e\u8ca8\u5e97\uff08\u53c8\u306f\u4e09\u4e2d\u4e95\u767e\u8ca8\u5e97\uff09\u2015\u65c5\u9928 | \u5949\u5929 |\n| 11\u65e5 | \u5949\u5929\u767c<br>\u64ab\u9806\u8457<br>\u540c \u767c<br>\u5949\u5929\u8457 | 9.20<br>10.37<br>15.30<br>16.49 | 643<br>652 | \u9a5b\u2015\u70ad\u7926\u4e8b\u52d9\u6240\u2015\u53e4\u57ce\u5b50\u2015\u9732\u5929\u5800\u2015\u88fd\u6cb9\u5de5\u5834\u2015\u65b0\u5e02\u8857\u2015\u9a5b | \u64ab\u9806 |\n| 12\u65e5 | \u540c \u767c<br>\u5927\u9023\u8457 | 21.55<br>7.00 | 24 | \u65c5\u9928\u2015\u6eff\u6d32\u8cc7\u6e90\u9928\u2015\u57e0\u982d\u2015\u6cb9\u623f\u2015\u6eff\u9435\u672c\u793e\u2015\u5927\u5ee3\u5834\u2015\u904a\u89bd\u9053\u8def\u2015\u9732\u5929\u5e02\u5834\u2015\u661f\u30f6\u6d66\u2015\u65c5\u9928 | \u5927\u9023 |\n| 13\u65e5 | \u540c \u767c<br>\u65c5\u9806\u8457<br>\u540c \u767c<br>\u5927\u9023\u8457 | 7.30<br>8.59<br>16.45<br>18.26 | 601<br>616 | \u767d\u7389\u5c71\u8868\u5fe0\u5854\u2015\u535a\u7269\u9928\u2015203\u9ad8\u5730\u2015\u6230\u5229\u54c1\u8a18\u5ff5\u9928\u2015\u6771\u9dc4\u51a0\u5c71\u2015\u5317\u5821\u58d8\u2015\u6c34\u5e2b\u71df\u6703\u898b\u6240 | \u540c |\n| 14\u65e5 | \u5927\u9023\u767c<br>\u5949\u5929\u8457 | 10.30<br>18.50 | 25 | | \u8eca\u4e2d |\n| 15\u65e5 | \u540c \u767c<br>\u5e73\u58e4\u8457 | 23.45<br>14.54 | 44 | \u9a5b\u2015\u5927\u795e\u5bae\u524d\u2015\u4e03\u661f\u9580\u2015\u535a\u7269\u9928\u2015\u4e59\u5bc6\u81fa\u2015\u7b95\u5b50\u5edf\u2015\u7384\u6b66\u9580\u2015\u7261\u4e39\u81fa\u2015\u6c38\u660e\u5bfa\u2015\u304a\u7267\u306e\u8336\u5c4b\u2015\u6d6e\u78a7\u6a13\u2015\u6e05\u6d41\u58c1\u2015\u5927\u540c\u6c5f\uff08\u821f\u3067\u4e0b\u308b\uff09\u2015\u5927\u540c\u9580\u2015\u7df4\u5149\u4ead\u2015\u5993\u751f\u5b78\u6821\u2015\u65c5\u9928 | \u5e73\u58e4 |\n| 16\u65e5 | \u540c \u767c<br>\u4eac\u57ce\u8457 | 10.10<br>17.52 | 202 | \u65c5\u9928\u2015\u671d\u9bae\u795e\u5bae\u2015\u535a\u6587\u5bfa\u2015\u7d93\u5b78\u9662\u2015\u660c\u6176\u82d1\u2015\u7e3d\u7763\u5e9c\uff08\u5ef3\u820d\u898b\u5b78\u671d\u9bae\u4e8b\u60c5\u7d39\u4ecb\u2015\u6620\u756b\u7b49\uff09\u2015\u535a\u7269\u9928\u2015\u5fb7\u58fd\u5bae\u2015\u671d\u9bae\u7f8e\u8853\u54c1\u88fd\u4f5c\u6240\u2015\u65c5\u9928 | \u4eac\u57ce |\n| 17\u65e5 | \u540c \u767c<br>\u91dc\u5c71\u8457<br>\u540c \u767c | 22.45<br>9.52<br>12.00 | 104 | | \u8239\u4e2d |\n| 17\u65e5 | \u4e0b\u95dc\u8457 | 19.30 | | | |",
+    "reasoning": null,
+    "prompt_json": null,
+    "response_json": {
+      "candidates": [
+        {
+          "finishReason": "STOP",
+          "index": 0
+        }
+      ],
+      "modelVersion": "gemini-4-argon",
+      "responseId": "oWbfasfFPKjlxN8PsdzIyQ4"
+    },
+    "prompt_fragments": [],
+    "system_fragments": [],
+    "tools": [],
+    "tool_calls": [],
+    "tool_results": [],
+    "attachments": [
+      {
+        "id": "aa8703d508f7f417d18677747adfa9f54ccc9fbac2509e55f2b26665be03e55b",
+        "type": "image/png",
+        "path": "/Users/kml/shell/projects/extract-benchmark/files/itinerary.png",
+        "url": null,
+        "content": null,
+        "content_length": null
+      }
+    ]
+  }
+]

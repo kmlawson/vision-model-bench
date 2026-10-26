@@ -1,0 +1,47 @@
+[
+  {
+    "id": "01m5wakyy6kdc1a6f79k09qxe7",
+    "model": "gemini/gemini-4-argon",
+    "resolved_model": "gemini-4-argon",
+    "options_json": {},
+    "conversation_id": "01m5wakyy5tp13jtjpqfq8rna7",
+    "duration_ms": 16469,
+    "datetime_utc": "2026-10-26T14:42:48.390223+00:00",
+    "input_tokens": 1282,
+    "output_tokens": 1722,
+    "token_details": "{\"candidatesTokenCount\": 1722, \"promptTokensDetails\": [{\"modality\": \"TEXT\", \"tokenCount\": 202}, {\"modality\": \"IMAGE\", \"tokenCount\": 1080}], \"candidatesTokensDetails\": [{\"modality\": \"TEXT\", \"tokenCount\": 1722}]}",
+    "conversation_name": "Extract the text from wide-tabl\u2026",
+    "conversation_model": "gemini/gemini-4-argon",
+    "schema_json": null,
+    "prompt": "Extract the text from wide-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example \u4e09 \u2192 3 and \u4e8c\u5341\u4e09 \u2192 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+    "system": null,
+    "response": "TABLE 34\n\nAverage Annual Expenditure for Miscellaneous Items\n\n| Monthly Income | Education | Communications | Health | House Equipment | Service | Entertainment | Contributions | Religion | Incidentals | Invest. & Surplus | Total |\n| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |\n| No. Reporting | 202 | 229 | 283 | 273 | 244 | 280 | 139 | 257 | 279 | 200 | |\n| $ 5\u2014 9..... | $ .01 | $ .01 | $1.15 | $ .23 | ... | $1.08 | ... | $ .04 | $ .74 | $6.38 | $9.64 |\n| 10\u2014 14..... | .14 | .25 | 1.83 | .82 | $ .24 | 3.59 | $1.37 | .43 | 1.09 | 9.48 | 19.24 |\n| 15\u2014 19..... | .29 | .56 | 2.58 | .84 | .24 | 4.83 | 2.52 | .62 | 4.36 | 15.38 | 32.22 |\n| 20\u2014 24..... | 1.11 | 1.63 | 5.15 | 1.44 | .44 | 7.75 | 3.12 | .97 | 5.35 | 23.39 | 50.35 |\n| 25\u2014 29..... | .80 | 3.65 | 4.40 | 2.07 | 1.12 | 12.10 | 3.13 | 1.47 | 7.50 | 41.86 | 78.10 |\n| 30\u2014 34..... | 1.10 | 7.43 | 8.38 | 5.55 | 1.73 | 15.40 | 4.21 | 1.92 | 6.92 | 53.16 | 105.80 |\n| 35\u2014 39..... | 5.42 | 4.67 | 7.25 | 5.87 | 5.48 | 20.71 | 2.90 | 2.75 | 13.09 | 63.75 | 131.89 |\n| 40\u2014 49..... | 11.60 | 7.70 | 10.31 | 10.64 | 3.49 | 26.38 | 14.17 | 2.03 | 10.78 | 64.25 | 161.35 |\n| 50\u2014 59..... | 6.27 | 9.26 | 10.04 | 8.26 | 4.96 | 51.73 | 9.23 | 1.51 | 17.96 | 97.25 | 216.47 |\n| 60\u2014 69..... | 2.07 | 11.21 | 8.55 | 9.39 | 1.78 | 34.40 | 23.41 | 6.60 | 22.45 | 155.77 | 275.63 |\n| 70\u2014 79..... | 17.85 | 15.34 | 14.82 | 8.97 | 1.55 | 59.78 | 36.50 | 3.99 | 40.19 | 128.34 | 327.33 |\n| 80\u2014 89..... | 18.08 | 12.24 | 18.29 | 16.08 | 3.48 | 58.62 | 1.37 | 5.81 | 28.88 | 205.31 | 368.16 |\n| 90\u2014 99..... | 20.15 | 24.86 | 25.62 | 9.65 | 27.77 | 116.31 | 14.68 | 6.22 | 18.89 | 177.96 | 442.11 |\n| 100\u2014124..... | 46.29 | 71.04 | 35.95 | 39.72 | 17.23 | 152.87 | 13.58 | 2.92 | 70.02 | 11.44 | 561.06 |\n| 125\u2014149..... | 164.63 | 63.66 | 56.03 | 51.88 | 28.65 | 80.85 | 8.52 | 2.08 | 73.88 | 146.78 | 676.96 |\n| 150\u2014174..... | 73.04 | 42.47 | 31.74 | 70.55 | 36.12 | 212.05 | 7.23 | 2.23 | 37.49 | 147.88 | 660.80 |\n| 175\u2014199..... | 207.34 | 57.01 | 38.27 | 60.84 | 40.51 | 211.26 | 7.70 | 1.71 | 147.36 | 324.01 | 1096.01 |\n| 200\u2014299..... | 125.92 | 84.93 | 46.55 | 42.50 | 66.46 | 272.86 | 16.77 | 6.55 | 94.48 | 737.76 | 1494.78 |\n| 300\u2014 ..... | 157.85 | 168.56 | 95.81 | 150.84 | 145.07 | 578.98 | 34.84 | 3.89 | 107.59 | 1134.66 | 2578.09 |\n\nAPPENDIX II\n\n335",
+    "reasoning": null,
+    "prompt_json": null,
+    "response_json": {
+      "candidates": [
+        {
+          "finishReason": "STOP",
+          "index": 0
+        }
+      ],
+      "modelVersion": "gemini-4-argon",
+      "responseId": "6GbfariLNqbZxs0PmLXC8Ag"
+    },
+    "prompt_fragments": [],
+    "system_fragments": [],
+    "tools": [],
+    "tool_calls": [],
+    "tool_results": [],
+    "attachments": [
+      {
+        "id": "d7b1b756316bfb1f661960562835bdcc68743140ef32610a8559806f145a1544",
+        "type": "image/png",
+        "path": "/Users/kml/shell/projects/extract-benchmark/files/wide-table.png",
+        "url": null,
+        "content": null,
+        "content_length": null
+      }
+    ]
+  }
+]

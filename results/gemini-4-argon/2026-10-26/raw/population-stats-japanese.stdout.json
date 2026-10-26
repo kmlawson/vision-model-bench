@@ -1,0 +1,47 @@
+[
+  {
+    "id": "01m5wajbhe93k13g67xqh59q1m",
+    "model": "gemini/gemini-4-argon",
+    "resolved_model": "gemini-4-argon",
+    "options_json": {},
+    "conversation_id": "01m5wajbhd1kb9rzykjef19zd7",
+    "duration_ms": 24618,
+    "datetime_utc": "2026-10-26T14:41:55.758652+00:00",
+    "input_tokens": 1287,
+    "output_tokens": 2337,
+    "token_details": "{\"candidatesTokenCount\": 1004, \"promptTokensDetails\": [{\"modality\": \"TEXT\", \"tokenCount\": 207}, {\"modality\": \"IMAGE\", \"tokenCount\": 1080}], \"candidatesTokensDetails\": [{\"modality\": \"TEXT\", \"tokenCount\": 1004}], \"thoughtsTokenCount\": 1333}",
+    "conversation_name": "Extract the table of population\u2026",
+    "conversation_model": "gemini/gemini-4-argon",
+    "schema_json": null,
+    "prompt": "Extract the table of population statistics from population-stats-japanese.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example \u4e09 \u2192 3 and \u4e8c\u5341\u4e09 \u2192 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+    "system": null,
+    "response": "\u571f\u5730\u4eba\u53e3\n\n# 2\u842c\u4ee5\u4e0a\u306e\u753a\u6751\uff08\u570b\u52e2\u8abf\u67fb\uff09\n\n| \u753a\u6751 | \u662d\u548c5\u5e74 \u4e16\u5e36 | \u662d\u548c5\u5e74 \u4eba\u53e3 | \u5927\u6b6314\u5e74 \u4eba\u53e3 | \u5927\u6b639\u5e74 \u4eba\u53e3 |\n| :--- | :--- | :--- | :--- | :--- |\n| \u5ca9\u898b\u6fa4\u753a\uff08\u5317\u6d77\u9053\uff09 | 5,158 | 29,329 | 24,758 | 23,326 |\n| \u4e09\u7b20\u5c71\u6751\uff08\u540c\uff09 | 4,329 | 22,771 | 18,763 | 20,914 |\n| \u7f8e\u5504\u753a\uff08\u540c\uff09 | 6,864 | 37,263 | 32,701 | 32,321 |\n| \u7802\u5ddd\u753a\uff08\u540c\uff09 | 4,238 | 22,896 | 20,332 | 17,119 |\n| \u5915\u5f35\u753a\uff08\u540c\uff09 | 10,271 | 51,967 | 48,697 | 51,064 |\n| \u82eb\u5c0f\u7267\u753a\uff08\u540c\uff09 | 4,179 | 20,987 | 19,938 | 17,565 |\n| \u5e36\u5ee3\u753a\uff08\u540c\uff09 | 5,490 | 28,135 | 20,208 | 16,081 |\n| \u7db2\u8d70\u753a\uff08\u540c\uff09 | 4,684 | 26,946 | 24,846 | 23,201 |\n| \u91ce\u4ed8\u725b\u753a\uff08\u540c\uff09 | 4,953 | 27,766 | 23,392 | 21,620 |\n| \u91dc\u77f3\u753a\uff08\u5ca9\u624b\uff09 | 5,647 | 30,601 | 22,499 | 20,663 |\n| \u9e7d\u91dc\u753a\uff08\u5bae\u57ce\uff09 | 4,436 | 23,282 | 16,871 | 13,139 |\n| \u77f3\u5377\u753a\uff08\u540c\uff09 | 5,265 | 30,743 | 25,594 | 21,067 |\n| \u80fd\u4ee3\u6e2f\u753a\uff08\u79cb\u7530\uff09 | 4,635 | 23,834 | 22,007 | 17,826 |\n| \u9152\u7530\u753a\uff08\u5c71\u5f62\uff09 | 5,939 | 30,280 | 27,864 | 24,752 |\n| \u767d\u6cb3\u753a\uff08\u798f\u5cf6\uff09 | 4,106 | 22,276 | 22,087 | 18,655 |\n| \u5e73\u753a\uff08\u540c\uff09 | 4,869 | 24,999 | 22,478 | 20,175 |\n| \u5167\u90f7\u6751\uff08\u540c\uff09 | 5,657 | 27,333 | 23,705 | 20,174 |\n| \u65e5\u7acb\u753a\uff08\u8328\u57ce\uff09 | 5,622 | 27,811 | 23,681 | 25,263 |\n| \u9e7f\u6cbc\u753a\uff08\u6803\u6728\uff09 | 4,477 | 21,969 | 20,453 | 18,097 |\n| \u8db3\u5c3e\u753a\uff08\u540c\uff09 | 5,149 | 23,803 | 22,547 | 32,804 |\n| \u6803\u6728\u753a\uff08\u540c\uff09 | 5,791 | 29,684 | 27,370 | 24,570 |\n| \u4f0a\u52e2\u5d0e\u753a\uff08\u7fa4\u99ac\uff09 | 4,384 | 21,996 | 18,645 | 14,295 |\n| \u6d66\u548c\u753a\uff08\u57fc\u7389\uff09 | 5,128 | 25,328 | 18,253 | 11,694 |",
+    "reasoning": null,
+    "prompt_json": null,
+    "response_json": {
+      "candidates": [
+        {
+          "finishReason": "STOP",
+          "index": 0
+        }
+      ],
+      "modelVersion": "gemini-4-argon",
+      "responseId": "tWbfavCqK6GzvdIPju2kWA"
+    },
+    "prompt_fragments": [],
+    "system_fragments": [],
+    "tools": [],
+    "tool_calls": [],
+    "tool_results": [],
+    "attachments": [
+      {
+        "id": "f535e12869d328add857874f694999fb811855b6d3f7d71ba71a647b9a8b8e33",
+        "type": "image/png",
+        "path": "/Users/kml/shell/projects/extract-benchmark/files/population-stats-japanese.png",
+        "url": null,
+        "content": null,
+        "content_length": null
+      }
+    ]
+  }
+]

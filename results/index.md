@@ -2,10 +2,11 @@
 
 Open [the interactive dashboard](index.html) or [the live site](https://kmlawson.github.io/vision-model-bench/). The dashboard is a single offline HTML file with embedded input images, accuracy scores, colored extraction review, timing, tokens, and reported costs.
 
-27 finished configurations, 201 saved extractions out of 216 tasks. Active runs are excluded until finished. Failed or missing final responses score zero; the eight corrected Markdown files are ground truth.
+28 finished configurations, 209 saved extractions out of 224 tasks. Active runs are excluded until finished. Failed or missing final responses score zero; the eight corrected Markdown files are ground truth.
 
 | Configuration | Date | Backend | Saved | Content F1 | Number F1 | Status | Details |
 |---|---|---|---:|---:|---:|---|---|
+| [gemini-4-argon](gemini-4-argon/2026-10-26/) | 2026-10-26 | llm | 8/8 | 98.88% | 96.60% | completed | [Metadata](gemini-4-argon/2026-10-26/run.json) |
 | [claude-opus-5.5](claude-opus-5.5/2026-10-12/) | 2026-10-12 | llm | 8/8 | 97.94% | 94.17% | completed | [Metadata](claude-opus-5.5/2026-10-12/run.json) |
 | [gpt-6-astra-low-cli](gpt-6-astra-low-cli/2026-10-13/) | 2026-10-13 | codex | 8/8 | 95.98% | 87.00% | completed | [Metadata](gpt-6-astra-low-cli/2026-10-13/run.json) |
 | [gpt-6-astra-low](gpt-6-astra-low/2026-10-12/) | 2026-10-12 | Codex fresh subagents | 8/8 | 95.85% | 87.75% | completed | [Metadata](gpt-6-astra-low/2026-10-12/run.json) |
