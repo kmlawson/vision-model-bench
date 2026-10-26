@@ -1,0 +1,482 @@
+{
+  "model": "openrouter/deepseek/deepseek-v4.1-flash-1017",
+  "reasoning_effort": "provider default (not overridden)",
+  "backend": "llm",
+  "date": "2026-10-26",
+  "started_at": "2026-10-26T13:01:29.077210+00:00",
+  "instructions_sha256": "48bf7c9a7be01aa02742fc25453a458bee826a3e6513d628fd4c3d0a37efcb9f",
+  "execution": "Fresh CLI invocation per image; no conversation continuation, OCR, reference answers, or editorial corrections.",
+  "reference_status": "Ground truth is used only after extraction, never supplied to the model.",
+  "tasks": [
+    {
+      "task": 1,
+      "input": "files/1931-table-english.png",
+      "input_sha256": "b9e5a06aa10503fa8aeb0cbcff7369a03069eea5b3c62404a9e896da188c1fac",
+      "output": "1931-table-english.md",
+      "prompt": "Extract just the table title, data, and table notes from the top of 1931-table-english.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "status": "completed",
+      "started_at": "2026-10-26T13:01:29.077834+00:00",
+      "command": [
+        "llm",
+        "-m",
+        "openrouter/deepseek/deepseek-v4.1-flash-1017",
+        "-a",
+        "/Users/kml/shell/projects/extract-benchmark/files/1931-table-english.png",
+        "--no-log",
+        "--hide-reasoning",
+        "--json",
+        "Extract just the table title, data, and table notes from the top of 1931-table-english.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs."
+      ],
+      "submitted_prompt": "Extract just the table title, data, and table notes from the top of 1931-table-english.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "raw_stdout": "raw/1931-table-english.stdout.json",
+      "raw_stderr": "raw/1931-table-english.stderr.txt",
+      "exit_code": 0,
+      "output_bytes": 2624,
+      "output_sha256": "249906b06fbb949051007fe22a27fccdc9432dbeb59eda820cc89f8f683794e2",
+      "response_metadata": {
+        "model": "openrouter/deepseek/deepseek-v4.1-flash-1017",
+        "resolved_model": null,
+        "options_json": {},
+        "duration_ms": 14062,
+        "input_tokens": 1208,
+        "output_tokens": 3818,
+        "token_details": "{\"input_tokens_details\": {\"cache_write_tokens\": null, \"cached_tokens\": 0}, \"output_tokens_details\": {\"reasoning_tokens\": 3102}}",
+        "conversation_id": "01m5w4teznc26sdc5n2dh6vktk",
+        "provider_model": "deepseek/deepseek-v4.1-flash-1017",
+        "provider_status": "completed",
+        "provider_usage": {
+          "input_tokens": 1208,
+          "input_tokens_details": {
+            "cached_tokens": 0
+          },
+          "output_tokens": 3818,
+          "output_tokens_details": {
+            "reasoning_tokens": 3102
+          },
+          "total_tokens": 5026,
+          "cost": 0.003426192,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0.0034608,
+            "upstream_inference_input_cost": 0.00025368,
+            "upstream_inference_output_cost": 0.00320712
+          }
+        }
+      },
+      "finished_at": "2026-10-26T13:01:44.309051+00:00",
+      "elapsed_seconds": 15.231
+    },
+    {
+      "task": 2,
+      "input": "files/difficult-table.png",
+      "input_sha256": "6e8030417069ffea318f62aa0734952ce6f272a2ab03c1e898b3743ca4fd7c7a",
+      "output": "difficult-table.md",
+      "prompt": "Extract the text from difficult-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "status": "completed",
+      "started_at": "2026-10-26T13:01:44.310044+00:00",
+      "command": [
+        "llm",
+        "-m",
+        "openrouter/deepseek/deepseek-v4.1-flash-1017",
+        "-a",
+        "/Users/kml/shell/projects/extract-benchmark/files/difficult-table.png",
+        "--no-log",
+        "--hide-reasoning",
+        "--json",
+        "Extract the text from difficult-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs."
+      ],
+      "submitted_prompt": "Extract the text from difficult-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "raw_stdout": "raw/difficult-table.stdout.json",
+      "raw_stderr": "raw/difficult-table.stderr.txt",
+      "exit_code": 0,
+      "output_bytes": 1247,
+      "output_sha256": "1b3eb1c7f1af9a0939ad6ead749ae5ce76ad1066e83509ea23fe50e6756b2ac5",
+      "response_metadata": {
+        "model": "openrouter/deepseek/deepseek-v4.1-flash-1017",
+        "resolved_model": null,
+        "options_json": {},
+        "duration_ms": 71587,
+        "input_tokens": 1219,
+        "output_tokens": 19581,
+        "token_details": "{\"input_tokens_details\": {\"cache_write_tokens\": null, \"cached_tokens\": 0}, \"output_tokens_details\": {\"reasoning_tokens\": 19330}}",
+        "conversation_id": "01m5w4txt37xz203tfn2gnaqn8",
+        "provider_model": "deepseek/deepseek-v4.1-flash-1017",
+        "provider_status": "completed",
+        "provider_usage": {
+          "input_tokens": 1219,
+          "input_tokens_details": {
+            "cached_tokens": 0
+          },
+          "output_tokens": 19581,
+          "output_tokens_details": {
+            "reasoning_tokens": 19330
+          },
+          "total_tokens": 20800,
+          "cost": 0.0098494803,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0.00994897,
+            "upstream_inference_input_cost": 0.00015847,
+            "upstream_inference_output_cost": 0.0097905
+          }
+        }
+      },
+      "finished_at": "2026-10-26T13:02:57.045191+00:00",
+      "elapsed_seconds": 72.735
+    },
+    {
+      "task": 3,
+      "input": "files/english-page.png",
+      "input_sha256": "d25aacc8656b521b220e00c04262b6079ac1de0a37cd3e663e055a3bf1a25681",
+      "output": "english-page.md",
+      "prompt": "Extract the text from the right page of english-page.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "status": "completed",
+      "started_at": "2026-10-26T13:02:57.047955+00:00",
+      "command": [
+        "llm",
+        "-m",
+        "openrouter/deepseek/deepseek-v4.1-flash-1017",
+        "-a",
+        "/Users/kml/shell/projects/extract-benchmark/files/english-page.png",
+        "--no-log",
+        "--hide-reasoning",
+        "--json",
+        "Extract the text from the right page of english-page.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs."
+      ],
+      "submitted_prompt": "Extract the text from the right page of english-page.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "raw_stdout": "raw/english-page.stdout.json",
+      "raw_stderr": "raw/english-page.stderr.txt",
+      "exit_code": 0,
+      "output_bytes": 3617,
+      "output_sha256": "3ffd8b8eef261b0b0f3e777b25dbe3498046517d47961f4b61d7d307c3ed7a2f",
+      "response_metadata": {
+        "model": "openrouter/deepseek/deepseek-v4.1-flash-1017",
+        "resolved_model": null,
+        "options_json": {},
+        "duration_ms": 16272,
+        "input_tokens": 1189,
+        "output_tokens": 3413,
+        "token_details": "{\"input_tokens_details\": {\"cache_write_tokens\": null, \"cached_tokens\": 0}, \"output_tokens_details\": {\"reasoning_tokens\": 2654}}",
+        "conversation_id": "01m5w4x4v1h8yq2sf5t9vrr4xq",
+        "provider_model": "deepseek/deepseek-v4.1-flash-1017",
+        "provider_status": "completed",
+        "provider_usage": {
+          "input_tokens": 1189,
+          "input_tokens_details": {
+            "cached_tokens": 0
+          },
+          "output_tokens": 3413,
+          "output_tokens_details": {
+            "reasoning_tokens": 2654
+          },
+          "total_tokens": 4602,
+          "cost": 0.00281845278,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0.002846922,
+            "upstream_inference_input_cost": 0.000116522,
+            "upstream_inference_output_cost": 0.0027304
+          }
+        }
+      },
+      "finished_at": "2026-10-26T13:03:14.429854+00:00",
+      "elapsed_seconds": 17.382
+    },
+    {
+      "task": 4,
+      "input": "files/itinerary.png",
+      "input_sha256": "aa8703d508f7f417d18677747adfa9f54ccc9fbac2509e55f2b26665be03e55b",
+      "output": "itinerary.md",
+      "prompt": "Extract the itinerary number 3 from itinerary.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "status": "completed",
+      "started_at": "2026-10-26T13:03:14.435957+00:00",
+      "command": [
+        "llm",
+        "-m",
+        "openrouter/deepseek/deepseek-v4.1-flash-1017",
+        "-a",
+        "/Users/kml/shell/projects/extract-benchmark/files/itinerary.png",
+        "--no-log",
+        "--hide-reasoning",
+        "--json",
+        "Extract the itinerary number 3 from itinerary.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs."
+      ],
+      "submitted_prompt": "Extract the itinerary number 3 from itinerary.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "raw_stdout": "raw/itinerary.stdout.json",
+      "raw_stderr": "raw/itinerary.stderr.txt",
+      "exit_code": 0,
+      "output_bytes": 1859,
+      "output_sha256": "3d35fae943a3c19968f7a2b49b8030cf829e8c654ee707a0044ac4839b861e1d",
+      "response_metadata": {
+        "model": "openrouter/deepseek/deepseek-v4.1-flash-1017",
+        "resolved_model": null,
+        "options_json": {},
+        "duration_ms": 99155,
+        "input_tokens": 1169,
+        "output_tokens": 13950,
+        "token_details": "{\"input_tokens_details\": {\"cache_write_tokens\": null, \"cached_tokens\": 0}, \"output_tokens_details\": {\"reasoning_tokens\": 13139}}",
+        "conversation_id": "01m5w4xnvcb0kek853sq0k8q6w",
+        "provider_model": "deepseek/deepseek-v4.1-flash-1017",
+        "provider_status": "completed",
+        "provider_usage": {
+          "input_tokens": 1169,
+          "input_tokens_details": {
+            "cached_tokens": 0
+          },
+          "output_tokens": 13950,
+          "output_tokens_details": {
+            "reasoning_tokens": 13139
+          },
+          "total_tokens": 15119,
+          "cost": 0.0069978348,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0.00706852,
+            "upstream_inference_input_cost": 9.352e-05,
+            "upstream_inference_output_cost": 0.006975
+          }
+        }
+      },
+      "finished_at": "2026-10-26T13:04:54.796200+00:00",
+      "elapsed_seconds": 100.361
+    },
+    {
+      "task": 5,
+      "input": "files/population-stats-japanese.png",
+      "input_sha256": "f535e12869d328add857874f694999fb811855b6d3f7d71ba71a647b9a8b8e33",
+      "output": "population-stats-japanese.md",
+      "prompt": "Extract the table of population statistics from population-stats-japanese.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "status": "completed",
+      "started_at": "2026-10-26T13:04:54.798191+00:00",
+      "command": [
+        "llm",
+        "-m",
+        "openrouter/deepseek/deepseek-v4.1-flash-1017",
+        "-a",
+        "/Users/kml/shell/projects/extract-benchmark/files/population-stats-japanese.png",
+        "--no-log",
+        "--hide-reasoning",
+        "--json",
+        "Extract the table of population statistics from population-stats-japanese.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs."
+      ],
+      "submitted_prompt": "Extract the table of population statistics from population-stats-japanese.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "raw_stdout": "raw/population-stats-japanese.stdout.json",
+      "raw_stderr": "raw/population-stats-japanese.stderr.txt",
+      "exit_code": 0,
+      "output_bytes": 1260,
+      "output_sha256": "c71cebac706af315e5dc702f79dc05981e5b12e87075c8d7d2f2f6a54338e937",
+      "response_metadata": {
+        "model": "openrouter/deepseek/deepseek-v4.1-flash-1017",
+        "resolved_model": null,
+        "options_json": {},
+        "duration_ms": 56913,
+        "input_tokens": 1163,
+        "output_tokens": 18553,
+        "token_details": "{\"input_tokens_details\": {\"cache_write_tokens\": null, \"cached_tokens\": 0}, \"output_tokens_details\": {\"reasoning_tokens\": 18309}}",
+        "conversation_id": "01m5w50r63943sb0dadw5nvsrw",
+        "provider_model": "deepseek/deepseek-v4.1-flash-1017",
+        "provider_status": "completed",
+        "provider_usage": {
+          "input_tokens": 1163,
+          "input_tokens_details": {
+            "cached_tokens": 0
+          },
+          "output_tokens": 18553,
+          "output_tokens_details": {
+            "reasoning_tokens": 18309
+          },
+          "total_tokens": 19716,
+          "cost": 0.0093334131,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0.00942769,
+            "upstream_inference_input_cost": 0.00015119,
+            "upstream_inference_output_cost": 0.0092765
+          }
+        }
+      },
+      "finished_at": "2026-10-26T13:05:53.233672+00:00",
+      "elapsed_seconds": 58.436
+    },
+    {
+      "task": 6,
+      "input": "files/sideways-table.png",
+      "input_sha256": "89b8fd891f136ef2998a982af74b1bddd34389be9e68b20b990a816985c7882e",
+      "output": "sideways-table.md",
+      "prompt": "Extract the table title, data, and notes from sideways-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "status": "completed",
+      "started_at": "2026-10-26T13:05:53.234643+00:00",
+      "command": [
+        "llm",
+        "-m",
+        "openrouter/deepseek/deepseek-v4.1-flash-1017",
+        "-a",
+        "/Users/kml/shell/projects/extract-benchmark/files/sideways-table.png",
+        "--no-log",
+        "--hide-reasoning",
+        "--json",
+        "Extract the table title, data, and notes from sideways-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs."
+      ],
+      "submitted_prompt": "Extract the table title, data, and notes from sideways-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "raw_stdout": "raw/sideways-table.stdout.json",
+      "raw_stderr": "raw/sideways-table.stderr.txt",
+      "exit_code": 0,
+      "output_bytes": 2389,
+      "output_sha256": "e812001ca206053ba8f9be6e5dba5dc0377031d10f477e271b880327c7754fee",
+      "response_metadata": {
+        "model": "openrouter/deepseek/deepseek-v4.1-flash-1017",
+        "resolved_model": null,
+        "options_json": {},
+        "duration_ms": 9770,
+        "input_tokens": 1061,
+        "output_tokens": 3721,
+        "token_details": "{\"input_tokens_details\": {\"cache_write_tokens\": null, \"cached_tokens\": 0}, \"output_tokens_details\": {\"reasoning_tokens\": 3123}}",
+        "conversation_id": "01m5w52h6en0dskdnnfyx731pc",
+        "provider_model": "deepseek/deepseek-v4.1-flash-1017",
+        "provider_status": "completed",
+        "provider_usage": {
+          "input_tokens": 1061,
+          "input_tokens_details": {
+            "cached_tokens": 0
+          },
+          "output_tokens": 3721,
+          "output_tokens_details": {
+            "reasoning_tokens": 3123
+          },
+          "total_tokens": 4782,
+          "cost": 0.0019784457,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0.00199843,
+            "upstream_inference_input_cost": 0.00013793,
+            "upstream_inference_output_cost": 0.0018605
+          }
+        }
+      },
+      "finished_at": "2026-10-26T13:06:04.420598+00:00",
+      "elapsed_seconds": 11.186
+    },
+    {
+      "task": 7,
+      "input": "files/text-two-columns-plus-tables.png",
+      "input_sha256": "f43913ccdbd7d78cd4268e7afa298c4a1b388d5330c77bc9bc7e8ae39d7e1bdd",
+      "output": "text-two-columns-plus-tables.md",
+      "prompt": "Extract the text and tables from text-two-columns-plus-tables.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "status": "completed",
+      "started_at": "2026-10-26T13:06:04.422639+00:00",
+      "command": [
+        "llm",
+        "-m",
+        "openrouter/deepseek/deepseek-v4.1-flash-1017",
+        "-a",
+        "/Users/kml/shell/projects/extract-benchmark/files/text-two-columns-plus-tables.png",
+        "--no-log",
+        "--hide-reasoning",
+        "--json",
+        "Extract the text and tables from text-two-columns-plus-tables.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs."
+      ],
+      "submitted_prompt": "Extract the text and tables from text-two-columns-plus-tables.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "raw_stdout": "raw/text-two-columns-plus-tables.stdout.json",
+      "raw_stderr": "raw/text-two-columns-plus-tables.stderr.txt",
+      "exit_code": 0,
+      "output_bytes": 2379,
+      "output_sha256": "acfb79b7defb6e18475851eb5b3e4d2508558ff0b1509d57aa5daec01fef6ad7",
+      "response_metadata": {
+        "model": "openrouter/deepseek/deepseek-v4.1-flash-1017",
+        "resolved_model": null,
+        "options_json": {},
+        "duration_ms": 120311,
+        "input_tokens": 998,
+        "output_tokens": 14265,
+        "token_details": "{\"input_tokens_details\": {\"cache_write_tokens\": null, \"cached_tokens\": 0}, \"output_tokens_details\": {\"reasoning_tokens\": 13452}}",
+        "conversation_id": "01m5w52vxr5b1r4m1bhz7vnhct",
+        "provider_model": "deepseek/deepseek-v4.1-flash-1017",
+        "provider_status": "completed",
+        "provider_usage": {
+          "input_tokens": 998,
+          "input_tokens_details": {
+            "cached_tokens": 0
+          },
+          "output_tokens": 14265,
+          "output_tokens_details": {
+            "reasoning_tokens": 13452
+          },
+          "total_tokens": 15263,
+          "cost": 0.0071402166,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0.00721234,
+            "upstream_inference_input_cost": 7.984e-05,
+            "upstream_inference_output_cost": 0.0071325
+          }
+        }
+      },
+      "finished_at": "2026-10-26T13:08:05.971501+00:00",
+      "elapsed_seconds": 121.55
+    },
+    {
+      "task": 8,
+      "input": "files/wide-table.png",
+      "input_sha256": "d7b1b756316bfb1f661960562835bdcc68743140ef32610a8559806f145a1544",
+      "output": "wide-table.md",
+      "prompt": "Extract the text from wide-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "status": "completed",
+      "started_at": "2026-10-26T13:08:05.972878+00:00",
+      "command": [
+        "llm",
+        "-m",
+        "openrouter/deepseek/deepseek-v4.1-flash-1017",
+        "-a",
+        "/Users/kml/shell/projects/extract-benchmark/files/wide-table.png",
+        "--no-log",
+        "--hide-reasoning",
+        "--json",
+        "Extract the text from wide-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs."
+      ],
+      "submitted_prompt": "Extract the text from wide-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "raw_stdout": "raw/wide-table.stdout.json",
+      "raw_stderr": "raw/wide-table.stderr.txt",
+      "exit_code": 0,
+      "output_bytes": 2369,
+      "output_sha256": "48cc1679c0ce4fd3f91d1736c6ecf877275e233bda6d2af68dc4287513f70f5b",
+      "response_metadata": {
+        "model": "openrouter/deepseek/deepseek-v4.1-flash-1017",
+        "resolved_model": null,
+        "options_json": {},
+        "duration_ms": 47474,
+        "input_tokens": 1024,
+        "output_tokens": 12709,
+        "token_details": "{\"input_tokens_details\": {\"cache_write_tokens\": null, \"cached_tokens\": 0}, \"output_tokens_details\": {\"reasoning_tokens\": 12126}}",
+        "conversation_id": "01m5w56jh88y9a4ee9xg9dekhn",
+        "provider_model": "deepseek/deepseek-v4.1-flash-1017",
+        "provider_status": "completed",
+        "provider_usage": {
+          "input_tokens": 1024,
+          "input_tokens_details": {
+            "cached_tokens": 0
+          },
+          "output_tokens": 12709,
+          "output_tokens_details": {
+            "reasoning_tokens": 12126
+          },
+          "total_tokens": 13733,
+          "cost": 0.0064227438,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0.00648762,
+            "upstream_inference_input_cost": 0.00013312,
+            "upstream_inference_output_cost": 0.0063545
+          }
+        }
+      },
+      "finished_at": "2026-10-26T13:08:54.589743+00:00",
+      "elapsed_seconds": 48.617
+    }
+  ],
+  "status": "completed",
+  "finished_at": "2026-10-26T13:08:54.590261+00:00",
+  "cli_version": "llm, version 0.36",
+  "plugin": "llm-openrouter 0.7.1",
+  "model_catalog": "openrouter-model.json",
+  "measurement_notes": "Each canonical image was submitted once, consecutively, with provider-default reasoning and no tools. CLI requests have the same 660-second timeout used for the earlier trials. Usage not returned by failed requests remains unavailable. Provider-reported reasoning tokens are included within output tokens and are not counted twice."
+}
