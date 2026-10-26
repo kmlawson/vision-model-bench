@@ -6,7 +6,7 @@ Open [the interactive dashboard](index.html) or [the live site](https://kmlawson
 
 | Configuration | Date | Backend | Saved | Content F1 | Number F1 | Status | Details |
 |---|---|---|---:|---:|---:|---|---|
-| [Gemini 4 Argon Medium (default)](gemini-4-argon/2026-10-26/) | 2026-10-26 | llm | 8/8 | 98.88% | 96.60% | completed | [Metadata](gemini-4-argon/2026-10-26/run.json) |
+| [Gemini 4 Argon Medium](gemini-4-argon/2026-10-26/) | 2026-10-26 | llm | 8/8 | 98.88% | 96.60% | completed | [Metadata](gemini-4-argon/2026-10-26/run.json) |
 | [Claude Opus 5.5](claude-opus-5.5/2026-10-12/) | 2026-10-12 | llm | 8/8 | 97.94% | 94.17% | completed | [Metadata](claude-opus-5.5/2026-10-12/run.json) |
 | [gpt-6-astra-low-cli](gpt-6-astra-low-cli/2026-10-13/) | 2026-10-13 | codex | 8/8 | 95.98% | 87.00% | completed | [Metadata](gpt-6-astra-low-cli/2026-10-13/run.json) |
 | [gpt-6-astra-low](gpt-6-astra-low/2026-10-12/) | 2026-10-12 | Codex fresh subagents | 8/8 | 95.85% | 87.75% | completed | [Metadata](gpt-6-astra-low/2026-10-12/run.json) |

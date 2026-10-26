@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-26T15:14:19.293643+00:00",
+  "generated_at": "2026-10-26T15:20:05.727051+00:00",
   "runs": [
     {
       "id": "gemini-3.8-flash-low/2026-10-12",
@@ -822871,7 +822871,7 @@
       "model": "gemini/gemini-4-argon",
       "family": "Gemini",
       "backend": "llm",
-      "display_name": "Gemini 4 Argon Medium (default)",
+      "display_name": "Gemini 4 Argon Medium",
       "effort": "medium (provider default; not overridden)",
       "status": "completed",
       "earlier_prompt": false,
