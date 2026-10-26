@@ -2,7 +2,7 @@
 
 Open [the interactive dashboard](index.html) or [the live site](https://kmlawson.github.io/vision-model-bench/). The dashboard is a single offline HTML file with embedded input images, accuracy scores, colored extraction review, timing, tokens, and reported costs.
 
-24 finished configurations, 178 saved extractions out of 192 tasks. Active runs are excluded until finished. Failed or missing final responses score zero; the eight corrected Markdown files are ground truth.
+25 finished configurations, 186 saved extractions out of 200 tasks. Active runs are excluded until finished. Failed or missing final responses score zero; the eight corrected Markdown files are ground truth.
 
 | Configuration | Date | Backend | Saved | Content F1 | Number F1 | Status | Details |
 |---|---|---|---:|---:|---:|---|---|
@@ -16,6 +16,7 @@ Open [the interactive dashboard](index.html) or [the live site](https://kmlawson
 | [gemini-3.8-flash-medium](gemini-3.8-flash-medium/2026-10-12/) | 2026-10-12 | agy | 8/8 | 94.20% | 87.26% | completed | [Metadata](gemini-3.8-flash-medium/2026-10-12/run.json) |
 | [claude-sonnet-5.5](claude-sonnet-5.5/2026-10-12/) | 2026-10-12 | llm | 8/8 | 93.92% | 86.05% | completed | [Metadata](claude-sonnet-5.5/2026-10-12/run.json) |
 | [qwen3.5-35b-a3b](qwen3.5-35b-a3b/2026-10-12/) | 2026-10-12 | llm | 8/8 | 86.93% | 71.33% | completed | [Metadata](qwen3.5-35b-a3b/2026-10-12/run.json) |
+| [nemotron-3.5-super-vl](nemotron-3.5-super-vl/2026-10-26/) | 2026-10-26 | llm | 8/8 | 83.73% | 71.41% | completed | [Metadata](nemotron-3.5-super-vl/2026-10-26/run.json) |
 | [deepseek-v4.1-flash-1017](deepseek-v4.1-flash-1017/2026-10-26/) | 2026-10-26 | llm | 8/8 | 83.56% | 71.37% | completed | [Metadata](deepseek-v4.1-flash-1017/2026-10-26/run.json) |
 | [gpt-6-luna-high-cli](gpt-6-luna-high-cli/2026-10-13/) | 2026-10-13 | codex | 8/8 | 80.75% | 71.66% | completed | [Metadata](gpt-6-luna-high-cli/2026-10-13/run.json) |
 | [claude-haiku-5.5](claude-haiku-5.5/2026-10-12/) | 2026-10-12 | llm | 8/8 | 80.64% | 75.34% | completed | [Metadata](claude-haiku-5.5/2026-10-12/run.json) |

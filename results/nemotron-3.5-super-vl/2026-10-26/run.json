@@ -1,0 +1,482 @@
+{
+  "model": "openrouter/nvidia/nemotron-3.5-super-vl",
+  "reasoning_effort": "provider default (not overridden)",
+  "backend": "llm",
+  "date": "2026-10-26",
+  "started_at": "2026-10-26T14:04:46.550754+00:00",
+  "instructions_sha256": "48bf7c9a7be01aa02742fc25453a458bee826a3e6513d628fd4c3d0a37efcb9f",
+  "execution": "Fresh CLI invocation per image; no conversation continuation, OCR, reference answers, or editorial corrections.",
+  "reference_status": "Ground truth is used only after extraction, never supplied to the model.",
+  "tasks": [
+    {
+      "task": 1,
+      "input": "files/1931-table-english.png",
+      "input_sha256": "b9e5a06aa10503fa8aeb0cbcff7369a03069eea5b3c62404a9e896da188c1fac",
+      "output": "1931-table-english.md",
+      "prompt": "Extract just the table title, data, and table notes from the top of 1931-table-english.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "status": "completed",
+      "started_at": "2026-10-26T14:04:46.551406+00:00",
+      "command": [
+        "llm",
+        "-m",
+        "openrouter/nvidia/nemotron-3.5-super-vl",
+        "-a",
+        "/Users/kml/shell/projects/extract-benchmark/files/1931-table-english.png",
+        "--no-log",
+        "--hide-reasoning",
+        "--json",
+        "Extract just the table title, data, and table notes from the top of 1931-table-english.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs."
+      ],
+      "submitted_prompt": "Extract just the table title, data, and table notes from the top of 1931-table-english.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "raw_stdout": "raw/1931-table-english.stdout.json",
+      "raw_stderr": "raw/1931-table-english.stderr.txt",
+      "exit_code": 0,
+      "output_bytes": 2668,
+      "output_sha256": "c93cdf3f1a5ba20f4df9619b8aee8d1b72aba3d2199adca4f3d80ee032b71959",
+      "response_metadata": {
+        "model": "openrouter/nvidia/nemotron-3.5-super-vl",
+        "resolved_model": null,
+        "options_json": {},
+        "duration_ms": 6331,
+        "input_tokens": 2508,
+        "output_tokens": 2962,
+        "token_details": "{\"input_tokens_details\": {\"cache_write_tokens\": null, \"cached_tokens\": 0}, \"output_tokens_details\": {\"reasoning_tokens\": 2072}}",
+        "conversation_id": "01m5w8ebe6yq3nxxg4t89ewsw6",
+        "provider_model": "nvidia/nemotron-3.5-super-vl",
+        "provider_status": "completed",
+        "provider_usage": {
+          "input_tokens": 2508,
+          "input_tokens_details": {
+            "cached_tokens": 0
+          },
+          "output_tokens": 2962,
+          "output_tokens_details": {
+            "reasoning_tokens": 2072
+          },
+          "total_tokens": 5470,
+          "cost": 0.001838628,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0.0018572,
+            "upstream_inference_input_cost": 0.0003762,
+            "upstream_inference_output_cost": 0.001481
+          }
+        }
+      },
+      "finished_at": "2026-10-26T14:04:54.100568+00:00",
+      "elapsed_seconds": 7.549
+    },
+    {
+      "task": 2,
+      "input": "files/difficult-table.png",
+      "input_sha256": "6e8030417069ffea318f62aa0734952ce6f272a2ab03c1e898b3743ca4fd7c7a",
+      "output": "difficult-table.md",
+      "prompt": "Extract the text from difficult-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "status": "completed",
+      "started_at": "2026-10-26T14:04:54.101593+00:00",
+      "command": [
+        "llm",
+        "-m",
+        "openrouter/nvidia/nemotron-3.5-super-vl",
+        "-a",
+        "/Users/kml/shell/projects/extract-benchmark/files/difficult-table.png",
+        "--no-log",
+        "--hide-reasoning",
+        "--json",
+        "Extract the text from difficult-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs."
+      ],
+      "submitted_prompt": "Extract the text from difficult-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "raw_stdout": "raw/difficult-table.stdout.json",
+      "raw_stderr": "raw/difficult-table.stderr.txt",
+      "exit_code": 0,
+      "output_bytes": 1293,
+      "output_sha256": "1f2bc23f837c2d5fb1a0ea3b2cc9ac4afb40785dd91349dec3933e19b05de4fd",
+      "response_metadata": {
+        "model": "openrouter/nvidia/nemotron-3.5-super-vl",
+        "resolved_model": null,
+        "options_json": {},
+        "duration_ms": 146118,
+        "input_tokens": 1856,
+        "output_tokens": 22503,
+        "token_details": "{\"input_tokens_details\": {\"cache_write_tokens\": null, \"cached_tokens\": 0}, \"output_tokens_details\": {\"reasoning_tokens\": 21662}}",
+        "conversation_id": "01m5w8ejyhbw2g4n09sf9t29yw",
+        "provider_model": "nvidia/nemotron-3.5-super-vl",
+        "provider_status": "completed",
+        "provider_usage": {
+          "input_tokens": 1856,
+          "input_tokens_details": {
+            "cached_tokens": 0
+          },
+          "output_tokens": 22503,
+          "output_tokens_details": {
+            "reasoning_tokens": 21662
+          },
+          "total_tokens": 24359,
+          "cost": 0.009094932,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0.0091868,
+            "upstream_inference_input_cost": 0.0001856,
+            "upstream_inference_output_cost": 0.0090012
+          }
+        }
+      },
+      "finished_at": "2026-10-26T14:07:21.556879+00:00",
+      "elapsed_seconds": 147.454
+    },
+    {
+      "task": 3,
+      "input": "files/english-page.png",
+      "input_sha256": "d25aacc8656b521b220e00c04262b6079ac1de0a37cd3e663e055a3bf1a25681",
+      "output": "english-page.md",
+      "prompt": "Extract the text from the right page of english-page.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "status": "completed",
+      "started_at": "2026-10-26T14:07:21.559311+00:00",
+      "command": [
+        "llm",
+        "-m",
+        "openrouter/nvidia/nemotron-3.5-super-vl",
+        "-a",
+        "/Users/kml/shell/projects/extract-benchmark/files/english-page.png",
+        "--no-log",
+        "--hide-reasoning",
+        "--json",
+        "Extract the text from the right page of english-page.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs."
+      ],
+      "submitted_prompt": "Extract the text from the right page of english-page.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "raw_stdout": "raw/english-page.stdout.json",
+      "raw_stderr": "raw/english-page.stderr.txt",
+      "exit_code": 0,
+      "output_bytes": 3594,
+      "output_sha256": "e7ccf816d847619ffa3c096a3d9171039bb09b8f1903d15b8979cdfaa7b2e3ba",
+      "response_metadata": {
+        "model": "openrouter/nvidia/nemotron-3.5-super-vl",
+        "resolved_model": null,
+        "options_json": {},
+        "duration_ms": 17323,
+        "input_tokens": 3418,
+        "output_tokens": 2454,
+        "token_details": "{\"input_tokens_details\": {\"cache_write_tokens\": null, \"cached_tokens\": 0}, \"output_tokens_details\": {\"reasoning_tokens\": 1657}}",
+        "conversation_id": "01m5w8k2tg9m9wtq5bby0zx4ev",
+        "provider_model": "nvidia/nemotron-3.5-super-vl",
+        "provider_status": "completed",
+        "provider_usage": {
+          "input_tokens": 3418,
+          "input_tokens_details": {
+            "cached_tokens": 0
+          },
+          "output_tokens": 2454,
+          "output_tokens_details": {
+            "reasoning_tokens": 1657
+          },
+          "total_tokens": 5872,
+          "cost": 0.001722303,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0.0017397,
+            "upstream_inference_input_cost": 0.0005127,
+            "upstream_inference_output_cost": 0.001227
+          }
+        }
+      },
+      "finished_at": "2026-10-26T14:07:40.068561+00:00",
+      "elapsed_seconds": 18.509
+    },
+    {
+      "task": 4,
+      "input": "files/itinerary.png",
+      "input_sha256": "aa8703d508f7f417d18677747adfa9f54ccc9fbac2509e55f2b26665be03e55b",
+      "output": "itinerary.md",
+      "prompt": "Extract the itinerary number 3 from itinerary.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "status": "completed",
+      "started_at": "2026-10-26T14:07:40.076357+00:00",
+      "command": [
+        "llm",
+        "-m",
+        "openrouter/nvidia/nemotron-3.5-super-vl",
+        "-a",
+        "/Users/kml/shell/projects/extract-benchmark/files/itinerary.png",
+        "--no-log",
+        "--hide-reasoning",
+        "--json",
+        "Extract the itinerary number 3 from itinerary.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs."
+      ],
+      "submitted_prompt": "Extract the itinerary number 3 from itinerary.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "raw_stdout": "raw/itinerary.stdout.json",
+      "raw_stderr": "raw/itinerary.stderr.txt",
+      "exit_code": 0,
+      "output_bytes": 3074,
+      "output_sha256": "06ca0992b286184e6acf03cd316909e6a2a68e23ff8399025305503f77f98926",
+      "response_metadata": {
+        "model": "openrouter/nvidia/nemotron-3.5-super-vl",
+        "resolved_model": null,
+        "options_json": {},
+        "duration_ms": 155942,
+        "input_tokens": 3460,
+        "output_tokens": 19261,
+        "token_details": "{\"input_tokens_details\": {\"cache_write_tokens\": null, \"cached_tokens\": 0}, \"output_tokens_details\": {\"reasoning_tokens\": 17894}}",
+        "conversation_id": "01m5w8kmwndkkp0rej27dgv68e",
+        "provider_model": "nvidia/nemotron-3.5-super-vl",
+        "provider_status": "completed",
+        "provider_usage": {
+          "input_tokens": 3460,
+          "input_tokens_details": {
+            "cached_tokens": 0
+          },
+          "output_tokens": 19261,
+          "output_tokens_details": {
+            "reasoning_tokens": 17894
+          },
+          "total_tokens": 22721,
+          "cost": 0.007969896,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0.0080504,
+            "upstream_inference_input_cost": 0.000346,
+            "upstream_inference_output_cost": 0.0077044
+          }
+        }
+      },
+      "finished_at": "2026-10-26T14:10:17.236217+00:00",
+      "elapsed_seconds": 157.158
+    },
+    {
+      "task": 5,
+      "input": "files/population-stats-japanese.png",
+      "input_sha256": "f535e12869d328add857874f694999fb811855b6d3f7d71ba71a647b9a8b8e33",
+      "output": "population-stats-japanese.md",
+      "prompt": "Extract the table of population statistics from population-stats-japanese.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "status": "completed",
+      "started_at": "2026-10-26T14:10:17.238650+00:00",
+      "command": [
+        "llm",
+        "-m",
+        "openrouter/nvidia/nemotron-3.5-super-vl",
+        "-a",
+        "/Users/kml/shell/projects/extract-benchmark/files/population-stats-japanese.png",
+        "--no-log",
+        "--hide-reasoning",
+        "--json",
+        "Extract the table of population statistics from population-stats-japanese.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs."
+      ],
+      "submitted_prompt": "Extract the table of population statistics from population-stats-japanese.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "raw_stdout": "raw/population-stats-japanese.stdout.json",
+      "raw_stderr": "raw/population-stats-japanese.stderr.txt",
+      "exit_code": 0,
+      "output_bytes": 1277,
+      "output_sha256": "612967ab7627bd8817078b15926a1ed01b0fef0db469398836ba4984b872d5b2",
+      "response_metadata": {
+        "model": "openrouter/nvidia/nemotron-3.5-super-vl",
+        "resolved_model": null,
+        "options_json": {},
+        "duration_ms": 142957,
+        "input_tokens": 2077,
+        "output_tokens": 20656,
+        "token_details": "{\"input_tokens_details\": {\"cache_write_tokens\": null, \"cached_tokens\": 0}, \"output_tokens_details\": {\"reasoning_tokens\": 20009}}",
+        "conversation_id": "01m5w8rebxbzwxbzpyyhz5pzsc",
+        "provider_model": "nvidia/nemotron-3.5-super-vl",
+        "provider_status": "completed",
+        "provider_usage": {
+          "input_tokens": 2077,
+          "input_tokens_details": {
+            "cached_tokens": 0
+          },
+          "output_tokens": 20656,
+          "output_tokens_details": {
+            "reasoning_tokens": 20009
+          },
+          "total_tokens": 22733,
+          "cost": 0.008385399,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0.0084701,
+            "upstream_inference_input_cost": 0.0002077,
+            "upstream_inference_output_cost": 0.0082624
+          }
+        }
+      },
+      "finished_at": "2026-10-26T14:12:41.394465+00:00",
+      "elapsed_seconds": 144.155
+    },
+    {
+      "task": 6,
+      "input": "files/sideways-table.png",
+      "input_sha256": "89b8fd891f136ef2998a982af74b1bddd34389be9e68b20b990a816985c7882e",
+      "output": "sideways-table.md",
+      "prompt": "Extract the table title, data, and notes from sideways-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "status": "completed",
+      "started_at": "2026-10-26T14:12:41.395614+00:00",
+      "command": [
+        "llm",
+        "-m",
+        "openrouter/nvidia/nemotron-3.5-super-vl",
+        "-a",
+        "/Users/kml/shell/projects/extract-benchmark/files/sideways-table.png",
+        "--no-log",
+        "--hide-reasoning",
+        "--json",
+        "Extract the table title, data, and notes from sideways-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs."
+      ],
+      "submitted_prompt": "Extract the table title, data, and notes from sideways-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "raw_stdout": "raw/sideways-table.stdout.json",
+      "raw_stderr": "raw/sideways-table.stderr.txt",
+      "exit_code": 0,
+      "output_bytes": 2199,
+      "output_sha256": "be8f0e4aa2f0a4913c9dcd78a3a3bf9d8eea38ba43eb64877640fb39b70db620",
+      "response_metadata": {
+        "model": "openrouter/nvidia/nemotron-3.5-super-vl",
+        "resolved_model": null,
+        "options_json": {},
+        "duration_ms": 37400,
+        "input_tokens": 1572,
+        "output_tokens": 19590,
+        "token_details": "{\"input_tokens_details\": {\"cache_write_tokens\": null, \"cached_tokens\": 0}, \"output_tokens_details\": {\"reasoning_tokens\": 18405}}",
+        "conversation_id": "01m5w8wv4gqzqy9azhes5thbh3",
+        "provider_model": "nvidia/nemotron-3.5-super-vl",
+        "provider_status": "completed",
+        "provider_usage": {
+          "input_tokens": 1572,
+          "input_tokens_details": {
+            "cached_tokens": 0
+          },
+          "output_tokens": 19590,
+          "output_tokens_details": {
+            "reasoning_tokens": 18405
+          },
+          "total_tokens": 21162,
+          "cost": 0.009930492,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0.0100308,
+            "upstream_inference_input_cost": 0.0002358,
+            "upstream_inference_output_cost": 0.009795
+          }
+        }
+      },
+      "finished_at": "2026-10-26T14:13:19.998511+00:00",
+      "elapsed_seconds": 38.602
+    },
+    {
+      "task": 7,
+      "input": "files/text-two-columns-plus-tables.png",
+      "input_sha256": "f43913ccdbd7d78cd4268e7afa298c4a1b388d5330c77bc9bc7e8ae39d7e1bdd",
+      "output": "text-two-columns-plus-tables.md",
+      "prompt": "Extract the text and tables from text-two-columns-plus-tables.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "status": "completed",
+      "started_at": "2026-10-26T14:13:20.000439+00:00",
+      "command": [
+        "llm",
+        "-m",
+        "openrouter/nvidia/nemotron-3.5-super-vl",
+        "-a",
+        "/Users/kml/shell/projects/extract-benchmark/files/text-two-columns-plus-tables.png",
+        "--no-log",
+        "--hide-reasoning",
+        "--json",
+        "Extract the text and tables from text-two-columns-plus-tables.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs."
+      ],
+      "submitted_prompt": "Extract the text and tables from text-two-columns-plus-tables.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "raw_stdout": "raw/text-two-columns-plus-tables.stdout.json",
+      "raw_stderr": "raw/text-two-columns-plus-tables.stderr.txt",
+      "exit_code": 0,
+      "output_bytes": 2006,
+      "output_sha256": "86d5c6793cb14dc611b14983e62807a174743bc1f1f360aa657ad75c8cd54b90",
+      "response_metadata": {
+        "model": "openrouter/nvidia/nemotron-3.5-super-vl",
+        "resolved_model": null,
+        "options_json": {},
+        "duration_ms": 21024,
+        "input_tokens": 1562,
+        "output_tokens": 12167,
+        "token_details": "{\"input_tokens_details\": {\"cache_write_tokens\": null, \"cached_tokens\": 0}, \"output_tokens_details\": {\"reasoning_tokens\": 11450}}",
+        "conversation_id": "01m5w8y0w541hscpm788w9we6f",
+        "provider_model": "nvidia/nemotron-3.5-super-vl",
+        "provider_status": "completed",
+        "provider_usage": {
+          "input_tokens": 1562,
+          "input_tokens_details": {
+            "cached_tokens": 0
+          },
+          "output_tokens": 12167,
+          "output_tokens_details": {
+            "reasoning_tokens": 11450
+          },
+          "total_tokens": 13729,
+          "cost": 0.0154432575,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0.01559925,
+            "upstream_inference_input_cost": 0.0003905,
+            "upstream_inference_output_cost": 0.01520875
+          }
+        }
+      },
+      "finished_at": "2026-10-26T14:13:42.225170+00:00",
+      "elapsed_seconds": 22.224
+    },
+    {
+      "task": 8,
+      "input": "files/wide-table.png",
+      "input_sha256": "d7b1b756316bfb1f661960562835bdcc68743140ef32610a8559806f145a1544",
+      "output": "wide-table.md",
+      "prompt": "Extract the text from wide-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "status": "completed",
+      "started_at": "2026-10-26T14:13:42.226396+00:00",
+      "command": [
+        "llm",
+        "-m",
+        "openrouter/nvidia/nemotron-3.5-super-vl",
+        "-a",
+        "/Users/kml/shell/projects/extract-benchmark/files/wide-table.png",
+        "--no-log",
+        "--hide-reasoning",
+        "--json",
+        "Extract the text from wide-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs."
+      ],
+      "submitted_prompt": "Extract the text from wide-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "raw_stdout": "raw/wide-table.stdout.json",
+      "raw_stderr": "raw/wide-table.stderr.txt",
+      "exit_code": 0,
+      "output_bytes": 2318,
+      "output_sha256": "671f00ece7aee56b74395da3282eeb7545608493121bd3b32a4778e39e923c1f",
+      "response_metadata": {
+        "model": "openrouter/nvidia/nemotron-3.5-super-vl",
+        "resolved_model": null,
+        "options_json": {},
+        "duration_ms": 416265,
+        "input_tokens": 1540,
+        "output_tokens": 12527,
+        "token_details": "{\"input_tokens_details\": {\"cache_write_tokens\": null, \"cached_tokens\": 0}, \"output_tokens_details\": {\"reasoning_tokens\": 10799}}",
+        "conversation_id": "01m5w8yphhrcgmyra1y2ckvwj1",
+        "provider_model": "nvidia/nemotron-3.5-super-vl",
+        "provider_status": "completed",
+        "provider_usage": {
+          "input_tokens": 1540,
+          "input_tokens_details": {
+            "cached_tokens": 0
+          },
+          "output_tokens": 12527,
+          "output_tokens_details": {
+            "reasoning_tokens": 10799
+          },
+          "total_tokens": 14067,
+          "cost": 0.0044320815,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0.00447685,
+            "upstream_inference_input_cost": 9.24e-05,
+            "upstream_inference_output_cost": 0.00438445
+          }
+        }
+      },
+      "finished_at": "2026-10-26T14:20:39.678314+00:00",
+      "elapsed_seconds": 417.449
+    }
+  ],
+  "status": "completed",
+  "finished_at": "2026-10-26T14:20:39.679439+00:00",
+  "cli_version": "llm, version 0.36",
+  "plugin": "llm-openrouter 0.7.1",
+  "model_catalog": "openrouter-model.json",
+  "measurement_notes": "Each canonical image was submitted once, consecutively, with provider-default reasoning and no tools. CLI requests have the same 660-second timeout used for the earlier trials. Usage not returned by failed requests remains unavailable. Reported token fields are retained exactly; reasoning counts are displayed separately and never added to reported totals."
+}
