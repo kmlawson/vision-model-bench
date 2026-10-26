@@ -20,7 +20,12 @@ CONFIGS = {
             for family in ('opus', 'haiku', 'sonnet')] +
            [(f'qwen{variant}', f'openrouter/qwen/qwen{variant}', None)
             for variant in ('3.5-35b-a3b', '3.7-flash', '3.8-flash')] +
-           [('kimi-k3.1-pro', 'openrouter/moonshotai/kimi-k3.1-pro', None)],
+           [('kimi-k3.1-pro', 'openrouter/moonshotai/kimi-k3.1-pro', None),
+            ('deepseek-v4.1-flash-1017', 'openrouter/deepseek/deepseek-v4.1-flash-1017', None),
+            ('mimo-v2.6-pro', 'openrouter/xiaomi/mimo-v2.6-pro', None),
+            ('mimo-v2.6-flash', 'openrouter/xiaomi/mimo-v2.6-flash', None),
+            ('nemotron-3.5-super-vl', 'openrouter/nvidia/nemotron-3.5-super-vl', None),
+            ('muse-spark-open', 'openrouter/meta/muse-spark-open', None)],
     'codex': [(f'gpt-6.1-sol-{effort}', 'gpt-6.1-sol', effort)
               for effort in ('low', 'medium', 'high')] +
              [('gpt-6-astra-low-cli', 'gpt-6-astra', 'low')] +

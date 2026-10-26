@@ -50,6 +50,7 @@ python3 run-cli-benchmark.py codex --models gpt-6.1-sol-low gpt-6.1-sol-medium g
 python3 run-cli-benchmark.py codex --models gpt-6-astra-low-cli gpt-6-luna-low-cli gpt-6-luna-medium-cli gpt-6-luna-high-cli --workers 1
 python3 run-cli-benchmark.py llm --models qwen3.5-35b-a3b qwen3.7-flash qwen3.8-flash --workers 1
 python3 run-cli-benchmark.py llm --models kimi-k3.1-pro --workers 1
+python3 run-cli-benchmark.py llm --models deepseek-v4.1-flash-1017 mimo-v2.6-pro mimo-v2.6-flash nemotron-3.5-super-vl muse-spark-open --workers 1
 ```
 
 The `agy` run selects `gemini-3.8-flash-low`, `gemini-3.8-flash-medium`, and `gemini-3.8-flash-high`. Each request starts in a separate workspace containing only its input image. The Claude `llm` command selects `anthropic/claude-opus-5-5`, `anthropic/claude-haiku-5-5`, and `anthropic/claude-sonnet-5-5`, supplying the PNG with `-a`. Claude reasoning settings are left at provider defaults. Every CLI task starts a fresh conversation.
@@ -63,6 +64,8 @@ GPT-6.1 Sol runs use the installed Codex CLI at low, medium, and high effort. In
 Qwen runs use `openrouter/qwen/qwen3.5-35b-a3b`, `openrouter/qwen/qwen3.7-flash`, and `openrouter/qwen/qwen3.8-flash` through the installed `llm-openrouter` plugin. These models run consecutively with `--workers 1`, with one fresh request per image and provider-default reasoning settings. Canonical input images are attached directly. The dashboard includes reasoning tokens, cached tokens, and provider-reported charges from the raw OpenRouter usage object. These are recorded charges, rather than estimates from a pricing table. See [OpenRouter usage accounting](https://github.com/OpenRouterTeam/docs/blob/main/cookbook/administration/usage-accounting.mdx) for the reported fields.
 
 Kimi K3.1 Pro uses `openrouter/moonshotai/kimi-k3.1-pro` through `llm-openrouter`, with provider-default reasoning settings. Each canonical PNG is attached directly in a fresh request. Inputs run consecutively using the same prompts and 660-second timeout as the earlier CLI benchmarks; original responses, timing, tokens, and provider-reported charges are retained. This is the existing visual-extraction category; the future blind-with-analysis plan is not enabled.
+
+The additional October OpenRouter cohort includes DeepSeek V4.1 Flash 1017, MiMo V2.6 Pro and Flash, NVIDIA Nemotron 3.5 Super VL, and Meta Muse Spark Open. They use the same consecutive one-shot requests, canonical PNGs, provider-default reasoning, and 660-second limit. See [availability and exact model IDs](docs/openrouter-october-2026.md).
 
 For Claude, the itinerary PNG needs lossless recompression to fit the provider's encoded image limit. Its prepared attachment is retained under `raw/inputs/`; identical decoded pixels are verified and recorded in the manifest. The canonical input in `files/` stays unchanged. Failed transport attempts are retained under `raw/attempts/`.
 
