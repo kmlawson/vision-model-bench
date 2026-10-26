@@ -1,6 +1,6 @@
 {
   "model": "gemini/gemini-4-argon",
-  "reasoning_effort": "provider default (not overridden)",
+  "reasoning_effort": "medium (provider default; not overridden)",
   "backend": "llm",
   "date": "2026-10-26",
   "started_at": "2026-10-26T14:40:19.122410+00:00",
@@ -350,5 +350,12 @@
   "cli_version": "llm, version 0.36",
   "plugin": "llm-gemini 0.35",
   "model_catalog": "model-catalog.json",
-  "measurement_notes": "Each canonical image was submitted once, consecutively, with provider-default reasoning and no tools. CLI requests have the same 660-second timeout used for the earlier trials. Usage not returned by failed requests remains unavailable. Reported token fields are retained exactly; reasoning counts are displayed separately and never added to reported totals."
+  "measurement_notes": "Each canonical image was submitted once, consecutively, with provider-default reasoning and no tools. CLI requests have the same 660-second timeout used for the earlier trials. Usage not returned by failed requests remains unavailable. Reported token fields are retained exactly; reasoning counts are displayed separately and never added to reported totals.",
+  "display_name": "Gemini 4 Argon Medium (default)",
+  "requested_reasoning_effort": null,
+  "reasoning_effort_source": {
+    "basis": "Documented provider default; all eight original commands and raw options_json records contain no thinking-level override.",
+    "url": "https://ai.google.dev/gemini-api/docs/latest-model",
+    "checked_date": "2026-10-26"
+  }
 }

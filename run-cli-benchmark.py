@@ -27,7 +27,8 @@ CONFIGS = {
             ('nemotron-3.5-super-vl', 'openrouter/nvidia/nemotron-3.5-super-vl', None),
             ('muse-spark-open', 'openrouter/meta/muse-spark-open', None),
             ('mistral-large-4', 'mistral/mistral-large-4', None),
-            ('gemini-4-argon', 'gemini/gemini-4-argon', None)],
+            ('gemini-4-argon', 'gemini/gemini-4-argon', None),
+            ('gpt-6-astra-high-openrouter', 'openrouter/openai/gpt-6-astra', 'high')],
     'codex': [(f'gpt-6.1-sol-{effort}', 'gpt-6.1-sol', effort)
               for effort in ('low', 'medium', 'high')] +
              [('gpt-6-astra-low-cli', 'gpt-6-astra', 'low')] +
@@ -193,7 +194,10 @@ def run_config(backend, config, run_date, selected):
             attachment, preparation = llm_attachment(source, outdir) if model.startswith('anthropic/') else (source, None)
             if preparation:
                 task['attachment_preparation'] = preparation
-            command = ['llm', '-m', model, '-a', str(attachment), '--no-log', '--hide-reasoning', '--json', prompt]
+            command = ['llm', '-m', model, '-a', str(attachment), '--no-log', '--hide-reasoning', '--json']
+            if effort is not None:
+                command += ['-o', 'reasoning_effort', effort]
+            command.append(prompt)
             cwd = ROOT
         task.update({'status': 'running', 'started_at': now(), 'command': command,
                      'submitted_prompt': prompt, 'raw_stdout': 'raw/' + stem + '.stdout.json',

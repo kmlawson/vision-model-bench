@@ -360,5 +360,6 @@
   ],
   "status": "completed",
   "finished_at": "2026-10-12T21:58:23.838876+01:00",
-  "verification": "All eight saved outputs exactly match raw CLI responses; provider stop_reason=end_turn, no tools, no options overridden. Input and output hashes verified separately."
+  "verification": "All eight saved outputs exactly match raw CLI responses; provider stop_reason=end_turn, no tools, no options overridden. Input and output hashes verified separately.",
+  "display_name": "Claude Opus 5.5"
 }
