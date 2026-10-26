@@ -19,7 +19,8 @@ CONFIGS = {
     'llm': [(f'claude-{family}-5.5', f'anthropic/claude-{family}-5-5', None)
             for family in ('opus', 'haiku', 'sonnet')] +
            [(f'qwen{variant}', f'openrouter/qwen/qwen{variant}', None)
-            for variant in ('3.5-35b-a3b', '3.7-flash', '3.8-flash')],
+            for variant in ('3.5-35b-a3b', '3.7-flash', '3.8-flash')] +
+           [('kimi-k3.1-pro', 'openrouter/moonshotai/kimi-k3.1-pro', None)],
     'codex': [(f'gpt-6.1-sol-{effort}', 'gpt-6.1-sol', effort)
               for effort in ('low', 'medium', 'high')] +
              [('gpt-6-astra-low-cli', 'gpt-6-astra', 'low')] +
