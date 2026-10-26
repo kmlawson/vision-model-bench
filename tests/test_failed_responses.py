@@ -38,3 +38,29 @@ class FailedResponseTests(unittest.TestCase):
             self.assertEqual(task['reported_cost_usd'], .01)
             self.assertEqual(task['error'], 'Provider incomplete')
             self.assertEqual(json.loads((run_dir/'failed.json').read_text()), raw)
+
+    def test_native_gemini_thought_tokens_are_not_counted_twice(self):
+        names = ['1931-table-english', 'difficult-table', 'english-page', 'itinerary',
+                 'population-stats-japanese', 'sideways-table', 'text-two-columns-plus-tables', 'wide-table']
+        with tempfile.TemporaryDirectory() as directory:
+            results = Path(directory)
+            run_dir = results/'gemini-4-argon'/'2026-10-26'
+            run_dir.mkdir(parents=True)
+            raw = {'response': 'A table', 'input_tokens': 112, 'output_tokens': 135,
+                   'token_details': json.dumps({'candidatesTokenCount': 35, 'thoughtsTokenCount': 100,
+                                                'cachedContentTokenCount': 12}),
+                   'response_json': {'modelVersion': 'gemini-4-argon',
+                                     'candidates': [{'finishReason': 'STOP'}]}}
+            (run_dir/'response.json').write_text(json.dumps(raw))
+            tasks = [{'task': i, 'input': f'{name}.png', 'status': 'failed'}
+                     for i, name in enumerate(names, 1)]
+            tasks[0].update(status='completed', raw_stdout='response.json')
+            (run_dir/'run.json').write_text(json.dumps({'status': 'incomplete', 'tasks': tasks}))
+            with patch.object(builder, 'HERE', results):
+                task = builder.collect()['runs'][0]['tasks'][0]
+            self.assertEqual(task['input_tokens'], 112)
+            self.assertEqual(task['output_tokens'], 135)
+            self.assertEqual(task['thinking_tokens'], 100)
+            self.assertEqual(task['cached_input_tokens'], 12)
+            self.assertEqual(task['total_tokens'], 247)
+            self.assertIsNone(task['reported_cost_usd'])

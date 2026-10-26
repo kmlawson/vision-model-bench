@@ -51,6 +51,7 @@ python3 run-cli-benchmark.py codex --models gpt-6-astra-low-cli gpt-6-luna-low-c
 python3 run-cli-benchmark.py llm --models qwen3.5-35b-a3b qwen3.7-flash qwen3.8-flash --workers 1
 python3 run-cli-benchmark.py llm --models kimi-k3.1-pro --workers 1
 python3 run-cli-benchmark.py llm --models deepseek-v4.1-flash-1017 mimo-v2.6-pro mimo-v2.6-flash nemotron-3.5-super-vl muse-spark-open --workers 1
+python3 run-cli-benchmark.py llm --models mistral-large-4 gemini-4-argon --workers 1
 ```
 
 The `agy` run selects `gemini-3.8-flash-low`, `gemini-3.8-flash-medium`, and `gemini-3.8-flash-high`. Each request starts in a separate workspace containing only its input image. The Claude `llm` command selects `anthropic/claude-opus-5-5`, `anthropic/claude-haiku-5-5`, and `anthropic/claude-sonnet-5-5`, supplying the PNG with `-a`. Claude reasoning settings are left at provider defaults. Every CLI task starts a fresh conversation.
@@ -74,3 +75,5 @@ The runner resumes completed tasks without overwriting their outputs. Its `--mod
 ## Future blind-with-analysis category
 
 The [proposed benchmark plan](docs/blind-with-analysis-benchmarks.md) describes isolated analysis tools, ground-truth access restrictions, leakage checks, measurement, and a separate OCR category. It is saved for later implementation; no tools-enabled cohort has been started.
+
+Mistral Large 4 uses the native `llm-mistral` plugin and saved Mistral key, with the explicit model ID `mistral/mistral-large-4`. Gemini 4 Argon uses `gemini/gemini-4-argon` through `llm-gemini` 0.35 and the saved Gemini key. Both model catalogs were checked with the configured accounts on 2026-10-26; Gemini was installed with `llm install -U llm-gemini` and the Mistral catalog refreshed. Both run the same eight requests consecutively, without tools, using canonical PNGs, provider-default reasoning, the unchanged prompts, and the same timeout. Native plugins retain timing, tokens, and resolved model versions where returned. Charges not supplied by the APIs remain unavailable; Gemini reasoning tokens are captured from `thoughtsTokenCount` without adding them again to output totals.

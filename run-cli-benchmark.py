@@ -25,7 +25,9 @@ CONFIGS = {
             ('mimo-v2.6-pro', 'openrouter/xiaomi/mimo-v2.6-pro', None),
             ('mimo-v2.6-flash', 'openrouter/xiaomi/mimo-v2.6-flash', None),
             ('nemotron-3.5-super-vl', 'openrouter/nvidia/nemotron-3.5-super-vl', None),
-            ('muse-spark-open', 'openrouter/meta/muse-spark-open', None)],
+            ('muse-spark-open', 'openrouter/meta/muse-spark-open', None),
+            ('mistral-large-4', 'mistral/mistral-large-4', None),
+            ('gemini-4-argon', 'gemini/gemini-4-argon', None)],
     'codex': [(f'gpt-6.1-sol-{effort}', 'gpt-6.1-sol', effort)
               for effort in ('low', 'medium', 'high')] +
              [('gpt-6-astra-low-cli', 'gpt-6-astra', 'low')] +
