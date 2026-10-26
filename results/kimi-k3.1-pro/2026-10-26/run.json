@@ -235,7 +235,7 @@
       "input_sha256": "d7b1b756316bfb1f661960562835bdcc68743140ef32610a8559806f145a1544",
       "output": "wide-table.md",
       "prompt": "Extract the text from wide-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
-      "status": "running",
+      "status": "completed",
       "started_at": "2026-10-26T12:45:12.021099+00:00",
       "command": [
         "llm",
@@ -250,8 +250,28 @@
       ],
       "submitted_prompt": "Extract the text from wide-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
       "raw_stdout": "raw/wide-table.stdout.json",
-      "raw_stderr": "raw/wide-table.stderr.txt"
+      "raw_stderr": "raw/wide-table.stderr.txt",
+      "exit_code": 0,
+      "output_bytes": 2241,
+      "output_sha256": "cdda9cd3473a5766f457365d246dc7a4fbed16ae34510ff6d9e2145b4660f554",
+      "response_metadata": {
+        "model": "openrouter/moonshotai/kimi-k3.1-pro",
+        "resolved_model": null,
+        "options_json": {},
+        "duration_ms": 347318,
+        "input_tokens": 2027,
+        "output_tokens": 12025,
+        "token_details": "{\"input_tokens_details\": {\"cache_write_tokens\": null, \"cached_tokens\": 0}, \"output_tokens_details\": {\"reasoning_tokens\": 10768}}",
+        "conversation_id": "01m5w3wmt2fsbj5hn1yg2rz3qy",
+        "provider_model": "moonshotai/kimi-k3.1-pro"
+      },
+      "finished_at": "2026-10-26T12:51:00.507474+00:00",
+      "elapsed_seconds": 348.488
     }
   ],
-  "status": "running"
+  "status": "incomplete",
+  "finished_at": "2026-10-26T12:51:00.508102+00:00",
+  "cli_version": "llm, version 0.36",
+  "plugin": "llm-openrouter 0.7.1",
+  "measurement_notes": "Each image was submitted once, consecutively, with provider-default reasoning and no tools. CLI requests have the same 660-second timeout used for the earlier trials. Timed-out requests returned no response or usage data; their tokens and charges are unavailable, and reported totals include only captured usage."
 }
