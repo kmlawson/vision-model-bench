@@ -183,7 +183,7 @@
       "input_sha256": "89b8fd891f136ef2998a982af74b1bddd34389be9e68b20b990a816985c7882e",
       "output": "sideways-table.md",
       "prompt": "Extract the table title, data, and notes from sideways-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
-      "status": "running",
+      "status": "failed",
       "started_at": "2026-10-26T12:23:11.990698+00:00",
       "command": [
         "llm",
@@ -198,14 +198,33 @@
       ],
       "submitted_prompt": "Extract the table title, data, and notes from sideways-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
       "raw_stdout": "raw/sideways-table.stdout.json",
-      "raw_stderr": "raw/sideways-table.stderr.txt"
+      "raw_stderr": "raw/sideways-table.stderr.txt",
+      "error": "CLI exceeded 660-second timeout",
+      "finished_at": "2026-10-26T12:34:12.003558+00:00",
+      "elapsed_seconds": 660.012
     },
     {
       "task": 7,
       "input": "files/text-two-columns-plus-tables.png",
       "input_sha256": "f43913ccdbd7d78cd4268e7afa298c4a1b388d5330c77bc9bc7e8ae39d7e1bdd",
       "output": "text-two-columns-plus-tables.md",
-      "prompt": "Extract the text and tables from text-two-columns-plus-tables.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs."
+      "prompt": "Extract the text and tables from text-two-columns-plus-tables.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "status": "running",
+      "started_at": "2026-10-26T12:34:12.007882+00:00",
+      "command": [
+        "llm",
+        "-m",
+        "openrouter/moonshotai/kimi-k3.1-pro",
+        "-a",
+        "/Users/kml/shell/projects/extract-benchmark/files/text-two-columns-plus-tables.png",
+        "--no-log",
+        "--hide-reasoning",
+        "--json",
+        "Extract the text and tables from text-two-columns-plus-tables.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs."
+      ],
+      "submitted_prompt": "Extract the text and tables from text-two-columns-plus-tables.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "raw_stdout": "raw/text-two-columns-plus-tables.stdout.json",
+      "raw_stderr": "raw/text-two-columns-plus-tables.stderr.txt"
     },
     {
       "task": 8,
