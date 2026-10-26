@@ -1,0 +1,478 @@
+{
+  "model": "openrouter/xiaomi/mimo-v2.6-flash",
+  "reasoning_effort": "provider default (not overridden)",
+  "backend": "llm",
+  "date": "2026-10-26",
+  "started_at": "2026-10-26T13:23:36.705280+00:00",
+  "instructions_sha256": "48bf7c9a7be01aa02742fc25453a458bee826a3e6513d628fd4c3d0a37efcb9f",
+  "execution": "Fresh CLI invocation per image; no conversation continuation, OCR, reference answers, or editorial corrections.",
+  "reference_status": "Ground truth is used only after extraction, never supplied to the model.",
+  "tasks": [
+    {
+      "task": 1,
+      "input": "files/1931-table-english.png",
+      "input_sha256": "b9e5a06aa10503fa8aeb0cbcff7369a03069eea5b3c62404a9e896da188c1fac",
+      "output": "1931-table-english.md",
+      "prompt": "Extract just the table title, data, and table notes from the top of 1931-table-english.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "status": "completed",
+      "started_at": "2026-10-26T13:23:36.705871+00:00",
+      "command": [
+        "llm",
+        "-m",
+        "openrouter/xiaomi/mimo-v2.6-flash",
+        "-a",
+        "/Users/kml/shell/projects/extract-benchmark/files/1931-table-english.png",
+        "--no-log",
+        "--hide-reasoning",
+        "--json",
+        "Extract just the table title, data, and table notes from the top of 1931-table-english.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs."
+      ],
+      "submitted_prompt": "Extract just the table title, data, and table notes from the top of 1931-table-english.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "raw_stdout": "raw/1931-table-english.stdout.json",
+      "raw_stderr": "raw/1931-table-english.stderr.txt",
+      "exit_code": 0,
+      "output_bytes": 2670,
+      "output_sha256": "66dc28a4fbb2cae15b1a7545295f4485ce9cf671a9dc636d4ab98cafebca182a",
+      "response_metadata": {
+        "model": "openrouter/xiaomi/mimo-v2.6-flash",
+        "resolved_model": null,
+        "options_json": {},
+        "duration_ms": 9524,
+        "input_tokens": 2397,
+        "output_tokens": 3816,
+        "token_details": "{\"input_tokens_details\": {\"cache_write_tokens\": null, \"cached_tokens\": 3}, \"output_tokens_details\": {\"reasoning_tokens\": 2356}}",
+        "conversation_id": "01m5w62ze9kzmd0yetankktfdb",
+        "provider_model": "xiaomi/mimo-v2.6-flash",
+        "provider_status": "completed",
+        "provider_usage": {
+          "input_tokens": 2397,
+          "input_tokens_details": {
+            "cached_tokens": 3
+          },
+          "output_tokens": 3816,
+          "output_tokens_details": {
+            "reasoning_tokens": 2356
+          },
+          "total_tokens": 6213,
+          "cost": 0.00136591191,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0.001379709,
+            "upstream_inference_input_cost": 0.000311229,
+            "upstream_inference_output_cost": 0.00106848
+          }
+        }
+      },
+      "finished_at": "2026-10-26T13:23:47.348612+00:00",
+      "elapsed_seconds": 10.642
+    },
+    {
+      "task": 2,
+      "input": "files/difficult-table.png",
+      "input_sha256": "6e8030417069ffea318f62aa0734952ce6f272a2ab03c1e898b3743ca4fd7c7a",
+      "output": "difficult-table.md",
+      "prompt": "Extract the text from difficult-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "status": "completed",
+      "started_at": "2026-10-26T13:23:47.349348+00:00",
+      "command": [
+        "llm",
+        "-m",
+        "openrouter/xiaomi/mimo-v2.6-flash",
+        "-a",
+        "/Users/kml/shell/projects/extract-benchmark/files/difficult-table.png",
+        "--no-log",
+        "--hide-reasoning",
+        "--json",
+        "Extract the text from difficult-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs."
+      ],
+      "submitted_prompt": "Extract the text from difficult-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "raw_stdout": "raw/difficult-table.stdout.json",
+      "raw_stderr": "raw/difficult-table.stderr.txt",
+      "exit_code": 0,
+      "output_bytes": 1283,
+      "output_sha256": "1693dcb88c2c40dc07d8466db729c6ec36da86a0580356cf462c0add30214b71",
+      "response_metadata": {
+        "model": "openrouter/xiaomi/mimo-v2.6-flash",
+        "resolved_model": null,
+        "options_json": {},
+        "duration_ms": 5832,
+        "input_tokens": 1795,
+        "output_tokens": 865,
+        "token_details": "{\"input_tokens_details\": {\"cache_write_tokens\": null, \"cached_tokens\": 0}, \"output_tokens_details\": {\"reasoning_tokens\": 0}}",
+        "conversation_id": "01m5w639v3fyfzz9wt8q31engf",
+        "provider_model": "xiaomi/mimo-v2.6-flash",
+        "provider_status": "completed",
+        "provider_usage": {
+          "input_tokens": 1795,
+          "input_tokens_details": {
+            "cached_tokens": 0
+          },
+          "output_tokens": 865,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 2660,
+          "cost": 0.0004707945,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0.00047555,
+            "upstream_inference_input_cost": 0.00023335,
+            "upstream_inference_output_cost": 0.0002422
+          }
+        }
+      },
+      "finished_at": "2026-10-26T13:23:54.284302+00:00",
+      "elapsed_seconds": 6.935
+    },
+    {
+      "task": 3,
+      "input": "files/english-page.png",
+      "input_sha256": "d25aacc8656b521b220e00c04262b6079ac1de0a37cd3e663e055a3bf1a25681",
+      "output": "english-page.md",
+      "prompt": "Extract the text from the right page of english-page.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "status": "completed",
+      "started_at": "2026-10-26T13:23:54.286533+00:00",
+      "command": [
+        "llm",
+        "-m",
+        "openrouter/xiaomi/mimo-v2.6-flash",
+        "-a",
+        "/Users/kml/shell/projects/extract-benchmark/files/english-page.png",
+        "--no-log",
+        "--hide-reasoning",
+        "--json",
+        "Extract the text from the right page of english-page.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs."
+      ],
+      "submitted_prompt": "Extract the text from the right page of english-page.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "raw_stdout": "raw/english-page.stdout.json",
+      "raw_stderr": "raw/english-page.stderr.txt",
+      "exit_code": 0,
+      "output_bytes": 3601,
+      "output_sha256": "49a48147a4886a4f6de4ab5fd06450f68e14660db068ecd347ca124132b70f4b",
+      "response_metadata": {
+        "model": "openrouter/xiaomi/mimo-v2.6-flash",
+        "resolved_model": null,
+        "options_json": {},
+        "duration_ms": 11829,
+        "input_tokens": 3404,
+        "output_tokens": 4106,
+        "token_details": "{\"input_tokens_details\": {\"cache_write_tokens\": null, \"cached_tokens\": 3}, \"output_tokens_details\": {\"reasoning_tokens\": 3363}}",
+        "conversation_id": "01m5w63gktbjrcr0ys1nawyv5s",
+        "provider_model": "xiaomi/mimo-v2.6-flash",
+        "provider_status": "completed",
+        "provider_usage": {
+          "input_tokens": 3404,
+          "input_tokens_details": {
+            "cached_tokens": 3
+          },
+          "output_tokens": 4106,
+          "output_tokens_details": {
+            "reasoning_tokens": 3363
+          },
+          "total_tokens": 7510,
+          "cost": 0.00157590081,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0.001591819,
+            "upstream_inference_input_cost": 0.000442139,
+            "upstream_inference_output_cost": 0.00114968
+          }
+        }
+      },
+      "finished_at": "2026-10-26T13:24:07.239022+00:00",
+      "elapsed_seconds": 12.952
+    },
+    {
+      "task": 4,
+      "input": "files/itinerary.png",
+      "input_sha256": "aa8703d508f7f417d18677747adfa9f54ccc9fbac2509e55f2b26665be03e55b",
+      "output": "itinerary.md",
+      "prompt": "Extract the itinerary number 3 from itinerary.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "status": "completed",
+      "started_at": "2026-10-26T13:24:07.244542+00:00",
+      "command": [
+        "llm",
+        "-m",
+        "openrouter/xiaomi/mimo-v2.6-flash",
+        "-a",
+        "/Users/kml/shell/projects/extract-benchmark/files/itinerary.png",
+        "--no-log",
+        "--hide-reasoning",
+        "--json",
+        "Extract the itinerary number 3 from itinerary.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs."
+      ],
+      "submitted_prompt": "Extract the itinerary number 3 from itinerary.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "raw_stdout": "raw/itinerary.stdout.json",
+      "raw_stderr": "raw/itinerary.stderr.txt",
+      "exit_code": 0,
+      "output_bytes": 1550,
+      "output_sha256": "ef84297eb063ace0fa19b59533f8c7f56cd789c763f563f69a3c6c875d977683",
+      "response_metadata": {
+        "model": "openrouter/xiaomi/mimo-v2.6-flash",
+        "resolved_model": null,
+        "options_json": {},
+        "duration_ms": 510998,
+        "input_tokens": 8281,
+        "output_tokens": 13622,
+        "token_details": "{\"input_tokens_details\": {\"cache_write_tokens\": null, \"cached_tokens\": 0}, \"output_tokens_details\": {\"reasoning_tokens\": 12864}}",
+        "conversation_id": "01m5w63x8mbm4897pzctca2eg7",
+        "provider_model": "xiaomi/mimo-v2.6-flash",
+        "provider_status": "completed",
+        "provider_usage": {
+          "input_tokens": 8281,
+          "input_tokens_details": {
+            "cached_tokens": 0
+          },
+          "output_tokens": 13622,
+          "output_tokens_details": {
+            "reasoning_tokens": 12864
+          },
+          "total_tokens": 21903,
+          "cost": 0.0045958374,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0.00464226,
+            "upstream_inference_input_cost": 0.0008281,
+            "upstream_inference_output_cost": 0.00381416
+          }
+        }
+      },
+      "finished_at": "2026-10-26T13:32:39.369352+00:00",
+      "elapsed_seconds": 512.123
+    },
+    {
+      "task": 5,
+      "input": "files/population-stats-japanese.png",
+      "input_sha256": "f535e12869d328add857874f694999fb811855b6d3f7d71ba71a647b9a8b8e33",
+      "output": "population-stats-japanese.md",
+      "prompt": "Extract the table of population statistics from population-stats-japanese.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "status": "completed",
+      "started_at": "2026-10-26T13:32:39.371336+00:00",
+      "command": [
+        "llm",
+        "-m",
+        "openrouter/xiaomi/mimo-v2.6-flash",
+        "-a",
+        "/Users/kml/shell/projects/extract-benchmark/files/population-stats-japanese.png",
+        "--no-log",
+        "--hide-reasoning",
+        "--json",
+        "Extract the table of population statistics from population-stats-japanese.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs."
+      ],
+      "submitted_prompt": "Extract the table of population statistics from population-stats-japanese.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "raw_stdout": "raw/population-stats-japanese.stdout.json",
+      "raw_stderr": "raw/population-stats-japanese.stderr.txt",
+      "exit_code": 0,
+      "output_bytes": 1196,
+      "output_sha256": "e388f8f91eb121958ca351e1f7045a2f9b3ec069eaae93450ababd482254c11c",
+      "response_metadata": {
+        "model": "openrouter/xiaomi/mimo-v2.6-flash",
+        "resolved_model": null,
+        "options_json": {},
+        "duration_ms": 69502,
+        "input_tokens": 2061,
+        "output_tokens": 16280,
+        "token_details": "{\"input_tokens_details\": {\"cache_write_tokens\": null, \"cached_tokens\": 0}, \"output_tokens_details\": {\"reasoning_tokens\": 15495}}",
+        "conversation_id": "01m5w6khbvnw5v4w8jn9vqwepg",
+        "provider_model": "xiaomi/mimo-v2.6-flash",
+        "provider_status": "completed",
+        "provider_usage": {
+          "input_tokens": 2061,
+          "input_tokens_details": {
+            "cached_tokens": 0
+          },
+          "output_tokens": 16280,
+          "output_tokens_details": {
+            "reasoning_tokens": 15495
+          },
+          "total_tokens": 18341,
+          "cost": 0.0047984706,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0.00484694,
+            "upstream_inference_input_cost": 0.00028854,
+            "upstream_inference_output_cost": 0.0045584
+          }
+        }
+      },
+      "finished_at": "2026-10-26T13:33:49.950421+00:00",
+      "elapsed_seconds": 70.578
+    },
+    {
+      "task": 6,
+      "input": "files/sideways-table.png",
+      "input_sha256": "89b8fd891f136ef2998a982af74b1bddd34389be9e68b20b990a816985c7882e",
+      "output": "sideways-table.md",
+      "prompt": "Extract the table title, data, and notes from sideways-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "status": "completed",
+      "started_at": "2026-10-26T13:33:49.951420+00:00",
+      "command": [
+        "llm",
+        "-m",
+        "openrouter/xiaomi/mimo-v2.6-flash",
+        "-a",
+        "/Users/kml/shell/projects/extract-benchmark/files/sideways-table.png",
+        "--no-log",
+        "--hide-reasoning",
+        "--json",
+        "Extract the table title, data, and notes from sideways-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs."
+      ],
+      "submitted_prompt": "Extract the table title, data, and notes from sideways-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "raw_stdout": "raw/sideways-table.stdout.json",
+      "raw_stderr": "raw/sideways-table.stderr.txt",
+      "exit_code": 0,
+      "output_bytes": 2198,
+      "output_sha256": "566af94c90344888cdef8a0a459e765a11aaceea18161f1553cf06aead22c546",
+      "response_metadata": {
+        "model": "openrouter/xiaomi/mimo-v2.6-flash",
+        "resolved_model": null,
+        "options_json": {},
+        "duration_ms": 94724,
+        "input_tokens": 1558,
+        "output_tokens": 21890,
+        "token_details": "{\"input_tokens_details\": {\"cache_write_tokens\": null, \"cached_tokens\": 3}, \"output_tokens_details\": {\"reasoning_tokens\": 12986}}",
+        "conversation_id": "01m5w6npafxgjprdb16503j12z",
+        "provider_model": "xiaomi/mimo-v2.6-flash",
+        "provider_status": "completed",
+        "provider_usage": {
+          "input_tokens": 1558,
+          "input_tokens_details": {
+            "cached_tokens": 3
+          },
+          "output_tokens": 21890,
+          "output_tokens_details": {
+            "reasoning_tokens": 12986
+          },
+          "total_tokens": 23448,
+          "cost": 0.00626804541,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0.006331359,
+            "upstream_inference_input_cost": 0.000202159,
+            "upstream_inference_output_cost": 0.0061292
+          }
+        }
+      },
+      "finished_at": "2026-10-26T13:35:25.789207+00:00",
+      "elapsed_seconds": 95.837
+    },
+    {
+      "task": 7,
+      "input": "files/text-two-columns-plus-tables.png",
+      "input_sha256": "f43913ccdbd7d78cd4268e7afa298c4a1b388d5330c77bc9bc7e8ae39d7e1bdd",
+      "output": "text-two-columns-plus-tables.md",
+      "prompt": "Extract the text and tables from text-two-columns-plus-tables.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "status": "failed",
+      "started_at": "2026-10-26T13:35:25.791137+00:00",
+      "command": [
+        "llm",
+        "-m",
+        "openrouter/xiaomi/mimo-v2.6-flash",
+        "-a",
+        "/Users/kml/shell/projects/extract-benchmark/files/text-two-columns-plus-tables.png",
+        "--no-log",
+        "--hide-reasoning",
+        "--json",
+        "Extract the text and tables from text-two-columns-plus-tables.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs."
+      ],
+      "submitted_prompt": "Extract the text and tables from text-two-columns-plus-tables.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "raw_stdout": "raw/text-two-columns-plus-tables.stdout.json",
+      "raw_stderr": "raw/text-two-columns-plus-tables.stderr.txt",
+      "exit_code": 0,
+      "error": "Provider did not complete the response: incomplete; ",
+      "finished_at": "2026-10-26T13:42:26.259238+00:00",
+      "elapsed_seconds": 420.466,
+      "response_metadata": {
+        "model": "openrouter/xiaomi/mimo-v2.6-flash",
+        "duration_ms": 419222,
+        "input_tokens": 1474,
+        "output_tokens": 131072,
+        "token_details": "{\"input_tokens_details\": {\"cache_write_tokens\": null, \"cached_tokens\": 0}, \"output_tokens_details\": {\"reasoning_tokens\": 131060}}",
+        "provider_model": "xiaomi/mimo-v2.6-flash",
+        "provider_status": "incomplete",
+        "provider_usage": {
+          "input_tokens": 1474,
+          "input_tokens_details": {
+            "cached_tokens": 0
+          },
+          "output_tokens": 131072,
+          "output_tokens_details": {
+            "reasoning_tokens": 131060
+          },
+          "total_tokens": 132546,
+          "cost": 0.0365374548,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0.03690652,
+            "upstream_inference_input_cost": 0.00020636,
+            "upstream_inference_output_cost": 0.03670016
+          }
+        }
+      }
+    },
+    {
+      "task": 8,
+      "input": "files/wide-table.png",
+      "input_sha256": "d7b1b756316bfb1f661960562835bdcc68743140ef32610a8559806f145a1544",
+      "output": "wide-table.md",
+      "prompt": "Extract the text from wide-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "status": "completed",
+      "started_at": "2026-10-26T13:42:26.260959+00:00",
+      "command": [
+        "llm",
+        "-m",
+        "openrouter/xiaomi/mimo-v2.6-flash",
+        "-a",
+        "/Users/kml/shell/projects/extract-benchmark/files/wide-table.png",
+        "--no-log",
+        "--hide-reasoning",
+        "--json",
+        "Extract the text from wide-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs."
+      ],
+      "submitted_prompt": "Extract the text from wide-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "raw_stdout": "raw/wide-table.stdout.json",
+      "raw_stderr": "raw/wide-table.stderr.txt",
+      "exit_code": 0,
+      "output_bytes": 2233,
+      "output_sha256": "b9b46e502bf88f49138648991c91e99dd64b67466c8e0fadbad6befa39362270",
+      "response_metadata": {
+        "model": "openrouter/xiaomi/mimo-v2.6-flash",
+        "resolved_model": null,
+        "options_json": {},
+        "duration_ms": 24753,
+        "input_tokens": 1526,
+        "output_tokens": 16902,
+        "token_details": "{\"input_tokens_details\": {\"cache_write_tokens\": null, \"cached_tokens\": 0}, \"output_tokens_details\": {\"reasoning_tokens\": 15205}}",
+        "conversation_id": "01m5w75ef4pmksa0e5344b2p11",
+        "provider_model": "xiaomi/mimo-v2.6-flash",
+        "provider_status": "completed",
+        "provider_usage": {
+          "input_tokens": 1526,
+          "input_tokens_details": {
+            "cached_tokens": 0
+          },
+          "output_tokens": 16902,
+          "output_tokens_details": {
+            "reasoning_tokens": 15205
+          },
+          "total_tokens": 18428,
+          "cost": 0.004896738,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0.0049462,
+            "upstream_inference_input_cost": 0.00021364,
+            "upstream_inference_output_cost": 0.00473256
+          }
+        }
+      },
+      "finished_at": "2026-10-26T13:42:52.044148+00:00",
+      "elapsed_seconds": 25.783
+    }
+  ],
+  "status": "incomplete",
+  "finished_at": "2026-10-26T13:42:52.044645+00:00",
+  "cli_version": "llm, version 0.36",
+  "plugin": "llm-openrouter 0.7.1",
+  "model_catalog": "openrouter-model.json",
+  "measurement_notes": "Each canonical image was submitted once, consecutively, with provider-default reasoning and no tools. CLI requests have the same 660-second timeout used for the earlier trials. Usage not returned by failed requests remains unavailable. Reported token fields are retained exactly; reasoning counts are displayed separately and never added to reported totals."
+}
