@@ -1,0 +1,99 @@
+[
+  {
+    "id": "01m5w605q3zjpbya0y6tw54rq0",
+    "model": "openrouter/xiaomi/mimo-v2.6-pro",
+    "resolved_model": null,
+    "options_json": {},
+    "conversation_id": "01m5w605q1hjy986fjdnrf1z28",
+    "duration_ms": 6152,
+    "datetime_utc": "2026-10-26T13:22:05.667076+00:00",
+    "input_tokens": 1663,
+    "output_tokens": 15,
+    "token_details": "{\"input_tokens_details\": {\"cache_write_tokens\": null, \"cached_tokens\": 0}, \"output_tokens_details\": {\"reasoning_tokens\": 0}}",
+    "conversation_name": "Extract the text and tables fro\u2026",
+    "conversation_model": "openrouter/xiaomi/mimo-v2.6-pro",
+    "schema_json": null,
+    "prompt": "Extract the text and tables from text-two-columns-plus-tables.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example \u4e09 \u2192 3 and \u4e8c\u5341\u4e09 \u2192 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+    "system": null,
+    "response": "The request was rejected because it was considered high risk",
+    "reasoning": null,
+    "prompt_json": null,
+    "response_json": {
+      "object": "response",
+      "parallel_tool_calls": true,
+      "temperature": 1.0,
+      "tool_choice": "auto",
+      "top_p": 1.0,
+      "background": false,
+      "service_tier": "auto",
+      "status": "incomplete",
+      "top_logprobs": 0,
+      "truncation": "disabled",
+      "frequency_penalty": 0,
+      "presence_penalty": 0,
+      "store": false,
+      "tools": [],
+      "id": "gen-1793020927-9WdKnpdeodgHW8KblSX0",
+      "created_at": 1793020927.0,
+      "incomplete_details": {
+        "reason": "content_filter"
+      },
+      "model": "xiaomi/mimo-v2.6-pro",
+      "output": [
+        {
+          "role": "assistant",
+          "status": "completed",
+          "type": "message",
+          "id": "msg_tmp_mcoywzsl86e",
+          "content": [
+            {
+              "annotations": [],
+              "text": "The request was rejected because it was considered high risk",
+              "type": "output_text",
+              "logprobs": []
+            }
+          ]
+        }
+      ],
+      "completed_at": 1793020931.0,
+      "text": {
+        "format": {
+          "type": "text"
+        }
+      },
+      "usage": {
+        "input_tokens": 1663,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 15,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 1678,
+        "cost": 0.00072909045,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.000736455,
+          "upstream_inference_input_cost": 0.000723405,
+          "upstream_inference_output_cost": 1.305e-05
+        }
+      }
+    },
+    "prompt_fragments": [],
+    "system_fragments": [],
+    "tools": [],
+    "tool_calls": [],
+    "tool_results": [],
+    "attachments": [
+      {
+        "id": "f43913ccdbd7d78cd4268e7afa298c4a1b388d5330c77bc9bc7e8ae39d7e1bdd",
+        "type": "image/png",
+        "path": "/Users/kml/shell/projects/extract-benchmark/files/text-two-columns-plus-tables.png",
+        "url": null,
+        "content": null,
+        "content_length": null
+      }
+    ]
+  }
+]

@@ -81,6 +81,12 @@ def extract_response(stdout, backend):
         raise ValueError('CLI returned is_error: ' + str(value.get('result', ''))[:500])
     if backend == 'agy' and value.get('status') not in (None, 'SUCCESS'):
         raise ValueError('agy returned status: ' + str(value['status']))
+    provider = value.get('response_json')
+    if backend == 'llm' and isinstance(provider, dict):
+        if provider.get('error') or provider.get('status') in ('incomplete', 'failed', 'cancelled'):
+            raise ValueError('Provider did not complete the response: ' +
+                             str(provider.get('error') or provider.get('status')) +
+                             '; ' + str(value.get('response', ''))[:500])
     for key in (('response',) if backend == 'llm' else ('result', 'response', 'text')):
         text = value.get(key)
         if isinstance(text, str) and text.strip():

@@ -2,7 +2,7 @@
 
 Open [the interactive dashboard](index.html) or [the live site](https://kmlawson.github.io/vision-model-bench/). The dashboard is a single offline HTML file with embedded input images, accuracy scores, colored extraction review, timing, tokens, and reported costs.
 
-22 finished configurations, 164 saved extractions out of 176 tasks. Active runs are excluded until finished. Failed or missing final responses score zero; the eight corrected Markdown files are ground truth.
+23 finished configurations, 171 saved extractions out of 184 tasks. Active runs are excluded until finished. Failed or missing final responses score zero; the eight corrected Markdown files are ground truth.
 
 | Configuration | Date | Backend | Saved | Content F1 | Number F1 | Status | Details |
 |---|---|---|---:|---:|---:|---|---|
@@ -26,6 +26,7 @@ Open [the interactive dashboard](index.html) or [the live site](https://kmlawson
 | [gpt-6-luna-medium-cli](gpt-6-luna-medium-cli/2026-10-13/) | 2026-10-13 | codex | 8/8 | 75.04% | 69.71% | completed | [Metadata](gpt-6-luna-medium-cli/2026-10-13/run.json) |
 | [qwen3.8-flash](qwen3.8-flash/2026-10-12/) | 2026-10-12 | llm | 6/8 | 71.43% | 68.68% | incomplete | [Metadata](qwen3.8-flash/2026-10-12/run.json) |
 | [gemini-3.8-flash-high](gemini-3.8-flash-high/2026-10-12/) | 2026-10-12 | agy | 6/8 | 71.12% | 66.44% | failed | [Metadata](gemini-3.8-flash-high/2026-10-12/run.json) |
+| [mimo-v2.6-pro](mimo-v2.6-pro/2026-10-26/) | 2026-10-26 | llm | 7/8 | 59.48% | 57.80% | incomplete | [Metadata](mimo-v2.6-pro/2026-10-26/run.json) |
 | [kimi-k3.1-pro](kimi-k3.1-pro/2026-10-26/) | 2026-10-26 | llm | 4/8 | 49.70% | 49.43% | incomplete | [Metadata](kimi-k3.1-pro/2026-10-26/run.json) |
 | [qwen3.7-flash](qwen3.7-flash/2026-10-12/) | 2026-10-12 | llm | 4/8 | 48.31% | 48.23% | incomplete | [Metadata](qwen3.7-flash/2026-10-12/run.json) |
 
