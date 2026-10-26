@@ -1,0 +1,482 @@
+{
+  "model": "openrouter/meta/muse-spark-open",
+  "reasoning_effort": "provider default (not overridden)",
+  "backend": "llm",
+  "date": "2026-10-26",
+  "started_at": "2026-10-26T14:20:57.682957+00:00",
+  "instructions_sha256": "48bf7c9a7be01aa02742fc25453a458bee826a3e6513d628fd4c3d0a37efcb9f",
+  "execution": "Fresh CLI invocation per image; no conversation continuation, OCR, reference answers, or editorial corrections.",
+  "reference_status": "Ground truth is used only after extraction, never supplied to the model.",
+  "tasks": [
+    {
+      "task": 1,
+      "input": "files/1931-table-english.png",
+      "input_sha256": "b9e5a06aa10503fa8aeb0cbcff7369a03069eea5b3c62404a9e896da188c1fac",
+      "output": "1931-table-english.md",
+      "prompt": "Extract just the table title, data, and table notes from the top of 1931-table-english.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "status": "completed",
+      "started_at": "2026-10-26T14:20:57.683666+00:00",
+      "command": [
+        "llm",
+        "-m",
+        "openrouter/meta/muse-spark-open",
+        "-a",
+        "/Users/kml/shell/projects/extract-benchmark/files/1931-table-english.png",
+        "--no-log",
+        "--hide-reasoning",
+        "--json",
+        "Extract just the table title, data, and table notes from the top of 1931-table-english.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs."
+      ],
+      "submitted_prompt": "Extract just the table title, data, and table notes from the top of 1931-table-english.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "raw_stdout": "raw/1931-table-english.stdout.json",
+      "raw_stderr": "raw/1931-table-english.stderr.txt",
+      "exit_code": 0,
+      "output_bytes": 2652,
+      "output_sha256": "d6512b5bdcaf4576fad3252c25ce110b28cfea38e7fcbc8693f10cb4bc3c08bc",
+      "response_metadata": {
+        "model": "openrouter/meta/muse-spark-open",
+        "resolved_model": null,
+        "options_json": {},
+        "duration_ms": 70946,
+        "input_tokens": 3271,
+        "output_tokens": 3230,
+        "token_details": "{\"input_tokens_details\": {\"cache_write_tokens\": null, \"cached_tokens\": 128}, \"output_tokens_details\": {\"reasoning_tokens\": 2504}}",
+        "conversation_id": "01m5w9bztf6bvgxy0jqnnk0wfv",
+        "provider_model": "meta/muse-spark-open",
+        "provider_status": "completed",
+        "provider_usage": {
+          "input_tokens": 3271,
+          "input_tokens_details": {
+            "cached_tokens": 128
+          },
+          "output_tokens": 3230,
+          "output_tokens_details": {
+            "reasoning_tokens": 2504
+          },
+          "total_tokens": 6501,
+          "cost": 0.0174986955,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0.01767545,
+            "upstream_inference_input_cost": 0.00394795,
+            "upstream_inference_output_cost": 0.0137275
+          }
+        }
+      },
+      "finished_at": "2026-10-26T14:22:09.829466+00:00",
+      "elapsed_seconds": 72.145
+    },
+    {
+      "task": 2,
+      "input": "files/difficult-table.png",
+      "input_sha256": "6e8030417069ffea318f62aa0734952ce6f272a2ab03c1e898b3743ca4fd7c7a",
+      "output": "difficult-table.md",
+      "prompt": "Extract the text from difficult-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "status": "completed",
+      "started_at": "2026-10-26T14:22:09.830564+00:00",
+      "command": [
+        "llm",
+        "-m",
+        "openrouter/meta/muse-spark-open",
+        "-a",
+        "/Users/kml/shell/projects/extract-benchmark/files/difficult-table.png",
+        "--no-log",
+        "--hide-reasoning",
+        "--json",
+        "Extract the text from difficult-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs."
+      ],
+      "submitted_prompt": "Extract the text from difficult-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "raw_stdout": "raw/difficult-table.stdout.json",
+      "raw_stderr": "raw/difficult-table.stderr.txt",
+      "exit_code": 0,
+      "output_bytes": 1219,
+      "output_sha256": "9b8fa56f0f37ecbe7ab86ad5cd676482e028600b7369e9715641551f90be8f28",
+      "response_metadata": {
+        "model": "openrouter/meta/muse-spark-open",
+        "resolved_model": null,
+        "options_json": {},
+        "duration_ms": 39010,
+        "input_tokens": 2438,
+        "output_tokens": 6351,
+        "token_details": "{\"input_tokens_details\": {\"cache_write_tokens\": null, \"cached_tokens\": 112}, \"output_tokens_details\": {\"reasoning_tokens\": 5809}}",
+        "conversation_id": "01m5w9e693jksyqbsj2cqjkgy8",
+        "provider_model": "meta/muse-spark-open",
+        "provider_status": "completed",
+        "provider_usage": {
+          "input_tokens": 2438,
+          "input_tokens_details": {
+            "cached_tokens": 112
+          },
+          "output_tokens": 6351,
+          "output_tokens_details": {
+            "reasoning_tokens": 5809
+          },
+          "total_tokens": 8789,
+          "cost": 0.0296168895,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0.02991605,
+            "upstream_inference_input_cost": 0.0029243,
+            "upstream_inference_output_cost": 0.02699175
+          }
+        }
+      },
+      "finished_at": "2026-10-26T14:22:50.046448+00:00",
+      "elapsed_seconds": 40.215
+    },
+    {
+      "task": 3,
+      "input": "files/english-page.png",
+      "input_sha256": "d25aacc8656b521b220e00c04262b6079ac1de0a37cd3e663e055a3bf1a25681",
+      "output": "english-page.md",
+      "prompt": "Extract the text from the right page of english-page.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "status": "completed",
+      "started_at": "2026-10-26T14:22:50.049094+00:00",
+      "command": [
+        "llm",
+        "-m",
+        "openrouter/meta/muse-spark-open",
+        "-a",
+        "/Users/kml/shell/projects/extract-benchmark/files/english-page.png",
+        "--no-log",
+        "--hide-reasoning",
+        "--json",
+        "Extract the text from the right page of english-page.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs."
+      ],
+      "submitted_prompt": "Extract the text from the right page of english-page.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "raw_stdout": "raw/english-page.stdout.json",
+      "raw_stderr": "raw/english-page.stderr.txt",
+      "exit_code": 0,
+      "output_bytes": 3606,
+      "output_sha256": "5b886e13dd2efadf99e9541090e51f783da8af78b5299f153cfb1a2a11b3c9db",
+      "response_metadata": {
+        "model": "openrouter/meta/muse-spark-open",
+        "resolved_model": null,
+        "options_json": {},
+        "duration_ms": 8696,
+        "input_tokens": 4316,
+        "output_tokens": 1998,
+        "token_details": "{\"input_tokens_details\": {\"cache_write_tokens\": null, \"cached_tokens\": 128}, \"output_tokens_details\": {\"reasoning_tokens\": 1221}}",
+        "conversation_id": "01m5w9fdh6vd5dgw00hk1tcnfw",
+        "provider_model": "meta/muse-spark-open",
+        "provider_status": "completed",
+        "provider_usage": {
+          "input_tokens": 4316,
+          "input_tokens_details": {
+            "cached_tokens": 128
+          },
+          "output_tokens": 1998,
+          "output_tokens_details": {
+            "reasoning_tokens": 1221
+          },
+          "total_tokens": 6314,
+          "cost": 0.013608243,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0.0137457,
+            "upstream_inference_input_cost": 0.0052542,
+            "upstream_inference_output_cost": 0.0084915
+          }
+        }
+      },
+      "finished_at": "2026-10-26T14:22:59.908733+00:00",
+      "elapsed_seconds": 9.859
+    },
+    {
+      "task": 4,
+      "input": "files/itinerary.png",
+      "input_sha256": "aa8703d508f7f417d18677747adfa9f54ccc9fbac2509e55f2b26665be03e55b",
+      "output": "itinerary.md",
+      "prompt": "Extract the itinerary number 3 from itinerary.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "status": "completed",
+      "started_at": "2026-10-26T14:22:59.914791+00:00",
+      "command": [
+        "llm",
+        "-m",
+        "openrouter/meta/muse-spark-open",
+        "-a",
+        "/Users/kml/shell/projects/extract-benchmark/files/itinerary.png",
+        "--no-log",
+        "--hide-reasoning",
+        "--json",
+        "Extract the itinerary number 3 from itinerary.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs."
+      ],
+      "submitted_prompt": "Extract the itinerary number 3 from itinerary.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "raw_stdout": "raw/itinerary.stdout.json",
+      "raw_stderr": "raw/itinerary.stderr.txt",
+      "exit_code": 0,
+      "output_bytes": 3428,
+      "output_sha256": "091005cd6b605da63ceb17805746148d89a3b8f39006b98dba24a49354abbb62",
+      "response_metadata": {
+        "model": "openrouter/meta/muse-spark-open",
+        "resolved_model": null,
+        "options_json": {},
+        "duration_ms": 22727,
+        "input_tokens": 4290,
+        "output_tokens": 4333,
+        "token_details": "{\"input_tokens_details\": {\"cache_write_tokens\": null, \"cached_tokens\": 0}, \"output_tokens_details\": {\"reasoning_tokens\": 2870}}",
+        "conversation_id": "01m5w9fq5k6xdtbjbyjjzdgjt0",
+        "provider_model": "meta/muse-spark-open",
+        "provider_status": "completed",
+        "provider_usage": {
+          "input_tokens": 4290,
+          "input_tokens_details": {
+            "cached_tokens": 0
+          },
+          "output_tokens": 4333,
+          "output_tokens_details": {
+            "reasoning_tokens": 2870
+          },
+          "total_tokens": 8623,
+          "cost": 0.0235399725,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0.02377775,
+            "upstream_inference_input_cost": 0.0053625,
+            "upstream_inference_output_cost": 0.01841525
+          }
+        }
+      },
+      "finished_at": "2026-10-26T14:23:23.823755+00:00",
+      "elapsed_seconds": 23.908
+    },
+    {
+      "task": 5,
+      "input": "files/population-stats-japanese.png",
+      "input_sha256": "f535e12869d328add857874f694999fb811855b6d3f7d71ba71a647b9a8b8e33",
+      "output": "population-stats-japanese.md",
+      "prompt": "Extract the table of population statistics from population-stats-japanese.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "status": "completed",
+      "started_at": "2026-10-26T14:23:23.825828+00:00",
+      "command": [
+        "llm",
+        "-m",
+        "openrouter/meta/muse-spark-open",
+        "-a",
+        "/Users/kml/shell/projects/extract-benchmark/files/population-stats-japanese.png",
+        "--no-log",
+        "--hide-reasoning",
+        "--json",
+        "Extract the table of population statistics from population-stats-japanese.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs."
+      ],
+      "submitted_prompt": "Extract the table of population statistics from population-stats-japanese.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "raw_stdout": "raw/population-stats-japanese.stdout.json",
+      "raw_stderr": "raw/population-stats-japanese.stderr.txt",
+      "exit_code": 0,
+      "output_bytes": 1198,
+      "output_sha256": "e6f81876069289e4e658581b6b9707499bb5be37f40f72bf6315739c20a84859",
+      "response_metadata": {
+        "model": "openrouter/meta/muse-spark-open",
+        "resolved_model": null,
+        "options_json": {},
+        "duration_ms": 10337,
+        "input_tokens": 2700,
+        "output_tokens": 2961,
+        "token_details": "{\"input_tokens_details\": {\"cache_write_tokens\": null, \"cached_tokens\": 0}, \"output_tokens_details\": {\"reasoning_tokens\": 2592}}",
+        "conversation_id": "01m5w9gegdpnnxhhfk4nwfymfk",
+        "provider_model": "meta/muse-spark-open",
+        "provider_status": "completed",
+        "provider_usage": {
+          "input_tokens": 2700,
+          "input_tokens_details": {
+            "cached_tokens": 0
+          },
+          "output_tokens": 2961,
+          "output_tokens_details": {
+            "reasoning_tokens": 2592
+          },
+          "total_tokens": 5661,
+          "cost": 0.0157996575,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0.01595925,
+            "upstream_inference_input_cost": 0.003375,
+            "upstream_inference_output_cost": 0.01258425
+          }
+        }
+      },
+      "finished_at": "2026-10-26T14:23:35.328084+00:00",
+      "elapsed_seconds": 11.502
+    },
+    {
+      "task": 6,
+      "input": "files/sideways-table.png",
+      "input_sha256": "89b8fd891f136ef2998a982af74b1bddd34389be9e68b20b990a816985c7882e",
+      "output": "sideways-table.md",
+      "prompt": "Extract the table title, data, and notes from sideways-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "status": "completed",
+      "started_at": "2026-10-26T14:23:35.329179+00:00",
+      "command": [
+        "llm",
+        "-m",
+        "openrouter/meta/muse-spark-open",
+        "-a",
+        "/Users/kml/shell/projects/extract-benchmark/files/sideways-table.png",
+        "--no-log",
+        "--hide-reasoning",
+        "--json",
+        "Extract the table title, data, and notes from sideways-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs."
+      ],
+      "submitted_prompt": "Extract the table title, data, and notes from sideways-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "raw_stdout": "raw/sideways-table.stdout.json",
+      "raw_stderr": "raw/sideways-table.stderr.txt",
+      "exit_code": 0,
+      "output_bytes": 2150,
+      "output_sha256": "8dd928cee03edd933d079e48111ba5deb5a17984edd99eb31dc27bd5e14cc0c8",
+      "response_metadata": {
+        "model": "openrouter/meta/muse-spark-open",
+        "resolved_model": null,
+        "options_json": {},
+        "duration_ms": 25248,
+        "input_tokens": 2081,
+        "output_tokens": 8853,
+        "token_details": "{\"input_tokens_details\": {\"cache_write_tokens\": null, \"cached_tokens\": 128}, \"output_tokens_details\": {\"reasoning_tokens\": 7813}}",
+        "conversation_id": "01m5w9gsst67x30zk9e7k4gf74",
+        "provider_model": "meta/muse-spark-open",
+        "provider_status": "completed",
+        "provider_usage": {
+          "input_tokens": 2081,
+          "input_tokens_details": {
+            "cached_tokens": 128
+          },
+          "output_tokens": 8853,
+          "output_tokens_details": {
+            "reasoning_tokens": 7813
+          },
+          "total_tokens": 10934,
+          "cost": 0.039684843,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0.0400857,
+            "upstream_inference_input_cost": 0.00246045,
+            "upstream_inference_output_cost": 0.03762525
+          }
+        }
+      },
+      "finished_at": "2026-10-26T14:24:01.874402+00:00",
+      "elapsed_seconds": 26.545
+    },
+    {
+      "task": 7,
+      "input": "files/text-two-columns-plus-tables.png",
+      "input_sha256": "f43913ccdbd7d78cd4268e7afa298c4a1b388d5330c77bc9bc7e8ae39d7e1bdd",
+      "output": "text-two-columns-plus-tables.md",
+      "prompt": "Extract the text and tables from text-two-columns-plus-tables.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "status": "completed",
+      "started_at": "2026-10-26T14:24:01.876691+00:00",
+      "command": [
+        "llm",
+        "-m",
+        "openrouter/meta/muse-spark-open",
+        "-a",
+        "/Users/kml/shell/projects/extract-benchmark/files/text-two-columns-plus-tables.png",
+        "--no-log",
+        "--hide-reasoning",
+        "--json",
+        "Extract the text and tables from text-two-columns-plus-tables.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs."
+      ],
+      "submitted_prompt": "Extract the text and tables from text-two-columns-plus-tables.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "raw_stdout": "raw/text-two-columns-plus-tables.stdout.json",
+      "raw_stderr": "raw/text-two-columns-plus-tables.stderr.txt",
+      "exit_code": 0,
+      "output_bytes": 2584,
+      "output_sha256": "321c940ded1bd814e3b159d50f9224e6960ce430dd832cd1267267c927a293ff",
+      "response_metadata": {
+        "model": "openrouter/meta/muse-spark-open",
+        "resolved_model": null,
+        "options_json": {},
+        "duration_ms": 36954,
+        "input_tokens": 1993,
+        "output_tokens": 4384,
+        "token_details": "{\"input_tokens_details\": {\"cache_write_tokens\": null, \"cached_tokens\": 128}, \"output_tokens_details\": {\"reasoning_tokens\": 3522}}",
+        "conversation_id": "01m5w9hm2zf5vejx1gyzackhz7",
+        "provider_model": "meta/muse-spark-open",
+        "provider_status": "completed",
+        "provider_usage": {
+          "input_tokens": 1993,
+          "input_tokens_details": {
+            "cached_tokens": 128
+          },
+          "output_tokens": 4384,
+          "output_tokens_details": {
+            "reasoning_tokens": 3522
+          },
+          "total_tokens": 6377,
+          "cost": 0.0207726255,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0.02098245,
+            "upstream_inference_input_cost": 0.00235045,
+            "upstream_inference_output_cost": 0.018632
+          }
+        }
+      },
+      "finished_at": "2026-10-26T14:24:40.419734+00:00",
+      "elapsed_seconds": 38.542
+    },
+    {
+      "task": 8,
+      "input": "files/wide-table.png",
+      "input_sha256": "d7b1b756316bfb1f661960562835bdcc68743140ef32610a8559806f145a1544",
+      "output": "wide-table.md",
+      "prompt": "Extract the text from wide-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "status": "completed",
+      "started_at": "2026-10-26T14:24:40.421539+00:00",
+      "command": [
+        "llm",
+        "-m",
+        "openrouter/meta/muse-spark-open",
+        "-a",
+        "/Users/kml/shell/projects/extract-benchmark/files/wide-table.png",
+        "--no-log",
+        "--hide-reasoning",
+        "--json",
+        "Extract the text from wide-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs."
+      ],
+      "submitted_prompt": "Extract the text from wide-table.png.\n\nExtract the requested content from the supplied visual input. Preserve the original language, spelling, numbers, punctuation, headings, notes, and reading order. Convert numbers written with Asian numeral characters to ordinary Western digits (0-9), for example 三 → 3 and 二十三 → 23. Normalize full-width digits to 0-9 as well. Preserve surrounding text and units; do not convert characters used as words rather than numbers. Represent tables in Markdown, preserving the association between headers, rows, and values. Use `[?]` for text you cannot read; do not guess or fill gaps. Return only the requested extraction, without explanations, summaries, translations, or commentary. Do not use OCR, embedded PDF text, external sources, reference answers, or other task outputs.",
+      "raw_stdout": "raw/wide-table.stdout.json",
+      "raw_stderr": "raw/wide-table.stderr.txt",
+      "exit_code": 0,
+      "output_bytes": 2345,
+      "output_sha256": "52b571caea3a616c287f6e9e7c51b7589e495c8543897064e654b3b481833477",
+      "response_metadata": {
+        "model": "openrouter/meta/muse-spark-open",
+        "resolved_model": null,
+        "options_json": {},
+        "duration_ms": 29720,
+        "input_tokens": 2078,
+        "output_tokens": 11268,
+        "token_details": "{\"input_tokens_details\": {\"cache_write_tokens\": null, \"cached_tokens\": 128}, \"output_tokens_details\": {\"reasoning_tokens\": 10005}}",
+        "conversation_id": "01m5w9jscnz7k95229t8qr7ewp",
+        "provider_model": "meta/muse-spark-open",
+        "provider_status": "completed",
+        "provider_usage": {
+          "input_tokens": 2078,
+          "input_tokens_details": {
+            "cached_tokens": 128
+          },
+          "output_tokens": 11268,
+          "output_tokens_details": {
+            "reasoning_tokens": 10005
+          },
+          "total_tokens": 13346,
+          "cost": 0.049842243,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0.0503457,
+            "upstream_inference_input_cost": 0.0024567,
+            "upstream_inference_output_cost": 0.047889
+          }
+        }
+      },
+      "finished_at": "2026-10-26T14:25:11.385171+00:00",
+      "elapsed_seconds": 30.963
+    }
+  ],
+  "status": "completed",
+  "finished_at": "2026-10-26T14:25:11.385734+00:00",
+  "cli_version": "llm, version 0.36",
+  "plugin": "llm-openrouter 0.7.1",
+  "model_catalog": "openrouter-model.json",
+  "measurement_notes": "Each canonical image was submitted once, consecutively, with provider-default reasoning and no tools. CLI requests have the same 660-second timeout used for the earlier trials. Usage not returned by failed requests remains unavailable. Reported token fields are retained exactly; reasoning counts are displayed separately and never added to reported totals."
+}

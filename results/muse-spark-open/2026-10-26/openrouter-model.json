@@ -1,0 +1,103 @@
+{
+  "source": "https://openrouter.ai/api/v1/models",
+  "checked_date": "2026-10-26",
+  "model": {
+    "id": "meta/muse-spark-open",
+    "canonical_slug": "meta/muse-spark-open-20261015",
+    "hugging_face_id": "meta-models/Muse-Spark-Open-816B-A42B",
+    "name": "Meta: Muse Spark Open",
+    "created": 1792087069,
+    "description": "Muse Spark Open is a coding-optimized open-weight model. Trained specifically for agentic coding workflows, it delivers higher first-attempt accuracy, reliable tool calling, and deep codebase understanding across the repos developers...",
+    "context_length": 1048576,
+    "architecture": {
+      "modality": "text+image+file+audio+video->text",
+      "input_modalities": [
+        "text",
+        "image",
+        "video",
+        "file",
+        "audio"
+      ],
+      "output_modalities": [
+        "text"
+      ],
+      "tokenizer": "Other",
+      "instruct_type": null
+    },
+    "pricing": {
+      "prompt": "0.00000125",
+      "completion": "0.00000425",
+      "input_cache_read": "0.00000015"
+    },
+    "top_provider": {
+      "context_length": 1048576,
+      "max_completion_tokens": 943718,
+      "is_moderated": false
+    },
+    "per_request_limits": null,
+    "supported_parameters": [
+      "frequency_penalty",
+      "include_reasoning",
+      "logit_bias",
+      "logprobs",
+      "max_tokens",
+      "min_p",
+      "presence_penalty",
+      "reasoning",
+      "reasoning_effort",
+      "repetition_penalty",
+      "response_format",
+      "seed",
+      "stop",
+      "structured_outputs",
+      "temperature",
+      "tool_choice",
+      "tools",
+      "top_k",
+      "top_logprobs",
+      "top_p"
+    ],
+    "default_parameters": {},
+    "supported_voices": null,
+    "knowledge_cutoff": null,
+    "expiration_date": null,
+    "links": {
+      "details": "/api/v1/models/meta/muse-spark-open-20261015/endpoints"
+    },
+    "benchmarks": {
+      "design_arena": [
+        {
+          "arena": "models",
+          "category": "codecategories",
+          "elo": 1297,
+          "win_rate": 53.5,
+          "rank": 17
+        },
+        {
+          "arena": "models",
+          "category": "gamedev",
+          "elo": 1266,
+          "win_rate": 49.4,
+          "rank": 29
+        },
+        {
+          "arena": "models",
+          "category": "website",
+          "elo": 1304,
+          "win_rate": 55,
+          "rank": 13
+        }
+      ]
+    },
+    "reasoning": {
+      "mandatory": true,
+      "supported_efforts": [
+        "xhigh",
+        "high",
+        "medium",
+        "low"
+      ],
+      "default_effort": "medium"
+    }
+  }
+}
